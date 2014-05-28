@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `MERCE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MERCE` (
-  `id_merce` int(11) NOT NULL,
+  `id_merce` int(11) NOT NULL AUTO_INCREMENT,
   `tags` text NOT NULL,
   PRIMARY KEY (`id_merce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
