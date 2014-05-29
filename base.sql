@@ -108,7 +108,7 @@ CREATE TABLE `REGISTRO` (
   `contatto` varchar(45) NOT NULL,
   `tipo` varchar(45) NOT NULL,
   `numero` varchar(45) NOT NULL,
-  `gruppo` varchar(45) DEFAULT NULL,
+  `gruppo` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `file` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_registro`)
@@ -116,13 +116,13 @@ CREATE TABLE `REGISTRO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `etichette`
+-- Table structure for table `proprieta`
 --
 
-DROP TABLE IF EXISTS `etichette`;
+DROP TABLE IF EXISTS `proprieta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `etichette` (
+CREATE TABLE `proprieta` (
   `sel` int(11) NOT NULL,
   `label` varchar(45) NOT NULL,
   PRIMARY KEY (`sel`,`label`)
