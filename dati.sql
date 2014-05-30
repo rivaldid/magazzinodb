@@ -1,6 +1,6 @@
 USE magazzino;
 
--- etichette
+-- proprieta
 TRUNCATE TABLE proprieta;
 
 -- proprieta tags sel 1
@@ -133,7 +133,7 @@ CALL input_proprieta('1','VBLOCK');
 CALL input_proprieta('1','VMAX');
 CALL input_proprieta('1','STORAGE');
 
--- etichette posizioni sel 2
+-- proprieta posizioni sel 2
 CALL input_proprieta('2','A1L02');
 CALL input_proprieta('2','A1L05');
 CALL input_proprieta('2','A1L11');
@@ -162,7 +162,7 @@ CALL input_proprieta('2','P10');
 CALL input_proprieta('2','P17');
 CALL input_proprieta('2','Z1L08');
 
--- etichette destinazioni sel 3
+-- proprieta destinazioni sel 3
 CALL input_proprieta('3','SALA1');
 CALL input_proprieta('3','temp');
 CALL input_proprieta('3','UFFICIO1');
@@ -176,7 +176,7 @@ CALL input_proprieta('3','TLCB');
 CALL input_proprieta('3','UFFICI');
 CALL input_proprieta('3','INGRESSO');
 
--- etichette tipi di documenti sel 4
+-- proprieta tipi di documenti sel 4
 CALL input_proprieta('4','BDC');
 CALL input_proprieta('4','DDT');
 CALL input_proprieta('4','eMail');
@@ -186,7 +186,7 @@ CALL input_proprieta('4','ODA');
 CALL input_proprieta('4','Verbale_di_consegna_ed_installazione');
 CALL input_proprieta('4','CarrierB');
 
--- etichette registro sel 5
+-- proprieta registro sel 5
 CALL input_proprieta('5','BRT SPA');
 CALL input_proprieta('5','CAMI SOLUTION');
 CALL input_proprieta('5','Carugati Luigi S.r.l.');
@@ -427,16 +427,16 @@ INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VA
 
 -- MERCE
 TRUNCATE TABLE MERCE;
-INSERT INTO MERCE(id_merce, tags) VALUES('1', 'SERVER IBM 3850-X5 ridontati doppioseriale');
-INSERT INTO MERCE(id_merce, tags) VALUES('2', 'BRETELLA FO-LC-LC-50/125 10M');
-INSERT INTO MERCE(id_merce, tags) VALUES('3', 'BRETELLA UTP-CAT6 3M giallo');
-INSERT INTO MERCE(id_merce, tags) VALUES('4', 'BRETELLA UTP-CAT6 3M blu');
-INSERT INTO MERCE(id_merce, tags) VALUES('5', 'BRETELLA UTP-CAT5E 3M');
-INSERT INTO MERCE(id_merce, tags) VALUES('6', 'BRETELLA FO-LC-LC-50/125 5M');
-INSERT INTO MERCE(id_merce, tags) VALUES('7', 'SERVER FUJITSU RX600 PY RX600 S6 S26361-K1402-V400');
-INSERT INTO MERCE(id_merce, tags) VALUES('8', 'APPARATI SWITCH KVM S4-0812 digital vm 1he S26361-K1393-V8 switch monitor tastiera rack');
-INSERT INTO MERCE(id_merce, tags) VALUES('9', 'APPARATI MONITOR 17inch rack tft rc25 43cm S26361-K1387-V600 monitor rack');
-INSERT INTO MERCE(id_merce, tags) VALUES('10', 'APPARATI ADAPTER USB-VGA KabelS26361-F4473-L230 console rack');
+INSERT INTO MERCE(id_merce, tags) VALUES('1','SERVER IBM 3850-X5 ridontati doppioseriale');
+INSERT INTO MERCE(id_merce, tags) VALUES('2','BRETELLA FO-LC-LC-50/125 10M');
+INSERT INTO MERCE(id_merce, tags) VALUES('3','BRETELLA UTP-CAT6 3M giallo');
+INSERT INTO MERCE(id_merce, tags) VALUES('4','BRETELLA UTP-CAT6 3M blu');
+INSERT INTO MERCE(id_merce, tags) VALUES('5','BRETELLA UTP-CAT5E 3M');
+INSERT INTO MERCE(id_merce, tags) VALUES('6','BRETELLA FO-LC-LC-50/125 5M');
+INSERT INTO MERCE(id_merce, tags) VALUES('7','SERVER FUJITSU RX600 PY RX600 S6 S26361-K1402-V400');
+INSERT INTO MERCE(id_merce, tags) VALUES('8','APPARATI SWITCH KVM S4-0812 digital vm 1he S26361-K1393-V8 switch monitor tastiera rack');
+INSERT INTO MERCE(id_merce, tags) VALUES('9','APPARATI MONITOR 17inch rack tft rc25 43cm S26361-K1387-V600 monitor rack');
+INSERT INTO MERCE(id_merce, tags) VALUES('10','APPARATI ADAPTER USB-VGA KabelS26361-F4473-L230 console rack');
 INSERT INTO MERCE(id_merce, tags) VALUES('11','APPARATI CHASSIS ENCLOSURE BLADE LCD HP BLC7000');
 INSERT INTO MERCE(id_merce, tags) VALUES('12','SERVER BLADE HP BL460c 641016-B21HP Gen8 10Gb FLB CTO');
 INSERT INTO MERCE(id_merce, tags) VALUES('13','APPARATI POSTEMOBILE RSS4000-HD-WEB STREAM-UPG 5150-32759-001 videoconferenza');
