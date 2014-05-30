@@ -180,7 +180,7 @@ IN in_quantita INT,
 IN in_posizione VARCHAR(45),
 IN in_data DATE,
 IN in_note TEXT,
-OUT out_id_operazione INT
+OUT out_id_operazioni INT
 )
 BEGIN
 
@@ -194,7 +194,7 @@ IF (in_posizione IS NOT NULL) THEN
 			
 			INSERT INTO OPERAZIONI(direzione,id_registro,id_merce,quantita,posizione,data,note)
 			VALUES (in_direzione,in_id_registro,in_id_merce,in_quantita,in_posizione,in_data,in_note);
-			SET out_id_operazione = LAST_INSERT_ID();
+			SET out_id_operazioni = LAST_INSERT_ID();
 	
 	END IF;		
 
@@ -205,30 +205,30 @@ DELIMITER ;
 
 
 
--- ---------------------- CARICO ---------------------- 
+-- ---------------------- ORDINI ---------------------- 
 DELIMITER //
 DROP PROCEDURE IF EXISTS input_ordini //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_ordini`(
-IN in_id_operazione INT,
+IN in_id_operazioni INT,
 IN in_id_oda INT,
 IN in_trasportatore VARCHAR(45)
 )
 BEGIN
-IF (in_id_operazione IS NOT NULL) THEN
+IF (in_id_operazioni IS NOT NULL) THEN
 
-	IF NOT (SELECT EXISTS(SELECT 1 FROM ORDINI WHERE id_operazione = in_id_operazione)) THEN
+	IF NOT (SELECT EXISTS(SELECT 1 FROM ORDINI WHERE id_operazioni = in_id_operazioni)) THEN
 		
 		IF ((in_id_oda IS NOT NULL) OR (in_trasportatore IS NOT NULL)) THEN
-			INSERT INTO ORDINI(id_operazione, id_registro_ordine, trasportatore) VALUES(in_id_operazione, in_id_oda, in_trasportatore);
+			INSERT INTO ORDINI(id_operazioni, id_registro_ordine, trasportatore) VALUES(in_id_operazioni, in_id_oda, in_trasportatore);
 		END IF;
 		
 	ELSE	
 		IF (in_id_oda IS NOT NULL) THEN
-			UPDATE ORDINI SET id_registro_ordine=in_id_oda WHERE id_operazione=in_id_operazione;
+			UPDATE ORDINI SET id_registro_ordine=in_id_oda WHERE id_operazioni=in_id_operazioni;
 		END IF;
 		
 		IF (in_trasportatore IS NOT NULL) THEN
-			UPDATE ORDINI SET trasportatore=in_trasportatore WHERE id_operazione=in_id_operazione;
+			UPDATE ORDINI SET trasportatore=in_trasportatore WHERE id_operazioni=in_id_operazioni;
 		END IF;
 	END IF;
 	
@@ -259,7 +259,7 @@ BEGIN
 DECLARE my_id_registro INT;
 DECLARE my_id_oda INT;
 DECLARE my_id_merce INT;
-DECLARE my_id_operazione INT;
+DECLARE my_id_operazioni INT;
 
 -- DOCUMENTO
 CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, NULL, in_data_doc, in_scansione, @my_id_registro);
@@ -268,7 +268,7 @@ CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, NULL, in_data_doc, in
 CALL input_merce(in_tags, @my_id_merce);
 
 -- OPERAZIONI
-CALL input_operazioni('1', @my_id_registro, @my_id_merce, in_quantita, in_posizione, in_data_carico, in_note_carico, @my_id_operazione);
+CALL input_operazioni('1', @my_id_registro, @my_id_merce, in_quantita, in_posizione, in_data_carico, in_note_carico, @my_id_operazioni);
 
 -- TRASPORTATORE*
 IF (in_trasportatore IS NOT NULL) THEN
@@ -283,7 +283,45 @@ SET @my_id_oda = NULL;
 END IF;
 
 -- ORDINI
-CALL input_ordini(@my_id_operazione, @my_id_oda, in_trasportatore);
+CALL input_ordini(@my_id_operazioni, @my_id_oda, in_trasportatore);
 
+END //
+DELIMITER ;
+
+
+-- ---------------------- MAGAZZINO ---------------------- 
+DELIMITER //
+DROP PROCEDURE IF EXISTS input_magazzino //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_magazzino`( 
+IN in_direzione INT,
+IN in_id_merce INT,
+IN in_posizione VARCHAR(45),
+IN in_quantita INT
+)
+BEGIN
+
+DECLARE stored_quantita INT;
+
+IF NOT (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce = in_id_merce AND posizione = in_posizione)) THEN
+
+	IF (in_direzione = 1) THEN
+		INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES(in_id_merce, in_posizione, in_quantita);
+	END IF;
+
+ELSE
+
+	SELECT quantita INTO stored_quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione;
+	
+	IF (in_direzione = 1) THEN
+		UPDATE MAGAZZINO SET quantita = stored_quantita + in_quantita WHERE id_merce = in_id_merce AND posizione = in_posizione;
+	END IF;
+	
+	IF (in_direzione = 0) THEN
+		IF (stored_quantita >= in_quantita) THEN
+			UPDATE MAGAZZINO SET quantita = stored_quantita - in_quantita WHERE id_merce = in_id_merce AND posizione = in_posizione;
+		END IF;
+	END IF;
+	
+END IF;
 END //
 DELIMITER ;

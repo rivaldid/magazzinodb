@@ -89,10 +89,10 @@ DROP TABLE IF EXISTS `ORDINI`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ORDINI` (
-  `id_operazione` int(11) NOT NULL,
+  `id_operazioni` int(11) NOT NULL,
   `id_registro_ordine` int(11) DEFAULT NULL,
   `trasportatore` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_operazione`)
+  PRIMARY KEY (`id_operazioni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
