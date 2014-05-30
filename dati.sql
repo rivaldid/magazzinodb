@@ -1,7 +1,7 @@
 USE magazzino;
 
 -- etichette
-TRUNCATE TABLE etichette;
+TRUNCATE TABLE proprieta;
 
 -- proprieta tags sel 1
 CALL input_proprieta('1','ATTREZZI');
