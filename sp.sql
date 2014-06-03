@@ -270,6 +270,9 @@ CALL input_merce(in_tags, @my_id_merce);
 -- OPERAZIONI
 CALL input_operazioni('1', @my_id_registro, @my_id_merce, in_quantita, in_posizione, in_data_carico, in_note_carico, @my_id_operazioni);
 
+-- MAGAZZINO
+CALL input_magazzino('1', @my_id_merce, in_posizione, in_quantita);
+
 -- TRASPORTATORE*
 IF (in_trasportatore IS NOT NULL) THEN
 CALL input_proprieta('5',in_trasportatore);
