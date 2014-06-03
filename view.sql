@@ -34,3 +34,9 @@ SELECT posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE q
 DELIMITER ;
 
 
+DELIMITER //
+DROP VIEW IF EXISTS vista_magazzino2 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino2` AS 
+SELECT tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
+//
+DELIMITER ;

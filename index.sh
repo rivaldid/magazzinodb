@@ -9,5 +9,6 @@ $BINCD $PREFIX
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source base.sql';
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source fun.sql';
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp.sql';
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source public_sp.sql';
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql';
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source view.sql';
