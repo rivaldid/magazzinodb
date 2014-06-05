@@ -1,4 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `magazzino` /*!40100 DEFAULT CHARACTER SET utf8 */;
+DROP DATABASE `magazzino`;
+CREATE DATABASE IF NOT EXISTS `magazzino` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `magazzino`;
 --
 -- Host: localhost    Database: magazzino
