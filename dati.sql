@@ -940,3 +940,6 @@ INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('82' ,'B2L04','10')
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('83' ,'B2L04','1');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('84' ,'P05','2');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('85' ,'P05','2');
+
+CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI ptnumber	PT40077614-PT40077814','200','UFFICIO2','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI TAG RIFID','200','UFFICIO2','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
