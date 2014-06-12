@@ -15,8 +15,8 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS
 SELECT
 OPERAZIONI.data,
 CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status,
-posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file, tags, quantita, note,
-CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.trasportatore
+posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita, note,
+CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file AS doc_ordine, vista_ordini.trasportatore
 FROM OPERAZIONI 
 JOIN MERCE USING(id_merce)
 JOIN REGISTRO USING(id_registro)
