@@ -946,3 +946,4 @@ CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-
 CALL input_registro('Ericsson Telecomunicazioni S.p.A','DDT','50165763',NULL,'2014-02-19','Ericsson_DDT_50165763.pdf',@myvar);
 CALL input_registro('Poste Italiane S.p.a.','ODA','4100016351',NULL,'2007-11-15','Poste_ODA_4100016351.pdf',@myvar);
 CALL input_registro('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014',NULL,'2014-06-04','email_costantino_04-06-2014.jpg',@myvar);
+CALL input_registro('Poste Italiane S.p.a.','ODA','4501184977',NULL,'2013-09-23','ODA_4501184977_DISPLAY.pdf',@myvar);
