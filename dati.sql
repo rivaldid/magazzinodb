@@ -246,7 +246,7 @@ INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VA
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('128', 'Ericsson Telecomunicazioni S.p.A','DDT','50165722',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('127', 'Ericsson Telecomunicazioni S.p.A','DDT','50165763',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('199', 'Ericsson Telecomunicazioni S.p.A','MDS','101', NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('43','Fimm S.R.L.', 'DDT','8', NULL, NULL, NULL);
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('43','Fimm S.R.L.','DDT','8','190','2013-01-29','DDT_FIMM_8.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('41','Fujitsu Technology Solutions S.r.l.', 'DDT','189003648', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('62','Fujitsu Technology Solutions S.r.l.', 'DDT','189205293', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('11','Fujitsu Technology Solutions S.r.l.', 'DDT','189340594', NULL, NULL, NULL);
@@ -255,14 +255,14 @@ INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VA
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('9', 'Fujitsu Technology Solutions S.r.l.', 'DDT','189349594', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('8', 'Fujitsu Technology Solutions S.r.l.', 'DDT','189367488', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('6', 'Fujitsu Technology Solutions S.r.l.', 'DDT','189367489', NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('49','G.F.O. Europe S.r.l.','DDT','11',NULL, NULL, NULL);
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('49','G.F.O. Europe S.r.l.','DDT','11','192', '2013-01-07', 'DDT_GFOEUROPE_11.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('194', 'Hewlett Packard International Sarl','BDC','GWOF 205389/050/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('190', 'Hewlett Packard International Sarl','BDC','GWOF 205478/041/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('192', 'Hewlett Packard International Sarl','BDC','GWOF 205478/047/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('17','Hewlett Packard International Sarl','DDT','GW0F 192498/099/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('19','Hewlett Packard International Sarl','DDT','GW0F 192650/050/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('20','Hewlett Packard International Sarl','DDT','GW0F 192779/057/01 C',NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('18','Hewlett Packard International Sarl','DDT','GW0F 193223/001/01 C',NULL, NULL, NULL);
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('18','Hewlett Packard International Sarl','DDT','GW0F 193223/001/01 C','219','2013-07-29','HP_DDT_GW0F-193223-001-01-C.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('21','Hewlett Packard International Sarl','DDT','GW0F 194285/014/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('15','Hewlett Packard International Sarl','DDT','GW0F 202277/032/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('1', 'HMS IT S.p.A.', 'DDT','R/55',NULL, NULL, NULL);
@@ -277,9 +277,9 @@ INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VA
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('183', 'Mauden S.p.a.', 'DDT','11',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('66','Mauden S.p.a.', 'DDT','339', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('64','Mauden S.p.a.', 'DDT','340', NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('46','Mauden S.p.a.', 'DDT','8', NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('44','Mauden S.p.a.', 'Lettera_di_vettura', '13 - 000103', NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('47','Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'mauden del 25-01-2013', NULL, NULL, NULL);
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('46','Mauden S.p.a.', 'DDT','8', '189', '2013-01-03', 'DDT_MAUDEN_8.pdf');
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('44','Safe Watcher S.r.l.','Lettera_di_vettura','13 - 000103','191','2013-01-04','LDV_safewatcher_13-000103.pdf');
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('47','Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden del 25-01-2013', '192', '2013-01-25', 'VCI_MAUDEN-del-25012013.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('26','Oracle Corporation','DDT','31840741',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('22','Oracle Corporation','DDT','6754892', NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('202', 'Polo Immobiliare','eMail','22/05/2014',NULL, NULL, NULL);
@@ -947,3 +947,6 @@ CALL input_registro('Ericsson Telecomunicazioni S.p.A','DDT','50165763',NULL,'20
 CALL input_registro('Poste Italiane S.p.a.','ODA','4100016351',NULL,'2007-11-15','Poste_ODA_4100016351.pdf',@myvar);
 CALL input_registro('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014',NULL,'2014-06-04','email_costantino_04-06-2014.jpg',@myvar);
 CALL input_registro('Poste Italiane S.p.a.','ODA','4501184977',NULL,'2013-09-23','ODA_4501184977_DISPLAY.pdf',@myvar);
+CALL input_registro('Poste Italiane S.p.a.','ODA','4100110391','192','2012-12-07',NULL,@myvar);
+CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','13 - 000099','191','2013-01-04','LDV_safewatcher_13-000099.pdf',@myvar);
+CALL input_registro('Fujitsu Technology Solutions S.r.l.','Rapporto_tecnico','2587030','184','2013-01-18','RT_FUJITSU_2587030.pdf',@myvar);
