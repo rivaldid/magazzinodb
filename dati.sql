@@ -952,3 +952,4 @@ CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','13 - 000099','19
 CALL input_registro('Fujitsu Technology Solutions S.r.l.','Rapporto_tecnico','2587030','184','2013-01-18','RT_FUJITSU_2587030.pdf',@myvar);
 CALL input_registro('Fujitsu Technology Solutions S.r.l.','DDT','189207351',NULL,'2013-07-01','DDT_FUJITSU_189207351.pdf',@myvar);
 CALL input_registro('TRADIS di Giuseppe Pullella','DDT','488','217','2013-07-10','DDT_TRADIS_488.pdf',@myvar);
+CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','13 - 005646','215','2013-07-08','LDV_safewatcher_13-005646.pdf',@myvar);
