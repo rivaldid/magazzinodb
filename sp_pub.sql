@@ -51,3 +51,43 @@ CALL input_ordini(@my_id_operazioni, @my_id_oda, in_trasportatore);
 
 END //
 DELIMITER ;
+
+
+-- ---------------------- SCARICO ---------------------- 
+DELIMITER //
+DROP PROCEDURE IF EXISTS SCARICO //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `SCARICO`(
+IN in_richiedente VARCHAR(45),
+IN in_id_merce TEXT,
+IN in_quantita INT,
+IN in_posizione VARCHAR(45),
+IN in_destinazione VARCHAR(45),
+IN in_data_doc_scarico DATE,
+IN in_data_scarico DATE,
+IN in_note_scarico TEXT
+)
+BEGIN
+
+DECLARE my_id_registro INT;
+DECLARE my_mds VARCHAR(45);
+DECLARE my_id_operazioni INT;
+DECLARE my_quantita INT;
+
+-- test scarico
+SELECT quantita INTO my_quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione;
+IF (in_quantita<=my_quantita) THEN
+
+	-- DOCUMENTO
+	SELECT MAX(CAST(numero AS UNSIGNED))+1 INTO my_mds FROM REGISTRO WHERE tipo='MDS';
+	CALL input_registro(in_richiedente, 'MDS', my_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
+
+	-- OPERAZIONI
+	CALL input_operazioni('0', @my_id_registro, in_id_merce, in_quantita, in_destinazione, in_data_scarico, in_note_scarico, @my_id_operazioni);
+
+	-- MAGAZZINO
+	CALL input_magazzino('0', in_id_merce, in_posizione, in_quantita);
+
+END IF; -- end if test scarico
+
+END //
+DELIMITER ;

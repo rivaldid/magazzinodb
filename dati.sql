@@ -953,3 +953,5 @@ CALL input_registro('Fujitsu Technology Solutions S.r.l.','Rapporto_tecnico','25
 CALL input_registro('Fujitsu Technology Solutions S.r.l.','DDT','189207351',NULL,'2013-07-01','DDT_FUJITSU_189207351.pdf',@myvar);
 CALL input_registro('TRADIS di Giuseppe Pullella','DDT','488','217','2013-07-10','DDT_TRADIS_488.pdf',@myvar);
 CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','13 - 005646','215','2013-07-08','LDV_safewatcher_13-005646.pdf',@myvar);
+CALL CARICO('LUPPRIANS','DDT', 'MJ196752', '2014-06-13', 'DDT_LUPPRIANS_MJ196752.pdf', 'APPARATI G45 RACK Avamar','1','P06', '2014-06-17','Progetto Avamar', 'Tecnotrans S.r.l.', NULL);
+CALL SCARICO('Facility', '14', '6', 'B1L03', 'sala1', '2014-06-17', '2014-06-17', 'Richiesto da Facility referente Lucati progetto EMC2');
