@@ -165,7 +165,7 @@ CALL input_proprieta('2','Z1L08');
 -- proprieta destinazioni sel 3
 CALL input_proprieta('3','SALA1');
 CALL input_proprieta('3','temp');
-CALL input_proprieta('3','UFFICIO1');
+CALL input_proprieta('3','UFFICIO3');
 CALL input_proprieta('3','SALA1-ISOLA5');
 CALL input_proprieta('3','SALA1-ISOLA6');
 CALL input_proprieta('3','SALA1-ISOLASTORAGE');
@@ -705,7 +705,7 @@ INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,pos
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('204' ,'0', '172', '27', '8','SALA1','2013-10-24', NULL);
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('205' ,'0', '173', '32', '1','SALA1','2013-10-24', NULL);
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('206' ,'0', '174', '11', '5','SALA1-ISOLA5', '2013-12-19', 'scarico complessivo per allineamento merce');
-INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('207' ,'1', '175', '61', '13', 'UFFICIO1', '2014-03-11', 'consegna pt number da del piano in occasione della tracciatura del proiettore');
+INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('207' ,'1', '175', '61', '13', 'UFFICIO3', '2014-03-11', 'consegna pt number da del piano in occasione della tracciatura del proiettore');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('208' ,'0', '176', '61', '1','UFFICI', '2014-03-11', 'scaricato 1 pt number per censimento proiettore');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('209' ,'0', '177', '54', '24', 'SALA1','2014-03-11', NULL);
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('210' ,'1', '178', '65', '80', 'Z1L08','2013-10-07', 'CONSEGNA A MANO');
@@ -917,7 +917,7 @@ INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('57' ,'P01','0');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('58' ,'P10','0');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('59' ,'P01','56');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('60' ,'P10','0');
-INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('61' ,'UFFICIO1' ,'20');
+INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('61' ,'UFFICIO3' ,'20');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('62' ,'P10','0');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('63' ,'B1L13','16');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('64' ,'P10','0');
@@ -941,8 +941,8 @@ INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('83' ,'B2L04','1');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('84' ,'P05','2');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('85' ,'P05','2');
 
-CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI pt_number','200','UFFICIO1','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
-CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI TAG_RFID','200','UFFICIO1','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI pt_number','200','UFFICIO3','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI TAG_RFID','200','UFFICIO3','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
 CALL input_registro('Ericsson Telecomunicazioni S.p.A','DDT','50165763',NULL,'2014-02-19','Ericsson_DDT_50165763.pdf',@myvar);
 CALL input_registro('Poste Italiane S.p.a.','ODA','4100016351',NULL,'2007-11-15','Poste_ODA_4100016351.pdf',@myvar);
 CALL input_registro('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014',NULL,'2014-06-04','email_costantino_04-06-2014.jpg',@myvar);
@@ -959,3 +959,8 @@ CALL SCARICO('Facility', '14', '6', 'B1L03', 'SALA1-ISOLA_STORAGE', '2014-06-17'
 CALL SCARICO('Postemobile Tec', '72', '3', 'P17', 'SALA1-ISOLA7', '2014-02-11', '2014-02-11', 'progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)');
 CALL SCARICO('Postemobile Tec', '73', '1', 'P17', 'SALA1-ISOLA7', '2014-02-11', '2014-02-11', 'progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)');
 CALL SCARICO('Postemobile Tec', '75', '2', 'P17', 'SALA1-ISOLA7', '2014-02-13', '2014-02-13', 'progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)');
+CALL input_registro('MITSafetrans S.r.l.','Rapporto_tecnico','PB-11212','218', '2013-07-23', 'RT_SAFETRANS_PB-11212.pdf', @myvar);
+CALL input_registro('MITSafetrans S.r.l.','Rapporto_tecnico','PB-11816','219', '2013-07-29', 'RT_SAFETRANS_PB-11816.pdf', @myvar);
+CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4501182589 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4501182589.pdf', @myvar);
+CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4100124026 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4100124026.pdf', @myvar);
+CALL input_registro('TI/GSI/GI/TO', 'eMail', 'marchisotti del 5 agosto 2013', NULL, '2013-08-05', 'eMail_TIGSIGITO_marchisotti-del-5agosto13.pdf', @myvar);
