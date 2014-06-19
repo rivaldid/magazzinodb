@@ -184,7 +184,6 @@ CALL input_proprieta('4','Lettera_di_vettura');
 CALL input_proprieta('4','MDS');
 CALL input_proprieta('4','ODA');
 CALL input_proprieta('4','Verbale_di_consegna_ed_installazione');
-CALL input_proprieta('4','CarrierB');
 
 -- proprieta registro sel 5
 CALL input_proprieta('5','BRT SPA');
