@@ -169,7 +169,7 @@ CALL input_proprieta('3','UFFICIO3');
 CALL input_proprieta('3','SALA1-ISOLA5');
 CALL input_proprieta('3','SALA1-ISOLA6');
 CALL input_proprieta('3','SALA1-ISOLASTORAGE');
-CALL input_proprieta('3','SALA1ISOLA2');
+CALL input_proprieta('3','SALA1-ISOLA2');
 CALL input_proprieta('3','SALA2');
 CALL input_proprieta('3','TLCA');
 CALL input_proprieta('3','TLCB');
@@ -963,4 +963,4 @@ CALL input_registro('MITSafetrans S.r.l.','Rapporto_tecnico','PB-11212','218', '
 CALL input_registro('MITSafetrans S.r.l.','Rapporto_tecnico','PB-11816','219', '2013-07-29', 'RT_SAFETRANS_PB-11816.pdf', @myvar);
 CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4501182589 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4501182589.pdf', @myvar);
 CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4100124026 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4100124026.pdf', @myvar);
-CALL input_registro('TI/GSI/GI/TO', 'eMail', 'marchisotti del 5 agosto 2013', NULL, '2013-08-05', 'eMail_TIGSIGITO_marchisotti-del-5agosto13.pdf', @myvar);
+CALL input_registro('Sicurezza', 'eMail', 'marchisotti del 5 agosto 2013', NULL, '2013-08-05', 'eMail_TIGSIGITO_marchisotti-del-5agosto13.pdf', @myvar);

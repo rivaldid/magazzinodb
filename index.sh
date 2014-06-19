@@ -22,3 +22,6 @@ $BINECHO "Carico le viste sui dati";
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source view.sql';
 $BINECHO "Carico le procedure di aggiornamento dati";
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_upd.sql';
+
+$BINECHO "Carico le viste per il service";
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source vserv.sql';
