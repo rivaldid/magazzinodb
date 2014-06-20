@@ -437,7 +437,7 @@ INSERT INTO MERCE(id_merce, tags) VALUES('8','APPARATI SWITCH KVM S4-0812 digita
 INSERT INTO MERCE(id_merce, tags) VALUES('9','APPARATI MONITOR 17inch rack tft rc25 43cm S26361-K1387-V600 monitor rack');
 INSERT INTO MERCE(id_merce, tags) VALUES('10','APPARATI ADAPTER USB-VGA KabelS26361-F4473-L230 console rack');
 INSERT INTO MERCE(id_merce, tags) VALUES('11','APPARATI CHASSIS ENCLOSURE BLADE LCD HP BLC7000');
-INSERT INTO MERCE(id_merce, tags) VALUES('12','SERVER BLADE HP BL460c 641016-B21HP Gen8 10Gb FLB CTO');
+INSERT INTO MERCE(id_merce, tags) VALUES('12','SERVER BLADE HP BL460c 641016-B21 Gen8 10Gb FLB CTO');
 INSERT INTO MERCE(id_merce, tags) VALUES('13','APPARATI POSTEMOBILE RSS4000-HD-WEB STREAM-UPG 5150-32759-001 videoconferenza');
 INSERT INTO MERCE(id_merce, tags) VALUES('14','BRETELLA UTP-CAT5E 2M');
 INSERT INTO MERCE(id_merce, tags) VALUES('16','APPARATI DVDRW HP Mobile USB nLS DVDRW Drive A2U57AA');
@@ -963,3 +963,4 @@ CALL input_registro('MITSafetrans S.r.l.','Rapporto_tecnico','PB-11816','219', '
 CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4501182589 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4501182589.pdf', @myvar);
 CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4100124026 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4100124026.pdf', @myvar);
 CALL input_registro('Sicurezza', 'eMail', 'marchisotti del 5 agosto 2013', NULL, '2013-08-05', 'eMail_TIGSIGITO_marchisotti-del-5agosto13.pdf', @myvar);
+CALL CARICO('Hewlett Packard International Sarl','DDT', 'GW0F 214073/026/01 C','2014-06-18','DDT_HP_GW0F-214073-026-01-C.pdf','SERVER BLADE HP BL460c 641016-B21 Gen8 10Gb FLB CTO','1','C1L13','2014-06-19','carico in seguito a mail di Lorusso, 4 colli stoccati in magazzino scaffale C1/13','Gebrueder Weiss GmbH Transport und Logistik',NULL);
