@@ -964,3 +964,13 @@ CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Ma
 CALL input_registro('Mauden S.p.a.', 'Verbale_di_consegna_ed_installazione', 'Mauden riferito ODA4100124026 del 30/05/2013', NULL, NULL, 'VCI_MAUDEN_riferito-ODA4100124026.pdf', @myvar);
 CALL input_registro('Sicurezza', 'eMail', 'marchisotti del 5 agosto 2013', NULL, '2013-08-05', 'eMail_TIGSIGITO_marchisotti-del-5agosto13.pdf', @myvar);
 CALL CARICO('Hewlett Packard International Sarl','DDT', 'GW0F 214073/026/01 C','2014-06-18','DDT_HP_GW0F-214073-026-01-C.pdf','SERVER BLADE HP BL460c 641016-B21 Gen8 10Gb FLB CTO','1','C1L13','2014-06-19','carico in seguito a mail di Lorusso, 4 colli stoccati in magazzino scaffale C1/13','Gebrueder Weiss GmbH Transport und Logistik',NULL);
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','535','2014-06-18',NULL,'BRETELLA FO-LC-LC-50/125 50M','7','P16','2014-06-23','carico da completare nella descrizione, LDV N. 14-005116','Safe Watcher S.r.l.',NULL);
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','535','2014-06-18',NULL,'BRETELLA FO-LC-LC-50/125 1M','15','P16','2014-06-23','carico da completare nella descrizione, LDV N. 14-005116','Safe Watcher S.r.l.',NULL);
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','535','2014-06-18',NULL,'BRETELLA FO-LC-LC-50/125 10M','695','P16','2014-06-23','carico da completare nella descrizione, LDV N. 14-005116','Safe Watcher S.r.l.',NULL);
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','535','2014-06-18',NULL,'APPARATI CHASSIS DCX','6','P16','2014-06-23','carico da completare nella descrizione, LDV N. 14-005116','Safe Watcher S.r.l.',NULL);
+CALL input_registro('EMC Computer Systems Italia S.p.a.','DDT','535',NULL,'2014-06-18','DDT_EMC2_535.jpg',@myvar);
+CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','14 - 005116',NULL,'2014-06-18','LDV_safewatcher_14-005116.jpg',@myvar);
+CALL input_registro('Safe Watcher S.r.l.','Lettera_di_vettura','14 - 005255',NULL,'2014-06-23','LDV_safewatcher_14-005255.png',@myvar);
+CALL CARICO('Safe Watcher S.r.l.','Lettera_di_vettura','14 - 005255',NULL,NULL,'APPARATI RACK S2 VMAX POSTEL','1','P08','2014-06-24','attivita per conto di EMC2, spostato in sala il giorno stesso','Safe Watcher S.r.l.',NULL);
+CALL SCARICO('Facility','90','1','P08','SALA1-ISOLASTORAGE','2014-06-24','2014-06-24','attivita per conto di EMC2, spostato in sala il giorno stesso');
+CALL CARICO('Safe Watcher S.r.l.','Lettera_di_vettura','14 - 005255',NULL,NULL,'VARI ACCESSORI RACK S2','1','B1L13','2014-06-24','attivita per conto di EMC2, scatola con cavi di alimentazione per rack','Safe Watcher S.r.l.',NULL);
