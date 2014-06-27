@@ -940,6 +940,7 @@ INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('83' ,'B2L04','1');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('84' ,'P05','2');
 INSERT INTO MAGAZZINO(id_merce, posizione, quantita) VALUES ('85' ,'P05','2');
 
+-- LIFE GOES ON...
 CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI pt_number','200','UFFICIO3','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
 CALL CARICO('Poste Italiane S.p.a. ROMA','eMail','roma del 04/06/2014','2014-06-04',NULL,'VARI TAG_RFID','200','UFFICIO3','2014-06-09','ricevuti 200 tags rfid e 200 ptnumber (PT40077614-PT40077814) tramite bonomo simone con mail di costantino pandolfi',NULL,NULL);
 CALL input_registro('Ericsson Telecomunicazioni S.p.A','DDT','50165763',NULL,'2014-02-19','Ericsson_DDT_50165763.pdf',@myvar);
