@@ -979,3 +979,6 @@ CALL SCARICO('Facility','91','1','B1L13','SALA1-ISOLA_STORAGE','2014-06-26','201
 CALL SCARICO('Prossimita','61','220','UFFICIO3','UFFICIO3','2014-06-27','2014-06-27','Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3');
 CALL SCARICO('Prossimita','86','200','UFFICIO3','UFFICIO3','2014-06-27','2014-06-27','Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3');
 CALL SCARICO('Facility','89','6','P16','SALA2','2014-06-20','2014-06-27','Implementazione infrstruttura Sun per Fase2, destinazioni ISOLE 10 13 16');
+CALL SCARICO('Postemobile Tec','54','6','P02','SALA1-ISOLA5','2014-06-30','2014-06-30','email di Farina, progetto FULL MVNO. consegnato da Accessi a Lorusso');
+CALL SCARICO('Facility','46','80','A1L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
+CALL SCARICO('Facility','46','30','A2L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
