@@ -982,3 +982,4 @@ CALL SCARICO('Facility','89','6','P16','SALA2','2014-06-20','2014-06-27','Implem
 CALL SCARICO('Postemobile Tec','54','6','P02','SALA1-ISOLA5','2014-06-30','2014-06-30','email di Farina, progetto FULL MVNO. consegnato da Accessi a Lorusso');
 CALL SCARICO('Facility','46','80','A1L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
 CALL SCARICO('Facility','46','30','A2L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
+CALL SCARICO('Postemobile Tec','54','2','P01','SALA1','2014-07-10','2014-07-10','progetto FULL MVNO per conto di Farina Andrea');
