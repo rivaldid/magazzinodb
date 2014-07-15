@@ -25,3 +25,6 @@ $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_upd.sql';
 
 $BINECHO "Carico le viste per il service";
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source vserv.sql';
+
+$BINECHO "Strumenti di debug";
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source debug.sql';

@@ -263,7 +263,7 @@ INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VA
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('20','Hewlett Packard International Sarl','DDT','GW0F 192779/057/01 C',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('18','Hewlett Packard International Sarl','DDT','GW0F 193223/001/01 C','219','2013-07-29','HP_DDT_GW0F-193223-001-01-C.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('21','Hewlett Packard International Sarl','DDT','GW0F 194285/014/01 C',NULL, NULL, NULL);
-INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('15','Hewlett Packard International Sarl','DDT','GW0F 202277/032/01 C',NULL, NULL, NULL);
+INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('15','Hewlett Packard International Sarl','DDT','GW0F 202277/032/01 C',NULL, '2013-12-12', 'DDT_HP_GW0F-202227-032-01-C.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('1', 'HMS IT S.p.A.', 'DDT','R/55',NULL, NULL, NULL);
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('195','IRCE SPA','Lettera_di_vettura', '171000026829', NULL, '2014-02-03', 'LDV_IRCE_171000026829.pdf');
 INSERT INTO REGISTRO(id_registro, contatto, tipo, numero, gruppo, data, file) VALUES('38','Italtel S.p.A.','DDT','NVLS 60071134', '214', '2013-06-26', 'DDT_ITALTEL_nvls60071134.pdf');
@@ -645,8 +645,8 @@ INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,pos
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('142' ,'0', '105', '49', '15', 'SALA1','2013-08-06', 'progetto cablaggio library. manet(jayme) ref. Gennarelli');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('143' ,'0', '106', '46', '100','SALA1','2013-08-06', 'progetto cablaggio library. manet(jayme) ref. Gennarelli');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('144' ,'0', '107', '54', '50', 'SALA1','2013-04-13', 'moving rma 13-04-2013. ref. Gennarelli');
-INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('145' ,'1', '15','12', '8','P10','2013-12-12', 'progetto vmware fase 3');
-INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('146' ,'1', '15','12', '8','P10','2013-12-12', 'progetto vmware fase 3');
+INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('145' ,'1', '15','12', '16','P10','2013-12-12', 'progetto vmware fase 3');
+INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('146' ,'0', '15','12', '16','SALA1','2013-12-12', 'progetto vmware fase 3');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('147' ,'0', '112', '54', '20', 'SALA1','2014-01-24', 'progetto full mvno. referente Florio');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('148' ,'0', '113', '6','2','SALA1','2014-02-04', 'progetto site cert 103943 + full mvno. referente petrone, consegnato da manzo');
 INSERT INTO OPERAZIONI(id_operazioni,direzione,id_registro,id_merce,quantita,posizione,data,note) VALUES('149' ,'0', '114', '5','5','SALA1','2014-02-04', 'progetto site cert 103943 + full mvno. referente petrone, consegnato da manzo');
@@ -829,7 +829,6 @@ CALL input_ordini('102', NULL, 'Safe Watcher S.r.l.');
 CALL input_ordini('103', NULL, 'Safe Watcher S.r.l.');
 CALL input_ordini('104', NULL, 'Safe Watcher S.r.l.');
 CALL input_ordini('145', '16', 'Gebrueder Weiss GmbH Transport und Logistik');
-CALL input_ordini('146', '16', 'Gebrueder Weiss GmbH Transport und Logistik');
 CALL input_ordini('171', NULL, 'Tecnotrans S.r.l.');
 CALL input_ordini('212', NULL, 'CEVA LOGISTIC ITALIA SRL');
 CALL input_ordini('213', NULL, 'CEVA LOGISTIC ITALIA SRL');
@@ -983,3 +982,5 @@ CALL SCARICO('Postemobile Tec','54','6','P02','SALA1-ISOLA5','2014-06-30','2014-
 CALL SCARICO('Facility','46','80','A1L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
 CALL SCARICO('Facility','46','30','A2L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
 CALL SCARICO('Postemobile Tec','54','2','P01','SALA1','2014-07-10','2014-07-10','progetto FULL MVNO per conto di Farina Andrea');
+
+
