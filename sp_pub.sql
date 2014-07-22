@@ -5,12 +5,12 @@ CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `CARICO`(
 IN in_fornitore VARCHAR(45),
 IN in_tipo_doc VARCHAR(45),
 IN in_num_doc VARCHAR(45),
-IN in_data_doc DATE,
+IN in_data_doc VARCHAR(10),
 IN in_scansione VARCHAR(45),
 IN in_tags TEXT,
 IN in_quantita INT,
 IN in_posizione VARCHAR(45),
-IN in_data_carico DATE,
+IN in_data_carico VARCHAR(10),
 IN in_note_carico TEXT,
 IN in_trasportatore VARCHAR(45),
 IN in_oda VARCHAR(45)
@@ -22,14 +22,25 @@ DECLARE my_id_oda INT;
 DECLARE my_id_merce INT;
 DECLARE my_id_operazioni INT;
 
+DECLARE my_data_doc DATE;
+DECLARE my_data_carico DATE;
+
+-- fixdate
+SET  @my_data_carico = STR_TO_DATE(in_data_carico,'%d/%m/%Y');
+IF (in_data_doc IS NOT NULL) THEN
+	SET @my_data_doc = STR_TO_DATE(in_data_doc,'%d/%m/%Y');
+ELSE
+	SET @my_data_doc = NULL;
+END IF;
+
 -- DOCUMENTO
-CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, NULL, in_data_doc, in_scansione, @my_id_registro);
+CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, NULL, @my_data_doc, in_scansione, @my_id_registro);
 
 -- MERCE
 CALL input_merce(in_tags, @my_id_merce);
 
 -- OPERAZIONI
-CALL input_operazioni('1', @my_id_registro, @my_id_merce, in_quantita, in_posizione, in_data_carico, in_note_carico, @my_id_operazioni);
+CALL input_operazioni('1', @my_id_registro, @my_id_merce, in_quantita, in_posizione, @my_data_carico, in_note_carico, @my_id_operazioni);
 
 -- MAGAZZINO
 CALL input_magazzino('1', @my_id_merce, in_posizione, in_quantita);
