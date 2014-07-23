@@ -4,7 +4,7 @@ USE magazzino;
 DELIMITER //
 DROP VIEW IF EXISTS vista_ordini //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_ordini` AS 
-SELECT * FROM ORDINI JOIN REGISTRO ON id_registro_ordine = id_registro
+SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro
 //
 DELIMITER ;
 

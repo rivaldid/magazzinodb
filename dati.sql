@@ -982,5 +982,8 @@ CALL SCARICO('Postemobile Tec','54','6','P02','SALA1-ISOLA5','2014-06-30','2014-
 CALL SCARICO('Facility','46','80','A1L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
 CALL SCARICO('Facility','46','30','A2L08','SALA2','2014-06-30','2014-06-30','allestimento switch fase2, referente Florio');
 CALL SCARICO('Postemobile Tec','54','2','P01','SALA1','2014-07-10','2014-07-10','progetto FULL MVNO per conto di Farina Andrea');
-
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','627','2014-07-10','DDT_EMC-CENTERA_627.pdf','APPARATI EMC CENTERA','1','P17','2014-07-10','carico complementare a lettera di vettura 14 - 005951 safe watcher','Safe Watcher S.r.l.',NULL);
+CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','627','2014-07-10','DDT_EMC-CENTERA_627.pdf','BRETELLA UTP-CAT6 3M','1','P17','2014-07-10','carico complementare a lettera di vettura 14 - 005951 safe watcher','Safe Watcher S.r.l.',NULL);
+CALL SCARICO('Facility','92','1','P17','SALA2','2014-07-18','2014-07-18','allestimento centera sala2 referente lucati gennarelli');
+CALL SCARICO('Facility','54','1','P17','SALA2','2014-07-18','2014-07-18','allestimento centera sala2 referente lucati gennarelli');
 
