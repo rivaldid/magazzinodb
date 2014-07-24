@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS `MAGAZZINO`;
 CREATE TABLE `MAGAZZINO` (
   `id_merce` int(11) NOT NULL,
   `posizione` varchar(45) NOT NULL,
-  `quantita` varchar(45) NOT NULL,
+  `quantita` int(11) NOT NULL,
   PRIMARY KEY (`id_merce`,`posizione`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
