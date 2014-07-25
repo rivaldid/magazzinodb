@@ -986,4 +986,9 @@ CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','627','2014-07-10','DDT_E
 CALL CARICO('EMC Computer Systems Italia S.p.a.','DDT','627','2014-07-10','DDT_EMC-CENTERA_627.pdf','BRETELLA UTP-CAT6 3M','1','P17','2014-07-10','carico complementare a lettera di vettura 14 - 005951 safe watcher','Safe Watcher S.r.l.',NULL);
 CALL SCARICO('Facility','92','1','P17','SALA2','2014-07-18','2014-07-18','allestimento centera sala2 referente lucati gennarelli');
 CALL SCARICO('Facility','54','1','P17','SALA2','2014-07-18','2014-07-18','allestimento centera sala2 referente lucati gennarelli');
-
+CALL upd_giacenza_magazzino('2','A2L05','530','2014-07-24');
+CALL upd_posizione_magazzino('2','P16','B1L06','2014-07-24');
+CALL upd_giacenza_magazzino('2','B1L06','400','2014-07-24');
+CALL upd_giacenza_magazzino('49','A1L11','10','2014-07-24');
+CALL upd_posizione_magazzino('88','P16','B1L01','2014-07-24');
+CALL upd_giacenza_magazzino('88','B1L01','20','2014-07-24');
