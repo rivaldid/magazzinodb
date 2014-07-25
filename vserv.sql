@@ -70,3 +70,10 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_registro` AS
 SELECT contatto, tipo, numero, gruppo, data, file FROM REGISTRO;
 //
 DELIMITER ;
+
+DELIMITER //
+DROP VIEW IF EXISTS vserv_merce //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_merce` AS 
+SELECT tags FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0 GROUP BY tags;
+//
+DELIMITER ;
