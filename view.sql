@@ -29,7 +29,7 @@ DELIMITER ;
 DELIMITER //
 DROP VIEW IF EXISTS vista_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino` AS 
-SELECT posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE quantita > 0 ORDER BY posizione,tags DESC
+SELECT id_merce,posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE quantita > 0 ORDER BY posizione,tags DESC
 //
 DELIMITER ;
 
@@ -38,5 +38,13 @@ DELIMITER //
 DROP VIEW IF EXISTS vista_magazzino2 //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino2` AS 
 SELECT tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
+//
+DELIMITER ;
+
+
+DELIMITER //
+DROP VIEW IF EXISTS vista_magazzino3 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS 
+SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
 //
 DELIMITER ;

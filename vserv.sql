@@ -74,6 +74,13 @@ DELIMITER ;
 DELIMITER //
 DROP VIEW IF EXISTS vserv_merce //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_merce` AS 
-SELECT tags FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0 GROUP BY tags;
+SELECT * FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0;
+//
+DELIMITER ;
+
+DELIMITER //
+DROP VIEW IF EXISTS vserv_magazzino_id //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS 
+SELECT * FROM vista_magazzino3;
 //
 DELIMITER ;
