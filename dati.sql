@@ -992,3 +992,15 @@ CALL upd_giacenza_magazzino('2','B1L06','400','2014-07-24');
 CALL upd_giacenza_magazzino('49','A1L11','10','2014-07-24');
 CALL upd_posizione_magazzino('88','P16','B1L01','2014-07-24');
 CALL upd_giacenza_magazzino('88','B1L01','20','2014-07-24');
+CALL SCARICO('Polo Immobiliare','2','32','A2L05','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2');
+CALL SCARICO('Polo Immobiliare','48','4','A2L10','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2');
+CALL SCARICO('Polo Immobiliare','47','4','A2L09','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2');
+CALL SCARICO('Postemobile S.p.A.','46','100','A1L07','SALA2','2014-08-07','2014-08-07','progetto non pervenuto');
+CALL upd_giacenza_magazzino('46','A1L07','80','2014-09-01');
+CALL upd_giacenza_magazzino('46','A2L08','91','2014-09-01');
+CALL SCARICO('Postemobile S.p.A.','46','60','A2L07','TLC','2014-09-01','2014-09-01','Attivita site DC2 ditta OSAT, referente Napoli');
+
+
+-- CALL CARICO(fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
+-- CALL SCARICO(richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico);
+-- CALL upd_giacenza_magazzino(id_merce, posizione, quantita, data);
