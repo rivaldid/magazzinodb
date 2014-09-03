@@ -999,6 +999,10 @@ CALL SCARICO('Postemobile S.p.A.','46','100','A1L07','SALA2','2014-08-07','2014-
 CALL upd_giacenza_magazzino('46','A1L07','80','2014-09-01');
 CALL upd_giacenza_magazzino('46','A2L08','91','2014-09-01');
 CALL SCARICO('Postemobile S.p.A.','46','60','A2L07','TLC','2014-09-01','2014-09-01','Attivita site DC2 ditta OSAT, referente Napoli');
+CALL CARICO('Italtel S.p.A.','DDT','NVLS 60075665','2014-09-01','DDT-ITALTEL-NVLS60075665.jpg','SERVER CISCO CSYMP N55596UPM POSTEMOBILE','2','P06','2014-09-03','ordine ricevuto per postemobile, a saldo per la network 131688','Tecnotrans S.r.l.',NULL);
+CALL SCARICO('Facility','46','200','A1L06','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc');
+CALL SCARICO('Facility','46','80','A1L07','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc');
+CALL SCARICO('Facility','46','32','A2L08','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc');
 
 
 -- CALL CARICO(fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
