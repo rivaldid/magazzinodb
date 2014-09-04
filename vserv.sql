@@ -84,3 +84,5 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS
 SELECT * FROM vista_magazzino3;
 //
 DELIMITER ;
+
+
