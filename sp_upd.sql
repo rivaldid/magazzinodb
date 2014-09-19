@@ -37,7 +37,7 @@ IF (foo IS NULL) THEN
 SET foo='1';
 END IF;
 
-CALL SCARICO('Sistema',in_id_merce,temp_quantita,in_posizione,in_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento giacenza magazzino');
+CALL SCARICO('Sistema',in_id_merce,temp_quantita,in_posizione,in_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento giacenza magazzino',@myvar);
 CALL CARICO('Sistema','Sistema',foo,in_data,NULL,temp_tags,in_quantita,in_posizione,in_data,'Carico invocato dal sistema per aggiornamento giacenza magazzino',NULL,NULL);
 
 END IF;
@@ -70,7 +70,7 @@ IF (foo IS NULL) THEN
 SET foo='1';
 END IF;
 
-CALL SCARICO('Sistema',in_id_merce,temp_quantita,in_vecchia_posizione,in_vecchia_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento posizione magazzino');
+CALL SCARICO('Sistema',in_id_merce,temp_quantita,in_vecchia_posizione,in_vecchia_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento posizione magazzino',@myvar);
 CALL CARICO('Sistema','Sistema',foo,in_data,NULL,temp_tags,temp_quantita,in_nuova_posizione,in_data,'Carico invocato dal sistema per aggiornamento posizione magazzino',NULL,NULL);
 
 END IF;
