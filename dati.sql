@@ -1003,6 +1003,8 @@ CALL CARICO('Italtel S.p.A.','DDT','NVLS 60075665','2014-09-01','DDT-ITALTEL-NVL
 CALL SCARICO('Facility','46','200','A1L06','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
 CALL SCARICO('Facility','46','80','A1L07','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
 CALL SCARICO('Facility','46','32','A2L08','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
+CALL SCARICO('POSTECOM','5','4','B1L04','LOCALE_SECURITY','2014-09-24','2014-09-24','PROGETTO VIDEOSORVEGLIANZA',@myvar);
+CALL CARICO('EMC','DDT','VB002535','2014-09-03','DDT_EMC_VB002535.pdf','AVAMAR RAIL KIT VBLOCK','1','P10','2014-09-25','referente Lucati, componente vblock',NULL,NULL);
 
 
 -- CALL CARICO(fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
