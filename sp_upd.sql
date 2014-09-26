@@ -25,16 +25,14 @@ IN in_data DATE
 BEGIN
 DECLARE temp_quantita INT;
 DECLARE temp_tags TEXT;
-DECLARE foo VARCHAR(45);
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione)) THEN
 
 SET temp_quantita=(SELECT quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione);
 SET temp_tags=(SELECT tags FROM MERCE WHERE id_merce=in_id_merce);
-SET foo=(SELECT next_system_doc());
 
 CALL SCARICO('Aggiornamento giacenze sistema',in_id_merce,temp_quantita,in_posizione,in_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento giacenza magazzino',@myvar);
-CALL CARICO('Aggiornamento giacenze sistema','Sistema',foo,in_data,NULL,temp_tags,in_quantita,in_posizione,in_data,'Carico invocato dal sistema per aggiornamento giacenza magazzino',NULL,NULL);
+CALL CARICO('Aggiornamento giacenze sistema','Sistema',(SELECT next_system_doc()),in_data,NULL,temp_tags,in_quantita,in_posizione,in_data,'Carico invocato dal sistema per aggiornamento giacenza magazzino',NULL,NULL);
 
 END IF;
 
@@ -54,16 +52,14 @@ IN in_data DATE
 BEGIN
 DECLARE temp_quantita INT;
 DECLARE temp_tags TEXT;
-DECLARE foo VARCHAR(45);
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_vecchia_posizione)) THEN
 
 SET temp_quantita=(SELECT quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_vecchia_posizione);
 SET temp_tags=(SELECT tags FROM MERCE WHERE id_merce=in_id_merce);
-SET foo=(SELECT next_system_doc());
 
 CALL SCARICO('Aggiornamento posizioni sistema',in_id_merce,temp_quantita,in_vecchia_posizione,in_vecchia_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento posizione magazzino',@myvar);
-CALL CARICO('Aggiornamento posizioni sistema','Sistema',foo,in_data,NULL,temp_tags,temp_quantita,in_nuova_posizione,in_data,'Carico invocato dal sistema per aggiornamento posizione magazzino',NULL,NULL);
+CALL CARICO('Aggiornamento posizioni sistema','Sistema',(SELECT next_system_doc()),in_data,NULL,temp_tags,temp_quantita,in_nuova_posizione,in_data,'Carico invocato dal sistema per aggiornamento posizione magazzino',NULL,NULL);
 
 END IF;
 
