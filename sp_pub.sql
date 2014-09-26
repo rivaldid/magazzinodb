@@ -39,6 +39,11 @@ IF (in_trasportatore IS NOT NULL) THEN
 CALL input_proprieta('5',in_trasportatore);
 END IF;
 
+-- per utente Sistema
+IF (in_fornitore='Sistema') THEN
+SET in_num_doc=(SELECT next_system_doc());
+END IF;
+
 -- ODA*
 IF (in_oda IS NOT NULL) THEN
 CALL input_registro('Poste Italiane S.p.a.','ODA',in_oda, NULL, NULL, NULL, @my_id_oda);

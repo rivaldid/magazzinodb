@@ -507,7 +507,7 @@ INSERT INTO MERCE(id_merce, tags) VALUES('80','Pannelli Plastica 3UR Plexiglass'
 INSERT INTO MERCE(id_merce, tags) VALUES('81','Pannelli Plastica 5UR Plexiglass');
 INSERT INTO MERCE(id_merce, tags) VALUES('82','Pannelli Plastica 10UR Plexiglass');
 INSERT INTO MERCE(id_merce, tags) VALUES('83','Minuteria Viti dadi gabbia Scatola');
-INSERT INTO MERCE(id_merce, tags) VALUES('84','APPARATI SWITCH POSTEMOBILE CISCOCSY N2K-C2232TF-E');
+INSERT INTO MERCE(id_merce, tags) VALUES('84','APPARATI SWITCH POSTEMOBILE CISCO CSY n2k-c2232tf-e');
 INSERT INTO MERCE(id_merce, tags) VALUES('85','APPARATI FIREWALL POSTEMOBILE CISCO ASA CSYMP ASA5525VPN-EM750K9');
 CALL fix_proprieta_tags();
 
@@ -1004,9 +1004,28 @@ CALL SCARICO('Facility','46','200','A1L06','SALA2+TLC','2014-07-16','2014-07-16'
 CALL SCARICO('Facility','46','80','A1L07','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
 CALL SCARICO('Facility','46','32','A2L08','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
 CALL SCARICO('POSTECOM','5','4','B1L04','LOCALE_SECURITY','2014-09-24','2014-09-24','PROGETTO VIDEOSORVEGLIANZA',@myvar);
-CALL CARICO('EMC','DDT','VB002535','2014-09-03','DDT_EMC_VB002535.pdf','AVAMAR RAIL KIT VBLOCK','1','P10','2014-09-25','referente Lucati, componente vblock',NULL,NULL);
+CALL CARICO('EMC','DDT','VB002535','2014-09-03','DDT_EMC_VB002535.pdf','COMPONENTI VBLOCK AVAMAR RAIL KIT','1','P10','2014-09-25','referente Lucati, componente vblock',NULL,NULL);
+CALL upd_posizione_magazzino('94','P10','P03','2014-09-26');
+CALL upd_posizione_magazzino('74','P17','P13','2014-09-26');
+CALL upd_posizione_magazzino('84','P05','P32','2014-09-26');
+CALL upd_posizione_magazzino('59','P01','B1L03','2014-09-26');
+CALL upd_posizione_magazzino('55','P01','B1L02','2014-09-26');
+CALL upd_posizione_magazzino('56','P01','B1L02','2014-09-26');
+CALL upd_posizione_magazzino('83','B2L04','Z1L10','2014-09-26');
+CALL upd_posizione_magazzino('38','P10','P20','2014-09-26');
+CALL SCARICO('Postemobile Tec','39','10','P10','SALA2','2014-06-01','2014-06-30','cablaggio storage sala2',@myvar);
+CALL upd_posizione_magazzino('39','P10','P31','2014-09-26');
+CALL upd_posizione_magazzino('63','P16','B1L13','2014-09-26');
+CALL upd_giacenza_magazzino('14','B1L03','20','2014-09-26');
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'BRETELLA FO-LC-LC-50/125 30M','28','A2L13','2014-09-26','Materiale presente in magazzino avanzante da site di luglio',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'BRETELLA FO-LC-LC-50/125 30M','100','A2L15','2014-09-26','Materiale presente in magazzino avanzante da site di luglio',NULL,NULL);
 
 
+
+--
+-- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';
+--
 -- CALL CARICO(fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
 -- CALL SCARICO(richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
 -- CALL upd_giacenza_magazzino(id_merce, posizione, quantita, data);
+-- CALL upd_posizione_magazzino(id_merce, vecchia_posizione, nuova_posizione, data);

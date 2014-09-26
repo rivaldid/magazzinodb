@@ -12,3 +12,15 @@ CREATE DEFINER=`magazzino`@`localhost` FUNCTION `quantita_per_magazzino`(x INT, 
 RETURN (SELECT quantita FROM MAGAZZINO WHERE id_merce=x AND posizione=y); //
 DELIMITER ;
 
+DELIMITER //
+DROP FUNCTION IF EXISTS next_system_doc //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `next_system_doc`() RETURNS VARCHAR(45)
+BEGIN
+DECLARE foo VARCHAR(45);
+SET foo=(SELECT MAX(CAST(numero AS UNSIGNED))+1 FROM REGISTRO WHERE tipo='Sistema');
+IF (foo IS NULL) THEN
+SET foo='1';
+END IF;
+RETURN foo; 
+END //
+DELIMITER ;
