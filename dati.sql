@@ -489,9 +489,9 @@ INSERT INTO MERCE(id_merce, tags) VALUES('62','APPARATI STORAGE IBM DS8800 57.6T
 INSERT INTO MERCE(id_merce, tags) VALUES('63','BRETELLA FO-LC-LC-50/125 50M');
 INSERT INTO MERCE(id_merce, tags) VALUES('64','APPARATI VBLOCK VB320-5700V06WT714001-01-02-03');
 INSERT INTO MERCE(id_merce, tags) VALUES('65','VARI PASSACAVI');
-INSERT INTO MERCE(id_merce, tags) VALUES('66','COMPONENTI ADATTATORE PER FIBRESFP-10G-SR');
+INSERT INTO MERCE(id_merce, tags) VALUES('66','COMPONENTI ADATTATORE PER FIBRE SFP-10G-SR');
 INSERT INTO MERCE(id_merce, tags) VALUES('67','COMPONENTI ADATTATORE CAVI RAME CSY GLC-T');
-INSERT INTO MERCE(id_merce, tags) VALUES('68','APPARATI SWITCH 48-PORTCATALYST 4948E OPT SW');
+INSERT INTO MERCE(id_merce, tags) VALUES('68','APPARATI SWITCH 48-PORT CATALYST WSC4948E OPT SW');
 INSERT INTO MERCE(id_merce, tags) VALUES('69','BRETELLA FO-LC-LC-50/125 26M');
 INSERT INTO MERCE(id_merce, tags) VALUES('70','BRETELLA FO-LC-LC-50/125 27M');
 INSERT INTO MERCE(id_merce, tags) VALUES('71','BRETELLA FO-LC-LC-50/125 35M');
@@ -995,10 +995,10 @@ CALL upd_giacenza_magazzino('88','B1L01','20','2014-07-24');
 CALL SCARICO('Polo Immobiliare','2','32','A2L05','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2',@myvar);
 CALL SCARICO('Polo Immobiliare','48','4','A2L10','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2',@myvar);
 CALL SCARICO('Polo Immobiliare','47','4','A2L09','SALA2','2014-08-11','2014-08-11','Futura site coss Sala2',@myvar);
-CALL SCARICO('Postemobile S.p.A.','46','100','A1L07','SALA2','2014-08-07','2014-08-07','progetto non pervenuto',@myvar);
+CALL SCARICO('Postemobile TLC','46','100','A1L07','SALA2','2014-08-07','2014-08-07','progetto non pervenuto',@myvar);
 CALL upd_giacenza_magazzino('46','A1L07','80','2014-09-01');
 CALL upd_giacenza_magazzino('46','A2L08','91','2014-09-01');
-CALL SCARICO('Postemobile S.p.A.','46','60','A2L07','TLC','2014-09-01','2014-09-01','Attivita site DC2 ditta OSAT, referente Napoli',@myvar);
+CALL SCARICO('Postemobile TLC','46','60','A2L07','TLC','2014-09-01','2014-09-01','Attivita site DC2 ditta OSAT, referente Napoli',@myvar);
 CALL CARICO('Italtel S.p.A.','DDT','NVLS 60075665','2014-09-01','DDT-ITALTEL-NVLS60075665.jpg','SERVER CISCO CSYMP N55596UPM POSTEMOBILE','2','P06','2014-09-03','ordine ricevuto per postemobile, a saldo per la network 131688','Tecnotrans S.r.l.',NULL);
 CALL SCARICO('Facility','46','200','A1L06','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
 CALL SCARICO('Facility','46','80','A1L07','SALA2+TLC','2014-07-16','2014-07-16','referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc',@myvar);
@@ -1019,10 +1019,29 @@ CALL upd_posizione_magazzino('63','P16','B1L13','2014-09-26');
 CALL upd_giacenza_magazzino('14','B1L03','20','2014-09-26');
 CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'BRETELLA FO-LC-LC-50/125 30M','28','A2L13','2014-09-26','Materiale presente in magazzino avanzante da site di luglio',NULL,NULL);
 CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'BRETELLA FO-LC-LC-50/125 30M','100','A2L15','2014-09-26','Materiale presente in magazzino avanzante da site di luglio',NULL,NULL);
+CALL SCARICO('Facility','46','200','A2L06','SALA2+TLC','2014-09-26','2014-09-29','cablaggio storage ln san sala2',@myvar);
+CALL SCARICO('Facility','46','8','A2L08','SALA2+TLC','2014-09-26','2014-09-29','cablaggio storage ln san sala2',@myvar);
+CALL SCARICO('Facility','6','4','A2L04','SALA2+TLC','2014-09-26','2014-09-29','cablaggio storage ln san sala2',@myvar);
+CALL SCARICO('Postemobile TLC','13','2','P10','SALA1-ISOLA5','2014-09-29','2014-03-10','progetto telepresence isola5 sala1',@myvar);
+CALL upd_posizione_magazzino('68','P06','P30','2014-09-26');
+CALL SCARICO('Sistema','68','4','P30','SALA2','2014-09-26','2014-09-26','scarico 4 dei 6 switch wsc4948e progetto mvno',@myvar);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'ventola condizionatori sala2 manutenzione','1','P25','2014-09-26','materiale in appoggio ditta di manutenzione',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'materiale coss sala2','1','P04','2014-09-26','materiale coss destinato alle site sala2',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'materiale postel vnx storage rack emc2','1','P33','2014-09-26','materiale emc2, armadio + materiali montaggio',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'materiale postel vnx storage rack emc2','1','P34','2014-09-26','materiale emc2, armadio + materiali montaggio',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'materiale hp rete cert','1','P05','2014-09-26','materiale hp, unico collo incelofanato',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'vmax panel emc2 eco76906','10','P12','2014-09-26','pannelli vmax imballati',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'enclosure blade postel c7000','1','P35','2014-09-26','materiale postel imballato',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC','11','P19','2014-09-26','ref Napoli spedizione UPS Standard, colli da 5kg cad.',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC BLADE WS-X6748-10G-TX CISCO CATALYST','2','P29','2014-09-26','apparecchiature smontate ref. Napoli',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC n2k-c2248-e-1ge','6','P29','2014-09-26','switch postemobile cablaggio sala2 ref. Napoli',NULL,NULL);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC n7k-m224xp-23l','2','P29','2014-09-26','switch postemobile cablaggio sala2 ref. Napoli',NULL,NULL);
+CALL SCARICO('Sistema','85','2','P05','SALA1','2014-09-26','2014-09-26','Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site',@myvar);
+CALL SCARICO('Sistema','93','2','P06','SALA1','2014-09-26','2014-09-26','Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site',@myvar);
+CALL CARICO('Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'CAVO SAS','2','P12','2014-09-26',NULL,NULL,NULL);
 
 
-
---
+-- '
 -- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';
 --
 -- CALL CARICO(fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
