@@ -1,4 +1,7 @@
---
+USE magazzino;
+
+
+-- ---------------------- INPUT PROPRIETA ----------------------
 -- proprieta:
 -- -- 1 TAGS
 -- -- 2 posizioni
@@ -6,13 +9,8 @@
 -- -- 4 tipi di documento
 -- -- 5 rubrica 
 --
-
-USE magazzino;
-
-
--- ---------------------- INPUT PROPRIETA ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_proprieta //
+-- DROP PROCEDURE IF EXISTS input_proprieta //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_proprieta`( 
 IN in_sel INT, 
 IN in_label VARCHAR(45) 
@@ -25,9 +23,27 @@ END //
 DELIMITER ;
 
 
+-- ---------------------- INPUT UTENTI ---------------------- 
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS input_utenti //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`( 
+IN in_label VARCHAR(45), 
+OUT out_id_utenti INT 
+) 
+BEGIN 
+IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE label=in_label)) THEN 
+INSERT INTO UTENTI(label) VALUES(in_label); 
+SET out_id_utenti=LAST_INSERT_ID();
+ELSE
+SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE label=in_label);
+END IF;
+END //
+DELIMITER ;
+
+
 -- ---------------------- INPUT REGISTRO ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_registro //
+-- DROP PROCEDURE IF EXISTS input_registro //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_registro`( 
 IN in_contatto VARCHAR(45),
 IN in_tipo VARCHAR(45),
@@ -95,7 +111,7 @@ DELIMITER ;
 
 -- ---------------------- MERCE ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_merce //
+-- DROP PROCEDURE IF EXISTS input_merce //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_merce`( 
 IN in_tags TEXT,
 OUT out_id_merce INT
@@ -120,9 +136,10 @@ DELIMITER ;
 
 -- ---------------------- OPERAZIONI ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_operazioni //
+-- DROP PROCEDURE IF EXISTS input_operazioni //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_operazioni`(
 IN in_direzione INT,
+IN in_id_utenti INT,
 IN in_id_registro INT,
 IN in_id_merce INT,
 IN in_quantita INT,
@@ -141,8 +158,8 @@ IF (in_posizione IS NOT NULL) THEN
 	-- il resto
 	IF ((in_direzione IS NOT NULL) AND (in_id_registro IS NOT NULL) AND (in_id_merce IS NOT NULL) AND (in_quantita IS NOT NULL)) THEN
 			
-			INSERT INTO OPERAZIONI(direzione,id_registro,id_merce,quantita,posizione,data,note)
-			VALUES (in_direzione,in_id_registro,in_id_merce,in_quantita,in_posizione,in_data,in_note);
+			INSERT INTO OPERAZIONI(direzione,id_utenti,id_registro,id_merce,quantita,posizione,data,note)
+			VALUES (in_direzione,in_id_utenti,in_id_registro,in_id_merce,in_quantita,in_posizione,in_data,in_note);
 			SET out_id_operazioni = LAST_INSERT_ID();
 	
 	END IF;		
@@ -155,7 +172,7 @@ DELIMITER ;
 
 -- ---------------------- ORDINI ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_ordini //
+-- DROP PROCEDURE IF EXISTS input_ordini //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_ordini`(
 IN in_id_operazioni INT,
 IN in_id_oda INT,
@@ -187,7 +204,7 @@ DELIMITER ;
 
 -- ---------------------- MAGAZZINO ---------------------- 
 DELIMITER //
-DROP PROCEDURE IF EXISTS input_magazzino //
+-- DROP PROCEDURE IF EXISTS input_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_magazzino`( 
 IN in_direzione INT,
 IN in_id_merce INT,

@@ -2,7 +2,7 @@ USE magazzino;
 
 
 DELIMITER //
-DROP VIEW IF EXISTS vista_ordini //
+-- DROP VIEW IF EXISTS vista_ordini //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_ordini` AS 
 SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro
 //
@@ -10,7 +10,7 @@ DELIMITER ;
 
 
 DELIMITER //
-DROP VIEW IF EXISTS TRANSITI //
+-- DROP VIEW IF EXISTS TRANSITI //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS 
 SELECT
 OPERAZIONI.data,
@@ -27,7 +27,7 @@ DELIMITER ;
 
 
 DELIMITER //
-DROP VIEW IF EXISTS vista_magazzino //
+-- DROP VIEW IF EXISTS vista_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino` AS 
 SELECT id_merce,posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE quantita > 0 ORDER BY posizione,tags DESC
 //
@@ -35,7 +35,7 @@ DELIMITER ;
 
 
 DELIMITER //
-DROP VIEW IF EXISTS vista_magazzino2 //
+-- DROP VIEW IF EXISTS vista_magazzino2 //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino2` AS 
 SELECT tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
 //
@@ -43,7 +43,7 @@ DELIMITER ;
 
 
 DELIMITER //
-DROP VIEW IF EXISTS vista_magazzino3 //
+-- DROP VIEW IF EXISTS vista_magazzino3 //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS 
 SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
 //
