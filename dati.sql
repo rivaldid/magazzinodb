@@ -26,7 +26,7 @@ CALL input_proprieta('1','FO-LC-LC-9/125');
 CALL input_proprieta('1','FO-LC-SC-50/125');
 CALL input_proprieta('1','FO-LC-SC-9/125');
 CALL input_proprieta('1','FO-SC-SC-50/125');
-CALL input_proprieta('1','HPDL360');
+CALL input_proprieta('1','HP-DL360');
 CALL input_proprieta('1','HPDL380PGEN8');
 CALL input_proprieta('1','KVM');
 CALL input_proprieta('1','LICENZASOFTWARE');
@@ -1045,6 +1045,10 @@ CALL SCARICO('Sistema','Sistema','93','2','P06','SALA1','2014-09-26','2014-09-26
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'CAVO SAS','2','P12','2014-09-26',NULL,NULL,NULL);
 CALL SCARICO('Manzo','Facility','3','12','P01','SALA2+TLC','2014-09-30','2014-09-30','cablaggio storage lan san sala2',@myvar);
 CALL SCARICO('Manzo','Facility','4','12','P01','SALA2+TLC','2014-09-30','2014-09-30','cablaggio storage lan san sala2',@myvar);
+CALL input_registro('IRCE SPA','Lettera_di_vettura','171000026829','334',NULL,NULL,@myvar);
+CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
+CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
+CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
 
 
 -- '
@@ -1054,4 +1058,4 @@ CALL SCARICO('Manzo','Facility','4','12','P01','SALA2+TLC','2014-09-30','2014-09
 -- CALL SCARICO(utente,richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
 -- CALL upd_giacenza_magazzino(id_merce, posizione, quantita, data);
 -- CALL upd_posizione_magazzino(id_merce, vecchia_posizione, nuova_posizione, data);
-
+-- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro); 
