@@ -2,7 +2,7 @@ USE magazzino;
 
 -- ---------------------- tokenizza tags ----------------------
 DELIMITER //
-DROP PROCEDURE IF EXISTS tokenizza_tags //
+-- DROP PROCEDURE IF EXISTS tokenizza_tags //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `tokenizza_tags`(IN tokens TEXT)
 BEGIN
 DECLARE i INT;
@@ -27,7 +27,7 @@ DELIMITER ;
 -- DECLARE CONTINUE HANDLER FOR NOT FOUND SET @done = TRUE;
 -- | Error | 1329 | No data - zero rows fetched, selected, or processed |
 DELIMITER //
-DROP PROCEDURE IF EXISTS fix_proprieta_tags //
+-- DROP PROCEDURE IF EXISTS fix_proprieta_tags //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `fix_proprieta_tags`()
 BEGIN
 

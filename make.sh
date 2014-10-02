@@ -9,7 +9,7 @@ BINDATE=/bin/date
 
 $BINCD $PREFIX
 $BINTOUCH logfile
-$BINECHO '==========>'$($BINDATE -u) >> logfile
+$BINECHO '==========>'$($BINDATE) >> logfile
 
 $BINECHO "Carico la base" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source base.sql \W;' >> logfile
