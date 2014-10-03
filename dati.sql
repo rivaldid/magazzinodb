@@ -1049,7 +1049,7 @@ CALL input_registro('IRCE SPA','Lettera_di_vettura','171000026829','334',NULL,NU
 CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
 CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
-
+CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 
 -- '
 -- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';

@@ -67,3 +67,40 @@ END IF;
 
 END //
 DELIMITER ;
+
+
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS upd_doc_carico //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_doc_carico`( 
+IN in_id_operazioni INT,
+IN in_fornitore VARCHAR(45),
+IN in_tipo_doc VARCHAR(45),
+IN in_num_doc VARCHAR(45),
+IN in_gruppo INT,
+IN in_data_doc DATE,
+IN in_scansione VARCHAR(45),
+OUT ritorno INT
+) 
+BEGIN
+DECLARE my_id_registro INT;
+
+IF (in_id_operazioni IS NOT NULL) THEN
+
+	CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, in_gruppo, in_data_doc, in_scansione, @my_id_registro);
+
+	IF (SELECT EXISTS(SELECT 1 FROM OPERAZIONI WHERE id_operazioni = in_id_operazioni)) THEN
+		
+		UPDATE OPERAZIONI SET id_registro=@my_id_registro WHERE id_operazioni=in_id_operazioni;
+		SET @ritorno := 0;
+		
+	ELSE	
+		
+		SET @ritorno := 1;
+		
+	END IF;
+	
+END IF;
+
+SELECT @ritorno AS 'risultato';
+END //
+DELIMITER ;
