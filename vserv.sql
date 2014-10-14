@@ -11,28 +11,28 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_contatti //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_contatti` AS 
-SELECT label FROM proprieta WHERE sel = 5;
+SELECT label FROM proprieta WHERE sel = 5 ORDER BY label;
 //
 DELIMITER ;
 
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_tipodoc //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tipodoc` AS 
-SELECT label FROM proprieta WHERE sel = 4;
+SELECT label FROM proprieta WHERE sel = 4 ORDER BY label;
 //
 DELIMITER ;
 
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_numdoc //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numdoc` AS 
-SELECT numero FROM REGISTRO;
+SELECT numero FROM REGISTRO ORDER BY numero;
 //
 DELIMITER ;
 
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_posizioni //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_posizioni` AS 
-SELECT label FROM proprieta WHERE sel = 2;
+SELECT label FROM proprieta WHERE sel = 2 ORDER BY label;
 //
 DELIMITER ;
 
@@ -46,7 +46,7 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_numoda //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numoda` AS 
-SELECT numero FROM REGISTRO WHERE tipo = 'ODA';
+SELECT numero FROM REGISTRO WHERE tipo = 'ODA' ORDER BY numero;
 //
 DELIMITER ;
 

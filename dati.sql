@@ -1050,6 +1050,7 @@ CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-0
 CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
 CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
 CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
+CALL CARICO('Piscazzi','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TELECOM-294_RZ_2014.pdf','APPARATI RACK TELECOM KMS6 RS/6000','6','M8-M9','2014-10-08','moving telecom da Rozzano','DYNAMICOS',NULL);
 
 -- '
 -- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';
