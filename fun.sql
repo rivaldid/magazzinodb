@@ -24,3 +24,9 @@ END IF;
 RETURN foo; 
 END//
 DELIMITER ;
+
+DELIMITER //
+-- DROP FUNCTION IF EXISTS `doc_exists`//
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `doc_exists`(in_fornitore VARCHAR(45), in_tipo_doc VARCHAR(45), in_num_doc VARCHAR(45)) RETURNS TINYINT(1)
+RETURN (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE contatto=in_fornitore AND tipo=in_tipo_doc AND numero=in_num_doc));//
+DELIMITER ;

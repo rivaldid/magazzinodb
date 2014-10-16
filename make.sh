@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-PREFIX=/home/apache/data/magazzino/projdb_dctomaga
+PREFIX=/home/apache/data/GMDBDCTO
 BINMYSQL=/usr/local/bin/mysql
 BINCD=/usr/bin/cd
 BINECHO=/bin/echo
