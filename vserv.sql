@@ -85,4 +85,11 @@ SELECT * FROM vista_magazzino3;
 //
 DELIMITER ;
 
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_utenti //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_utenti` AS 
+SELECT label FROM UTENTI;
+//
+DELIMITER ;
+
 
