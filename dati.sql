@@ -1054,6 +1054,13 @@ CALL CARICO('Piscazzi','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TE
 CALL input_utenti('Piscazzi',@myvar);
 CALL input_utenti('Manzo',@myvar);
 CALL input_utenti('Muratore',@myvar);
+CALL SCARICO('Muratore','Facility','54','79','P02','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
+CALL SCARICO('Muratore','Facility','47','16','A2L09','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
+CALL SCARICO('Muratore','Facility','2','10','A2L05','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
+CALL SCARICO('Muratore','Facility','46','198','A1L08','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
+CALL SCARICO('Muratore','Facility','19','24','A2L13','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
+
+
 
 -- '
 -- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';
