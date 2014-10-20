@@ -1059,7 +1059,10 @@ CALL SCARICO('Muratore','Facility','47','16','A2L09','SALA1-SALA2','2014-10-17',
 CALL SCARICO('Muratore','Facility','2','10','A2L05','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO('Muratore','Facility','46','198','A1L08','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO('Muratore','Facility','19','24','A2L13','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
-
+CALL CARICO('Manzo','Tecnotrans S.r.l','DDT','40009','2014-10-16','DDT-FUJITSU-40009.pdf','BRETELLA UTP-CAT6 3M','88','B1L09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
+CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','BRETELLA FO-LC-LC-50/125 5M','32','P09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
+CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','2','P09','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
+CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 
 
 -- '
