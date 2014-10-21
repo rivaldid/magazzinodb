@@ -1063,6 +1063,7 @@ CALL CARICO('Manzo','Tecnotrans S.r.l','DDT','40009','2014-10-16','DDT-FUJITSU-4
 CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','BRETELLA FO-LC-LC-50/125 5M','32','P09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','2','P09','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
+CALL upd_posizione_magazzino('Piscazzi','54','B1L09','P02','2014-10-21');
 
 
 -- '
@@ -1070,6 +1071,6 @@ CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','201
 --
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
 -- CALL SCARICO(utente,richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
--- CALL upd_giacenza_magazzino(id_merce, posizione, quantita, data);
--- CALL upd_posizione_magazzino(id_merce, vecchia_posizione, nuova_posizione, data);
+-- CALL upd_giacenza_magazzino(utente,id_merce, posizione, quantita, data);
+-- CALL upd_posizione_magazzino(utente,id_merce, vecchia_posizione, nuova_posizione, data);
 -- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro); 
