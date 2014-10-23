@@ -50,7 +50,7 @@ IF (in_fornitore='Sistema') THEN
 END IF;
 
 -- ODA*
-IF (in_oda IS NOT NULL) THEN
+IF (in_oda IS NOT NULL) OR (in_oda != '') THEN
 	CALL input_registro('Poste Italiane S.p.a.','ODA',in_oda, NULL, NULL, NULL, @my_id_oda);
 ELSE
 	SET @my_id_oda := NULL;
