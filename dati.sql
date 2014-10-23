@@ -1064,6 +1064,8 @@ CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','201
 CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','2','P09','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 CALL upd_posizione_magazzino('Piscazzi','54','B1L09','P02','2014-10-21');
+CALL SCARICO('Piscazzi','Facility','107','2','P09','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
+CALL SCARICO('Piscazzi','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
 
 
 -- '
