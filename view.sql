@@ -13,6 +13,7 @@ DELIMITER //
 -- DROP VIEW IF EXISTS TRANSITI //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS 
 SELECT
+UTENTI.label AS utente,
 OPERAZIONI.data,
 CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status,
 posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita, note,
@@ -20,6 +21,7 @@ CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file
 FROM OPERAZIONI 
 JOIN MERCE USING(id_merce)
 JOIN REGISTRO USING(id_registro)
+JOIN UTENTI USING (id_utenti)
 LEFT JOIN vista_ordini USING(id_operazioni)
 ORDER BY data DESC
 //
@@ -48,3 +50,20 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS
 SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
 //
 DELIMITER ;
+
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_tags2 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags2` AS 
+SELECT label from proprieta WHERE sel='1' and label LIKE 'UTP%' OR label LIKE 'FO%';
+//
+DELIMITER ;
+
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_tags3 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS 
+SELECT label from proprieta WHERE sel='1' and label like '%M';
+//
+DELIMITER ;
+
