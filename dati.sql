@@ -1066,6 +1066,7 @@ CALL CARICO('Manzo','Fujitsu Technology Solutions S.r.l.','DDT','189659216','201
 CALL upd_posizione_magazzino('Piscazzi','54','B1L09','P02','2014-10-21');
 CALL SCARICO('Piscazzi','Facility','107','2','P09','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
 CALL SCARICO('Piscazzi','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
+CALL CARICO('Manzo','Hewlett Packard International Sarl','DDT','GW0F 224662/034/01 C','2014-10-17','DDT-HP-GW0F_22466203401_C.pdf','APPARATI KVM HP CONSOLE-KIT TFT','1','P06','2014-10-27','DA COMPLETARE','Gebrueder Weiss GmbH Transport und Logistik','');
 
 
 -- '
