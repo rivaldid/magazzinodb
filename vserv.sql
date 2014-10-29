@@ -57,12 +57,21 @@ SELECT * FROM TRANSITI;
 //
 DELIMITER ;
 
+
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino` AS 
-SELECT * FROM vista_magazzino2;
+SELECT tags,posizioni,tot FROM vista_magazzino_parzxtot;
 //
 DELIMITER ;
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_magazzino_id //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS 
+SELECT id_merce,tags,posizioni,tot FROM vista_magazzino_parzxtot;
+//
+DELIMITER ;
+
 
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_registro //
@@ -75,13 +84,6 @@ DELIMITER //
 -- DROP VIEW IF EXISTS vserv_merce //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_merce` AS 
 SELECT * FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0;
-//
-DELIMITER ;
-
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_magazzino_id //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS 
-SELECT * FROM vista_magazzino3;
 //
 DELIMITER ;
 
