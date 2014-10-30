@@ -1069,7 +1069,20 @@ CALL SCARICO('Piscazzi','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23',
 CALL CARICO('Manzo','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','1','P16','2014-10-27','site sala2','Tecnotrans S.r.l.','');
 CALL CARICO('Manzo','Hewlett Packard International Sarl','DDT','GW0F 224523/087/01 C','2014-10-16','DDT-HP-GW0F_22452308701_C.pdf','HP TFT7600 KVM KIT','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('Manzo','Hewlett Packard International Sarl','DDT','GW0F 224662/034/01 C','2014-10-17','DDT-HP-GW0F_22466203401_C.pdf','HP CONSOLE INTERFACE ADAPTER','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
-CALL CARICO('Manzo','Hewlett Packard International Sarl','DDT','GW0F 224378/023/01 C','2014-10-15','DDT-HP-GW0F_22437802301_C.pdf','SERVER HP BL460C','8','P15','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
+CALL CARICO('Manzo','Hewlett Packard International Sarl','DDT','GW0F 24378/023/01 C','2014-10-15','DDT-HP-GW0F_22437802301_C.pdf','SERVER HP BL460C','8','P15','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
+CALL SCARICO('Manzo','Facility','109','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
+CALL SCARICO('Manzo','Facility','110','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
+CALL SCARICO('Manzo','Facility','111','1','P15','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
+CALL SCARICO('Manzo','Facility','76','8','A2L11','SALA2','2014-10-28','2014-10-28','progetto coss sala2 cablaggio (item73)',@myvar);
+CALL upd_posizione_magazzino('Manzo','78','B2L05','C2L05','2014-10-30');
+CALL upd_posizione_magazzino('Manzo','79','B2L05','C2L05','2014-10-30');
+CALL upd_posizione_magazzino('Manzo','80','B2L05','C2L05','2014-10-30');
+CALL upd_posizione_magazzino('Manzo','81','B2L05','C2L05','2014-10-30');
+CALL upd_posizione_magazzino('Manzo','82','B2L05','C2L04','2014-10-30');
+CALL upd_giacenza_magazzino('Manzo','78','C2L05','39','2014-10-30');
+CALL upd_giacenza_magazzino('Manzo','79','C2L05','39','2014-10-30');
+CALL upd_giacenza_magazzino('Manzo','82','C2L04','39','2014-10-30');
+CALL SCARICO('Manzo','Geico Lender','82','39','C2L04','SALA2-ISOLA13','2014-10-29','2014-10-29','richiesti da Gheriani, compartimentazione corridoi isola13',@myvar);
 
 
 -- '
