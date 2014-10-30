@@ -1085,6 +1085,10 @@ CALL upd_giacenza_magazzino('Manzo','82','C2L04','39','2014-10-30');
 CALL SCARICO('Manzo','Geico Lender','82','39','C2L04','SALA2-ISOLA13','2014-10-29','2014-10-29','richiesti da Gheriani, compartimentazione corridoi isola13',@myvar);
 CALL SCARICO('Manzo','Geico Lender','81','11','C2L05','SALA2-ISOLA13','2014-10-30','2014-10-30','richiesti da La Tona, compartimentazione corridoi isola13',@myvar);
 CALL SCARICO('Manzo','Geico Lender','80','11','C2L05','SALA2-ISOLA13','2014-10-30','2014-10-30','richiesti da La Tona, compartimentazione corridoi isola13',@myvar);
+CALL SCARICO('Piscazzi','Facility','54','69','P02','SALA2-ISOLA13','2014-10-29','2014-10-29','GECT per CRM, opensource',@myvar);
+CALL SCARICO('Piscazzi','Facility','2','22','A2L05','SALA2-ISOLA13','2014-10-29','2014-10-29','GECT per CRM, opensource',@myvar);
+CALL CARICO('Manzo','Facility','MDS','182','2014-10-30',NULL,'BRETELLA FO-LC-LC-50/125 10M','22','A2L05','2014-10-30','restituzione fibre causa cambio con altre da 12,5M',NULL,NULL);
+CALL SCARICO('Manzo','Facility','47','22','A2L09','SALA2-ISOLA13','2014-10-30','2014-10-30','monitoraggio opensource sala2',@myvar);
 
 
 -- '
