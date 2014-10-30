@@ -1078,11 +1078,13 @@ CALL upd_posizione_magazzino('Manzo','78','B2L05','C2L05','2014-10-30');
 CALL upd_posizione_magazzino('Manzo','79','B2L05','C2L05','2014-10-30');
 CALL upd_posizione_magazzino('Manzo','80','B2L05','C2L05','2014-10-30');
 CALL upd_posizione_magazzino('Manzo','81','B2L05','C2L05','2014-10-30');
-CALL upd_posizione_magazzino('Manzo','82','B2L05','C2L04','2014-10-30');
+CALL upd_posizione_magazzino('Manzo','82','B2L04','C2L04','2014-10-30');
 CALL upd_giacenza_magazzino('Manzo','78','C2L05','39','2014-10-30');
 CALL upd_giacenza_magazzino('Manzo','79','C2L05','39','2014-10-30');
 CALL upd_giacenza_magazzino('Manzo','82','C2L04','39','2014-10-30');
 CALL SCARICO('Manzo','Geico Lender','82','39','C2L04','SALA2-ISOLA13','2014-10-29','2014-10-29','richiesti da Gheriani, compartimentazione corridoi isola13',@myvar);
+CALL SCARICO('Manzo','Geico Lender','81','11','C2L05','SALA2-ISOLA13','2014-10-30','2014-10-30','richiesti da La Tona, compartimentazione corridoi isola13',@myvar);
+CALL SCARICO('Manzo','Geico Lender','80','11','C2L05','SALA2-ISOLA13','2014-10-30','2014-10-30','richiesti da La Tona, compartimentazione corridoi isola13',@myvar);
 
 
 -- '
