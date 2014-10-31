@@ -1089,6 +1089,9 @@ CALL SCARICO('Piscazzi','Facility','54','69','P02','SALA2-ISOLA13','2014-10-29',
 CALL SCARICO('Piscazzi','Facility','2','22','A2L05','SALA2-ISOLA13','2014-10-29','2014-10-29','GECT per CRM, opensource',@myvar);
 CALL CARICO('Manzo','Facility','MDS','182','2014-10-30',NULL,'BRETELLA FO-LC-LC-50/125 10M','22','A2L05','2014-10-30','restituzione fibre causa cambio con altre da 12,5M',NULL,NULL);
 CALL SCARICO('Manzo','Facility','47','22','A2L09','SALA2-ISOLA13','2014-10-30','2014-10-30','monitoraggio opensource sala2',@myvar);
+CALL CARICO('Piscazzi','Fujitsu Technology Solutions S.r.l.','DDT','40013','2014-10-16','DDT-FUJITSU-40013.pdf','BRETELLA UTP-CAT6 3M','22','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Tecnotrans S.r.l.','4100169594');
+CALL CARICO('Piscazzi','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','SERVER FUJITSU RX600 8S-D3141S26361 K1402 V400 YLCE007830 YLCE007831','2','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
+CALL CARICO('Piscazzi','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','BRETELLA FO-LC-LC-50/125 5M','8','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
 
 
 -- '
