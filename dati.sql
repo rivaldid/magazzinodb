@@ -1097,7 +1097,8 @@ CALL SCARICO('Piscazzi','Facility','6','8','P22','SALA2-ISOLA13','2014-11-03','2
 CALL SCARICO('Piscazzi','Facility','54','22','P22','SALA2-ISOLA13','2014-11-03','2014-11-03','scarico per movimentazione merce',@myvar);
 CALL CARICO('Piscazzi','Facility','MDS','185','2014-11-03','','BRETELLA FO-LC-LC-50/125 5M','8','A2L04','2014-11-03','reintegro merce per movimentazione interna','','');
 CALL CARICO('Piscazzi','Facility','MDS','185','2014-11-03','','BRETELLA UTP-CAT6 3M','22','P02','2014-11-03','reintegro merce per movimentazione interna','','');
-
+CALL CARICO('Piscazzi','Fujitsu Technology Solutions S.r.l.','DDT','SO 300214556','2014-06-27','DDT-FUJITSU-SO_300214556.pdf','APPARATO PER COSS','1','P08','2014-11-05','','','');
+CALL SCARICO('Piscazzi','Facility','113','1','P08','SALA2','2014-11-05','2014-11-05','',@myvar);
 
 
 -- '
