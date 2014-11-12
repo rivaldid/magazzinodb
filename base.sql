@@ -112,7 +112,7 @@ CREATE TABLE `REGISTRO` (
   `numero` varchar(45) NOT NULL,
   `gruppo` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
-  `file` varchar(45) DEFAULT NULL,
+  `file` text DEFAULT NULL,
   PRIMARY KEY (`id_registro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

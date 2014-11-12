@@ -1100,8 +1100,8 @@ CALL CARICO('Piscazzi','Facility','MDS','185','2014-11-03','','BRETELLA UTP-CAT6
 CALL CARICO('Piscazzi','Fujitsu Technology Solutions S.r.l.','DDT','SO 300214556','2014-06-27','DDT-FUJITSU-SO_300214556.pdf','APPARATO PER COSS','1','P08','2014-11-05','','','');
 CALL SCARICO('Piscazzi','Facility','113','1','P08','SALA2','2014-11-05','2014-11-05','',@myvar);
 
-CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','988','2014-11-04','DDT-EMCComputerSystemsItaliaS.p.a.-988.jpg','PB-DCX-48PORT BLADE-8G','7','P08','2014-11-07','','Safe Watcher S.r.l.','');
-CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','14 - 010000','2014-11-10','DDT-EMCComputerSystemsItaliaS.p.a.-14-010000.jpg','DCX-48PORT BLADE 8G','1','C2-L13','2014-11-11','','Safe Watcher S.r.l.','');
+CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','988','2014-11-04','DDT-EMC-988.jpg','PB-DCX-48PORT BLADE-8G','7','P08','2014-11-07','','Safe Watcher S.r.l.','');
+CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','14 - 010000','2014-11-10','DDT-EMC-14-010000.jpg','DCX-48PORT BLADE 8G','1','C2-L13','2014-11-11','','Safe Watcher S.r.l.','');
 CALL SCARICO('PISCAZZI','Facility','114','7','P08','SALA2','2014-11-11','2014-11-11','',@myvar);
 CALL upd_posizione_magazzino('PISCAZZI','115','C2-L13','C2-L14','2014-11-11');
 
