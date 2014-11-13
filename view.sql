@@ -16,7 +16,7 @@ SELECT
 UTENTI.label AS utente,
 OPERAZIONI.data,
 CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status,
-posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita, note,
+posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita, CONCAT_WS(' ',COALESCE(note,'Nessuna annotazione'),COALESCE(vista_ordini.trasportatore,'')) as note,
 CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file AS doc_ordine, vista_ordini.trasportatore
 FROM OPERAZIONI 
 JOIN MERCE USING(id_merce)
@@ -55,6 +55,6 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vista_documenti //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS 
-SELECT * FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema';
+SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo),data FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data;
 //
 DELIMITER ;
