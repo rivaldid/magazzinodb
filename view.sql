@@ -52,19 +52,9 @@ DELIMITER ;
 -- //
 -- DELIMITER ;
 
-
 DELIMITER //
--- DROP VIEW IF EXISTS vserv_tags2 //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags2` AS 
-SELECT label from proprieta WHERE sel='1' and label LIKE 'UTP%' OR label LIKE 'FO%';
+-- DROP VIEW IF EXISTS vista_documenti //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS 
+SELECT * FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema';
 //
 DELIMITER ;
-
-
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_tags3 //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS 
-SELECT label from proprieta WHERE sel='1' and label like '%M';
-//
-DELIMITER ;
-

@@ -95,3 +95,16 @@ SELECT label FROM UTENTI;
 DELIMITER ;
 
 
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_tags2 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags2` AS 
+SELECT label from proprieta WHERE sel='1' and label LIKE 'UTP%' OR label LIKE 'FO%';
+//
+DELIMITER ;
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_tags3 //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS 
+SELECT label from proprieta WHERE sel='1' and label like '%M';
+//
+DELIMITER ;
