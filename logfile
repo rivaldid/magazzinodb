@@ -1,4 +1,4 @@
-==========>Thu Nov 13 16:15:11 CET 2014
+==========>Tue Nov 18 16:35:06 CET 2014
 Carico la base
 Carico le funzioni
 Carico le procedure
@@ -6,7 +6,22 @@ Carico le procedure di input
 Carico le APIs pubbliche
 Carico le viste sui dati
 Carico le procedure di aggiornamento dati
+Note (Code 1305): PROCEDURE magazzino.upd_instestazione_registro does not exist
+Note (Code 1305): PROCEDURE magazzino.upd_giacenza_magazzino does not exist
+Note (Code 1305): PROCEDURE magazzino.upd_posizione_magazzino does not exist
+Note (Code 1305): PROCEDURE magazzino.upd_doc_carico does not exist
+Note (Code 1305): PROCEDURE magazzino.delta_magazzino_001 does not exist
+Note (Code 1305): PROCEDURE magazzino.delta_magazzino_010 does not exist
+Note (Code 1305): PROCEDURE magazzino.delta_magazzino does not exist
 Carico i dati
+risultato
+0
+risultato
+0
+risultato
+0
+risultato
+0
 risultato
 0
 risultato
