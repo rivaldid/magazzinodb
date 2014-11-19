@@ -16,8 +16,9 @@ SELECT
 UTENTI.label AS utente,
 OPERAZIONI.data,
 CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status,
-posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita, CONCAT_WS(' ',COALESCE(note,'Nessuna annotazione'),COALESCE(vista_ordini.trasportatore,'')) as note,
-CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file AS doc_ordine, vista_ordini.trasportatore
+posizione, CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento, REGISTRO.file AS doc_ingresso, tags, quantita,
+CONCAT_WS(' ',IF(note='','Nessuna annotazione',note),IF(vista_ordini.trasportatore='','',CONCAT(' Trasportatore: ',vista_ordini.trasportatore))) as note,
+CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file AS doc_ordine
 FROM OPERAZIONI 
 JOIN MERCE USING(id_merce)
 JOIN REGISTRO USING(id_registro)
