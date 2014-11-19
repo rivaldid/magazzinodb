@@ -120,23 +120,12 @@ IN in_2nd_quantita INT,
 IN in_data DATE
 ) 
 BEGIN
-DECLARE diff_quantita INT;
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione AND quantita=in_1st_quantita)) THEN
 
-	IF (in_2nd_quantita<=in_1st_quantita) THEN
+CALL SCARICO(in_utente,'Aggiornamento',in_id_merce,in_1st_quantita,in_posizione,in_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento giacenze magazzino (da ',in_1st_quantita,' a ',in_2nd_quantita,')'),@myvar);
+CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_2nd_quantita,in_posizione,in_data,CONCAT('Carico di sistema per aggiornamento giacenze magazzino (da ',in_1st_quantita,' a ',in_2nd_quantita,')'),NULL,NULL);
 		
-		SET @diff_quantita=in_1st_quantita-in_2nd_quantita;
-
-		IF (@diff_quantita>=0) THEN
-		
-			CALL SCARICO(in_utente,'Aggiornamento',in_id_merce,@diff_quantita,in_posizione,in_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento giacenze magazzino',@myvar);
-			CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_2nd_quantita,in_posizione,in_data,'Carico invocato dal sistema per aggiornamento giacenze magazzino',NULL,NULL);
-		
-		END IF;  -- end test quantita
-		
-	END IF; -- end test richista
-
 END IF; -- end esistenza
 
 END //
@@ -157,8 +146,8 @@ BEGIN
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_1st_posizione AND quantita=in_quantita)) THEN
 
-CALL SCARICO(in_utente,'Aggiornamento',in_id_merce,in_quantita,in_1st_posizione,in_1st_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento posizioni magazzino',@myvar);
-CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_quantita,in_2nd_posizione,in_data,'Carico invocato dal sistema per aggiornamento posizioni magazzino',NULL,NULL);
+CALL SCARICO(in_utente,'Aggiornamento',in_id_merce,in_quantita,in_1st_posizione,in_1st_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),@myvar);
+CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_quantita,in_2nd_posizione,in_data,CONCAT('Carico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),NULL,NULL);
 
 END IF;
 END //
@@ -177,10 +166,15 @@ IN in_data DATE
 ) 
 BEGIN
 
+DECLARE tags_1st TEXT;
+DECLARE tags_2nd TEXT;
+SET tags_1st = (SELECT tags FROM MERCE WHERE id_merce=in_1st_id_merce);
+SET tags_2nd = (SELECT tags FROM MERCE WHERE id_merce=in_2nd_id_merce);
+
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_1st_id_merce AND posizione=in_posizione AND quantita=in_quantita)) THEN
 
-CALL SCARICO(in_utente,'Aggiornamento',in_1st_id_merce,in_quantita,in_posizione,in_posizione,in_data,in_data,'Scarico invocato dal sistema per aggiornamento merce magazzino',@myvar);
-CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_2nd_id_merce),in_quantita,in_posizione,in_data,'Carico invocato dal sistema per aggiornamento merce magazzino',NULL,NULL);
+CALL SCARICO(in_utente,'Aggiornamento',in_1st_id_merce,in_quantita,in_posizione,in_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento merce magazzino (da ',tags_1st,' a ',tags_2nd,')'),@myvar);
+CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,tags_2nd,in_quantita,in_posizione,in_data,CONCAT('Carico di sistema per aggiornamento merce magazzino (da ',tags_1st,' a ',tags_2nd,')'),NULL,NULL);
 
 END IF;
 END //
