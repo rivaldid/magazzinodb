@@ -124,3 +124,58 @@ SELECT @ritorno AS 'risultato';
 
 END //
 DELIMITER ;
+
+
+-- ---------------------- AGGIORNAMENTO MAGAZZINO ---------------------- 
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`(
+IN in_utente VARCHAR(45),
+IN in_1st_tags TEXT,
+IN in_1st_id_merce INT,
+IN in_1st_posizione VARCHAR(45),
+IN in_1st_quantita INT,
+IN in_2nd_tags TEXT,
+IN in_2nd_id_merce INT,
+IN in_2nd_posizione VARCHAR(45),
+IN in_2nd_quantita INT,
+IN in_data DATE
+) 
+BEGIN
+
+
+-- pre: mi assicuro di lavorare con id
+IF (in_1st_tags IS NOT NULL) THEN
+	CALL input_merce(in_1st_tags,in_1st_id_merce);
+END IF;
+
+IF (in_2nd_tags IS NOT NULL) THEN
+	CALL input_merce(in_2nd_tags,in_2nd_id_merce);
+END IF;
+
+
+
+-- in base alla terna id-posizione-quantita, smisto alla sp designata
+
+IF ((in_1st_id_merce IS NOT NULL) AND (in_1st_posizione IS NOT NULL) AND (in_1st_quantita IS NOT NULL)) THEN
+
+-- 001
+IF ((in_2nd_id_merce IS NULL) AND (in_2nd_posizione IS NULL) AND (in_2nd_quantita IS NOT NULL)) THEN
+CALL aggiornamento_magazzino_quantita(in_utente,in_1st_id_merce,in_1st_posizione,in_1st_quantita,in_2nd_quantita,in_data);		
+END IF;
+
+-- 010
+IF ((in_2nd_id_merce IS NULL) AND (in_2nd_posizione IS NOT NULL) AND (in_2nd_quantita IS NULL)) THEN
+CALL aggiornamento_magazzino_posizione(in_utente,in_1st_id_merce,in_1st_posizione,in_2nd_posizione,in_1st_quantita,in_data);	
+END IF;
+
+-- 100
+IF ((in_2nd_id_merce IS NOT NULL) AND (in_2nd_posizione IS NULL) AND (in_2nd_quantita IS NULL)) THEN
+CALL aggiornamento_magazzino_merce(in_utente,in_1st_id_merce,in_2nd_id_merce,in_1st_posizione,in_1st_quantita,in_data);	
+END IF;
+
+END IF; -- end test valori
+
+
+END //
+DELIMITER ;

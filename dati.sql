@@ -1113,6 +1113,9 @@ CALL upd_posizione_magazzino('MANZOGI9','46','A1L08','A2L07','2014-11-17');
 CALL upd_posizione_magazzino('MANZOGI9','46','A2L08','A2L07','2014-11-17');
 CALL CARICO('PISCAZZI','HMS IT S.p.A.','DDT','RO 38','2014-11-13','DDT-HMSITS.p.A.-RO38.jpg','SERVER X3850 X5-JB9+JBA','3','P15','2014-11-18','OGNI SERVER DIVISO IN DUE COLLI ','HMS IT S.p.A.','4100169026');
 CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-18','2014-11-18','',@myvar);
+-- *********************************************************************
+-- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
+-- *********************************************************************
 
 
 -- '
@@ -1120,6 +1123,10 @@ CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-1
 --
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
 -- CALL SCARICO(utente,richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
+-- CALL aggiornamento_magazzino(utente, primo_tags, primo_id, primo_posizione, primo_quantita, secondo_tags, secondo_id, secondo_posizione, secondo_quantita, data);
+-- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro);
+
+-- **************** <DEPRECATE> ********************************************************************************************************************
 -- CALL upd_giacenza_magazzino(utente,id_merce, posizione, quantita, data);
 -- CALL upd_posizione_magazzino(utente,id_merce, vecchia_posizione, nuova_posizione, data);
--- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro); 
+-- **************** </DEPRECATE> *******************************************************************************************************************

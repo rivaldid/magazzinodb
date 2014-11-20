@@ -19,12 +19,13 @@ $BINECHO "Carico le procedure" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp.sql \W;' >> logfile
 $BINECHO "Carico le procedure di input" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_inp.sql \W;' >> logfile
+$BINECHO "Carico le procedure di aggiornamento dati" >> logfile
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_upd.sql \W;' >> logfile
+
 $BINECHO "Carico le APIs pubbliche" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_pub.sql \W;' >> logfile
 $BINECHO "Carico le viste sui dati" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source view.sql \W;' >> logfile
-$BINECHO "Carico le procedure di aggiornamento dati" >> logfile
-$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_upd.sql \W;' >> logfile
 $BINECHO "Carico i dati" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql \W;' >> logfile
 
