@@ -1043,7 +1043,7 @@ CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc(
 CALL SCARICO('Sistema','Sistema','85','2','P05','SALA1','2014-09-26','2014-09-26','Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site',@myvar);
 CALL SCARICO('Sistema','Sistema','93','2','P06','SALA1','2014-09-26','2014-09-26','Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site',@myvar);
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'CAVO SAS','2','P12','2014-09-26',NULL,NULL,NULL);
-CALL SCARICO('MANZOGI9GI9','Facility','3','12','P01','SALA2+TLC','2014-09-30','2014-09-30','cablaggio storage lan san sala2',@myvar);
+CALL SCARICO('MANZOGI9','Facility','3','12','P01','SALA2+TLC','2014-09-30','2014-09-30','cablaggio storage lan san sala2',@myvar);
 CALL SCARICO('MANZOGI9','Facility','4','12','P01','SALA2+TLC','2014-09-30','2014-09-30','cablaggio storage lan san sala2',@myvar);
 CALL input_registro('IRCE SPA','Lettera_di_vettura','171000026829','334',NULL,NULL,@myvar);
 CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
