@@ -1117,6 +1117,9 @@ CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-1
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 -- *********************************************************************
 CALL SCARICO('MANZOGI9','Gestione Accessi','94','1','P03','SALA1','2014-11-21','2014-11-24','Materiale avanzato dall\'installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE',@myvar);
+CALL SCARICO('PISCAZZI','Facility','59','30','B1L03','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('PISCAZZI','Facility','49','8','A2L11','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('PISCAZZI','Facility','54','8','P02','SALA1 ISOLA1','2014-11-26','2014-11-27','PROG CERT',@myvar);
 
 
 
