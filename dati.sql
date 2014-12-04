@@ -1120,7 +1120,15 @@ CALL SCARICO('MANZOGI9','Gestione Accessi','94','1','P03','SALA1','2014-11-21','
 CALL SCARICO('PISCAZZI','Facility','59','30','B1L03','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('PISCAZZI','Facility','49','8','A2L11','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('PISCAZZI','Facility','54','8','P02','SALA1 ISOLA1','2014-11-26','2014-11-27','PROG CERT',@myvar);
-
+CALL CARICO('MANZOGI9','Facility','Sistema','Aggiornamento Sistema','2014-12-01','','BRETELLA FO-SC-SC-50/125 10M','6','A2L05','2014-12-01','Carico invocato dal sistema per aggiornamento posizione magazzino','DHL Express','');
+CALL CARICO('MANZOGI9','Sistema','Sistema','Aggiornamento Sistema','2014-12-01','','BRETELLA UTP-CAT6 3M blu','14','P01','2014-12-01','Carico invocato dal sistema per aggiornamento posizione magazzino','DHL Express','');
+CALL CARICO('MANZOGI9','Sistema','Sistema','Aggiornamento Sistema','2014-12-01','','BRETELLA UTP-CAT6 3M giallo','13','P01','2014-12-01','Carico invocato dal sistema per aggiornamento posizione magazzino','DHL Express','');
+CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 219473/013 F','2014-08-21','DDT-HP-GW0F219473013F.pdf','HP Store Easy 3840 Gateway Storage','1','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
+CALL CARICO('MANZOGI9','Hewlett Packard Italiana S.p.A.','DDT','GW0F 218122/019/01 C','2014-08-05','DDT-HP-GW0F21812201901C.pdf','HP 4GB 1RX4 PC3L-10600R-9 Kit','6','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
+CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-ItaltelS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-ItaltelS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL SCARICO('MANZOGI9','Facility','123','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('MANZOGI9','Facility','122','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 
 
 -- '

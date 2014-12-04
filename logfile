@@ -1,4 +1,4 @@
-==========>Fri Nov 28 18:34:43 CET 2014
+==========>Thu Dec 4 15:38:32 CET 2014
 Carico la base
 Carico le funzioni
 Carico le procedure
@@ -199,5 +199,9 @@ risultato
 0
 risultato
 0
+risultato
+1
+risultato
+1
 Carico le viste per il service
 Strumenti di debug
