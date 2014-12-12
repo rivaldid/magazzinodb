@@ -1116,7 +1116,7 @@ CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-1
 -- *********************************************************************
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 -- *********************************************************************
-CALL SCARICO('MANZOGI9','Gestione Accessi','94','1','P03','SALA1','2014-11-21','2014-11-24','Materiale avanzato dall\'installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE',@myvar);
+CALL SCARICO('MANZOGI9','Gestione Accessi','94','1','P03','SALA1','2014-11-21','2014-11-24','Materiale avanzato dalla installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE',@myvar);
 CALL SCARICO('PISCAZZI','Facility','59','30','B1L03','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('PISCAZZI','Facility','49','8','A2L11','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('PISCAZZI','Facility','54','8','P02','SALA1 ISOLA1','2014-11-26','2014-11-27','PROG CERT',@myvar);
@@ -1129,6 +1129,8 @@ CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-Italtel
 CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-ItaltelS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
 CALL SCARICO('MANZOGI9','Facility','123','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('MANZOGI9','Facility','122','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-12-05','MOVING ARTE ANTICA',@myvar);
+CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086','2014-12-03','Letteradivettura-PosteMobileS.p.a.-J100026900086.pdf','MATERIALE ELETTRICO','1','P06','2014-12-12','Mail del 10/12 da FARINA ANDREA','SDA Express Courier','');
 
 
 -- '

@@ -56,6 +56,6 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vista_documenti //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS 
-SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo),data FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data;
+SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,data FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data;
 //
 DELIMITER ;

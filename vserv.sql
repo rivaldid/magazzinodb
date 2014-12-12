@@ -108,3 +108,4 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS
 SELECT label from proprieta WHERE sel='1' and label like '%M';
 //
 DELIMITER ;
+

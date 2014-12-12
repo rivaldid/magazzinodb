@@ -50,7 +50,7 @@ IN in_tipo VARCHAR(45),
 IN in_numero VARCHAR(45),
 IN in_gruppo INT,
 IN in_data DATE,
-IN in_file VARCHAR(45),
+IN in_file TEXT,
 OUT out_id_registro INT
 ) 
 BEGIN
