@@ -1125,12 +1125,14 @@ CALL CARICO('MANZOGI9','Sistema','Sistema','Aggiornamento Sistema','2014-12-01',
 CALL CARICO('MANZOGI9','Sistema','Sistema','Aggiornamento Sistema','2014-12-01','','BRETELLA UTP-CAT6 3M giallo','13','P01','2014-12-01','Carico invocato dal sistema per aggiornamento posizione magazzino','DHL Express','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 219473/013 F','2014-08-21','DDT-HP-GW0F219473013F.pdf','HP Store Easy 3840 Gateway Storage','1','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard Italiana S.p.A.','DDT','GW0F 218122/019/01 C','2014-08-05','DDT-HP-GW0F21812201901C.pdf','HP 4GB 1RX4 PC3L-10600R-9 Kit','6','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
-CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-ItaltelS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
-CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','1537/A','2014-11-28','DDT-ItaltelS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
 CALL SCARICO('MANZOGI9','Facility','120','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('MANZOGI9','Facility','121','1','P18','SALA2 ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-12-05','MOVING ARTE ANTICA',@myvar);
 CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086','2014-12-03','Letteradivettura-PosteMobileS.p.a.-J100026900086.pdf','MATERIALE ELETTRICO','1','P06','2014-12-12','Mail del 10/12 da FARINA ANDREA','SDA Express Courier','');
+CALL SCARICO('PISCAZZI','Facility','118','1','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
+CALL SCARICO('PISCAZZI','Facility','119','6','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 
 
 -- '
