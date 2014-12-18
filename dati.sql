@@ -1133,6 +1133,7 @@ CALL SCARICO('MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-
 CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086','2014-12-03','Letteradivettura-PosteMobileS.p.a.-J100026900086.pdf','MATERIALE ELETTRICO','1','P06','2014-12-12','Mail del 10/12 da FARINA ANDREA','SDA Express Courier','');
 CALL SCARICO('PISCAZZI','Facility','118','1','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','119','6','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
+CALL SCARICO('PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2014-12-18','progetto nas rete cert',@myvar);
 
 
 -- '
