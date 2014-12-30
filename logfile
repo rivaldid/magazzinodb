@@ -1,4 +1,4 @@
-==========>Thu Dec 18 11:50:02 CET 2014
+==========>Tue Dec 30 18:53:15 CET 2014
 Carico la base
 Carico le funzioni
 Carico le procedure
@@ -211,5 +211,9 @@ risultato
 0
 risultato
 0
+risultato
+0
+Warning (Code 1292): Truncated incorrect INTEGER value: 'Aggiornamento Sistema'
+Warning (Code 1292): Truncated incorrect INTEGER value: 'Aggiornamento Sistema'
 Carico le viste per il service
 Strumenti di debug

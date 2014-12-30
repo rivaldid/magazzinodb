@@ -1134,6 +1134,20 @@ CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086'
 CALL SCARICO('PISCAZZI','Facility','118','1','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','119','6','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2014-12-18','progetto nas rete cert',@myvar);
+CALL CARICO('PISCAZZI','Emmegi','DDT','3797','2014-12-17','DDT-Emmegi-3797.jpg','BRETELLA UTP-CAT6 5M','46','B1 L05','2014-12-22','','BRT SPA','4501193782');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','BROCADE 38.6 KG','1','P36','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','RACK S2 1067 KG','1','P23','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','RACK S2 732 KG','1','P25','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','S2ADD 141 142 KG','2','P36','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 122 KG','1','P37','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 146 KG','1','P27','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 160 KG','1','P38','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 204 KG','1','P26','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 307.5 KG','1','P37','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 31 KG','1','P36','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 65 KG','1','P38','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
+CALL aggiornamento_magazzino_posizione('MANZOGI9','95','P25','P33','1','2014-12-29');
+CALL CARICO('MURATO48','CRISMA SECURITY SRL','DDT','040/2014','2014-12-19','','SERVER NetRack SR-100','1','P21','2014-12-29','Progetto RTLS Data Center','SDA','4501194009');
 
 
 -- '
@@ -1141,8 +1155,9 @@ CALL SCARICO('PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2
 --
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
 -- CALL SCARICO(utente,richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
--- CALL aggiornamento_magazzino(utente, primo_tags, primo_id, primo_posizione, primo_quantita, secondo_tags, secondo_id, secondo_posizione, secondo_quantita, data);
 -- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro);
+-- CALL aggiornamento_magazzino_quantita(utente, id_merce, posizione, quantita, nuova_quantita, data);
+-- CALL aggiornamento_magazzino_posizione(utente, id_merce, posizione, nuova_posizione, quantita, data);
 
 -- **************** <DEPRECATE> ********************************************************************************************************************
 -- CALL upd_giacenza_magazzino(utente,id_merce, posizione, quantita, data);

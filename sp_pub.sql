@@ -179,3 +179,4 @@ END IF; -- end test valori
 
 END //
 DELIMITER ;
+DROP PROCEDURE aggiornamento_magazzino;
