@@ -141,18 +141,23 @@ DELIMITER //
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_posizione//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_posizione`( 
 IN in_utente VARCHAR(45),
-IN in_id_merce INT,
+IN in_id_merce VARCHAR(45),
 IN in_1st_posizione VARCHAR(45),
 IN in_2nd_posizione VARCHAR(45),
-IN in_quantita INT,
+IN in_quantita VARCHAR(45),
 IN in_data DATE
 ) 
 BEGIN
 
-IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_1st_posizione AND quantita=in_quantita)) THEN
+DECLARE cast_quantita INT;
+DECLARE cast_id_merce INT;
+SET @cast_quantita:=CAST(in_quantita AS SIGNED);
+SET @cast_id_merce:=CAST(in_id_merce AS SIGNED);
 
-CALL SCARICO(in_utente,'Aggiornamento',in_id_merce,in_quantita,in_1st_posizione,in_1st_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),@myvar);
-CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_quantita,in_2nd_posizione,in_data,CONCAT('Carico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),NULL,NULL);
+IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=@cast_id_merce AND posizione=in_1st_posizione AND quantita=@cast_quantita)) THEN
+
+CALL SCARICO(in_utente,'Aggiornamento',@cast_id_merce,@cast_quantita,in_1st_posizione,in_1st_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),@myvar);
+CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=@cast_id_merce),@cast_quantita,in_2nd_posizione,in_data,CONCAT('Carico di sistema per aggiornamento posizioni magazzino (da ',in_1st_posizione,' a ',in_2nd_posizione,')'),NULL,NULL);
 
 END IF;
 END //
