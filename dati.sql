@@ -1115,6 +1115,8 @@ CALL CARICO('PISCAZZI','HMS IT S.p.A.','DDT','RO 38','2014-11-13','DDT-HMSITS.p.
 CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-18','2014-11-18','',@myvar);
 -- *********************************************************************
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
+DROP PROCEDURE upd_giacenza_magazzino;
+DROP PROCEDURE upd_posizione_magazzino;
 -- *********************************************************************
 CALL SCARICO('MANZOGI9','Gestione Accessi','94','1','P03','SALA1','2014-11-21','2014-11-24','Materiale avanzato dalla installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE',@myvar);
 CALL SCARICO('PISCAZZI','Facility','59','30','B1L03','SALA2 ISOLA10','2014-11-26','2014-11-27','PROG ANTIRICICLAGGIO',@myvar);
@@ -1148,11 +1150,18 @@ CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-1
 CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','VARIOUS 65 KG','1','P38','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
 CALL aggiornamento_magazzino_posizione('MANZOGI9','95','P25','P33','1','2014-12-29');
 CALL CARICO('MURATO48','CRISMA SECURITY SRL','DDT','040/2014','2014-12-19','','SERVER NetRack SR-100','1','P21','2014-12-29','Progetto RTLS Data Center','SDA','4501194009');
+CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','NVLS 60077438','2014-12-29','DDT-ItaltelS.p.A.-NVLS60077438.pdf','MATERIALE CISCO PER POSTEMOBILE','7','M08','2014-12-31','MATERIALE PER IDC','TNT GLOBAL EXPRESS','');
+
+-- aggiornamento al 9/1/2015
+CALL CARICO('MANZOGI9','Italtel S.p.A.','DDT','NVLS 60077438','2014-12-29','DDT-ItaltelS.p.A.-NVLS60077438.pdf','MATERIALE CISCO PER POSTEMOBILE','7','P07','2014-12-31','MATERIALE PER IDC','TNT GLOBAL EXPRESS','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS 60077460','2014-12-31','DDT-ItaltelS.p.A.-NVLS60077460.pdf','MDS-9513-FAB3','4','P22','2015-01-07','PROG EOX MDS POSTE MOBILE NETWORK 134183','CEVA LOGISTIC ITALIA SRL','');
+CALL SCARICO('MANZOGI9','Facility','54','182','P02','SALA1','2015-01-09','2015-01-09','VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER',@myvar);
+CALL SCARICO('MANZOGI9','Facility','2','42','A2L05','SALA1','2015-01-09','2015-01-09','VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER',@myvar);
+CALL SCARICO('MANZOGI9','Facility','47','8','A2L09','SALA1','2015-01-09','2015-01-09','VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER',@myvar);
+CALL SCARICO('MANZOGI9','Facility','48','18','A1L09','SALA1','2015-01-09','2015-01-09','VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER',@myvar);
 
 
--- '
--- select * from MAGAZZINO JOIN MERCE USING(id_merce) where tags like '%qualcosa%';
---
+-- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
 -- CALL SCARICO(utente,richiedente, id_merce, quantita, posizione, destinazione, data_doc_scarico, data_scarico, note_scarico,@myvar);
 -- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro);
