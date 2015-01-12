@@ -109,7 +109,7 @@ ELSE
 		CALL input_registro(in_richiedente, 'MDS', my_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
 		
 		-- OPERAZIONI
-		CALL input_operazioni('0', @my_id_utente, @my_id_registro, in_id_merce, in_quantita, in_destinazione, in_data_scarico, in_note_scarico, @my_id_operazioni);
+		CALL input_operazioni('0', @my_id_utente, @my_id_registro, in_id_merce, in_quantita, in_destinazione, in_data_scarico, CONCAT(in_note_scarico,' PROVENIENZA ',in_posizione), @my_id_operazioni);
 		
 		-- MAGAZZINO
 		CALL input_magazzino('0', in_id_merce, in_posizione, in_quantita);
