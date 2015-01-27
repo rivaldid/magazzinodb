@@ -109,3 +109,10 @@ SELECT label from proprieta WHERE sel='1' and label like '%M';
 //
 DELIMITER ;
 
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vserv_gruppi_doc //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS 
+SELECT gruppo,CONCAT_WS(' - ',contatto,tipo,numero),data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento');
+//
+DELIMITER ;
