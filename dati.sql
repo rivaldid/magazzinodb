@@ -1161,11 +1161,15 @@ CALL SCARICO('MANZOGI9','Facility','54','38','P02','SALA1','2015-01-12','2015-01
 CALL SCARICO('MANZOGI9','Facility','2','8','A2L05','SALA1','2015-01-12','2015-01-12','VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE',@myvar);
 CALL SCARICO('MANZOGI9','Facility','48','4','A1L09','SALA1','2015-01-12','2015-01-12','VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE',@myvar);
 CALL aggiornamento_magazzino_posizione('PISCAZZI','74','P13','Z1L04','1','2015-01-15');
-
 CALL CARICO('PISCAZZI','Hewlett Packard International Sarl','DDT','GW0F232932/033/01C','2015-01-16','DDT-HewlettPackardInternationalSarl-GW0F23293203301C.pdf','HP BLC 7000 FULL MVNO','1','M08','2015-01-27','','MITSafetrans S.r.l.','');
 CALL CARICO('PISCAZZI','Hewlett Packard International Sarl','DDT','GW0F233259/001/01C','2015-01-21','DDT-HewlettPackardInternationalSarl-GW0F23325900101C.pdf','HP 9000 FULL MVNO','1','M08','2015-01-27','POSTEL','MITSafetrans S.r.l.','');
 CALL CARICO('PISCAZZI','Hewlett Packard International Sarl','DDT','GW0F233412/001/01C','2015-01-22','DDT-HewlettPackardInternationalSarl-GW0F23341200101C.pdf','HP SUPERDOME 2','1','M08','2015-01-27','','MITSafetrans S.r.l.','');
 CALL SCARICO('PISCAZZI','Facility','140','1','M08','SALA2','2015-01-27','2015-01-28','progetto superdome2',@myvar);
+CALL CARICO('PISCAZZI','Facility','Sistema','51',NULL,'','BRETELLA FO-LC-LC-50/125 10M','100','A2L05','2015-01-30','reintegro fibre HP','','');
+CALL SCARICO('PISCAZZI','POSTEL','125','1','P23','RESTITUZIONE','2015-01-29','2015-01-30','RESTITUZIONE MERCE POSTEL',@myvar);
+CALL SCARICO('PISCAZZI','Facility','97','1','P34','SALA1','2015-01-29','2015-01-30','INSTALLAZIONE CENTERA',@myvar);
+CALL SCARICO('PISCAZZI','Facility','139','1','M08','SALA1-ISOLA7','2015-01-29','2015-01-30','',@myvar);
+CALL aggiornamento_magazzino_posizione('PISCAZZI','135','P21','UFFICIO_RESPONSABILE','1','2015-01-30');
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
