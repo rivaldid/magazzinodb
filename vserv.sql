@@ -113,6 +113,6 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_gruppi_doc //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS 
-SELECT gruppo,CONCAT_WS(' - ',contatto,tipo,numero),data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento');
+SELECT gruppo,CONCAT_WS(' - ',contatto,tipo,numero) as documento,data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento');
 //
 DELIMITER ;

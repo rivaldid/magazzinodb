@@ -1136,7 +1136,7 @@ CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086'
 CALL SCARICO('PISCAZZI','Facility','118','1','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','119','6','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2014-12-18','progetto nas rete cert',@myvar);
-CALL CARICO('PISCAZZI','Emmegi','DDT','3797','2014-12-17','DDT-Emmegi-3797.jpg','BRETELLA UTP-CAT6 5M','46','B1 L05','2014-12-22','','BRT SPA','4501193782');
+CALL CARICO('PISCAZZI','Emmegi','DDT','3797','2014-12-17','DDT-Emmegi-3797.jpg','BRETELLA UTP-CAT6 5M','46','B1L05','2014-12-22','','BRT SPA','4501193782');
 CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','BROCADE 38.6 KG','1','P36','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
 CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','RACK S2 1067 KG','1','P23','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
 CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','RACK S2 732 KG','1','P25','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
