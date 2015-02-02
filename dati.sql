@@ -1170,6 +1170,7 @@ CALL SCARICO('PISCAZZI','POSTEL','125','1','P23','RESTITUZIONE','2015-01-29','20
 CALL SCARICO('PISCAZZI','Facility','97','1','P34','SALA1','2015-01-29','2015-01-30','INSTALLAZIONE CENTERA',@myvar);
 CALL SCARICO('PISCAZZI','Facility','139','1','M08','SALA1-ISOLA7','2015-01-29','2015-01-30','',@myvar);
 CALL aggiornamento_magazzino_posizione('PISCAZZI','135','P21','UFFICIO_RESPONSABILE','1','2015-01-30');
+CALL SCARICO('MANZOGI9','Facility','59','4','B1L03','SALA1','2015-02-02','2015-02-02','APPARATO CENTERA',@myvar);
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
