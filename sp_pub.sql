@@ -120,7 +120,7 @@ ELSE
 
 END IF;
 
-SELECT @ritorno AS 'risultato';
+SELECT 'SCARICO' AS chiamata, @ritorno AS risultato, CONCAT_WS(' ',in_utente,in_richiedente,in_id_merce,in_quantita,in_posizione,in_destinazione,in_data_doc_scarico,in_data_scarico,in_note_scarico) AS riferimenti;
 
 END //
 DELIMITER ;

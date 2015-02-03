@@ -1049,7 +1049,7 @@ CALL input_registro('IRCE SPA','Lettera_di_vettura','171000026829','334',NULL,NU
 CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
 CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
-CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
+-- CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 CALL CARICO('PISCAZZI','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TELECOM-294_RZ_2014.pdf','APPARATI RACK TELECOM KMS6 RS/6000','6','M8-M9','2014-10-08','moving telecom da Rozzano','DYNAMICOS',NULL);
 CALL SCARICO('MURATO48','Facility','54','79','P02','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO('MURATO48','Facility','47','16','A2L09','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
@@ -1171,6 +1171,10 @@ CALL SCARICO('PISCAZZI','Facility','97','1','P34','SALA1','2015-01-29','2015-01-
 CALL SCARICO('PISCAZZI','Facility','139','1','M08','SALA1-ISOLA7','2015-01-29','2015-01-30','',@myvar);
 CALL aggiornamento_magazzino_posizione('PISCAZZI','135','P21','UFFICIO_RESPONSABILE','1','2015-01-30');
 CALL SCARICO('MANZOGI9','Facility','59','4','B1L03','SALA1','2015-02-02','2015-02-02','APPARATO CENTERA',@myvar);
+CALL CARICO('MANZOGI9','INFORDATA','DDT','189753004','2015-01-27','DDT-INFORDATA-189753004.pdf','SERVER FUJITZU S26361-K1484-V200','4','P05','2015-02-02','PROGETTO SITE VMWARE FASE 5','Tecnotrans S.r.l','4100176202');
+CALL CARICO('MANZOGI9','INFORDATA','DDT','189753004','2015-01-27','DDT-INFORDATA-189753004.pdf','BRETELLA FO-LC-LC-50/125 5M','16','P05','2015-02-02','PROGETTO SITE VMWARE FASE 5','Tecnotrans S.r.l','4100176202');
+CALL CARICO('MANZOGI9','INFORDATA','DDT','40008','2015-01-27','DDT-INFORDATA-40008.pdf','BRETELLA UTP-CAT6 3M','44','P05','2015-02-02','PROGETTO SITE VMWARE FASE 5','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Facility','MDS','215','2015-01-30','','BRETELLA UTP-CAT6 100M','4','B2L08','2015-02-02','MATERIALE AVANZATO DA INSTLLAZIONE CENTERA','','');
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);

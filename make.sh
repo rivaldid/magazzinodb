@@ -26,10 +26,11 @@ $BINECHO "Carico le APIs pubbliche" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source sp_pub.sql \W;' >> logfile
 $BINECHO "Carico le viste sui dati" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source view.sql \W;' >> logfile
-$BINECHO "Carico i dati" >> logfile
-$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql \W;' >> logfile
 
 $BINECHO "Carico le viste per il service" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source vserv.sql \W;' >> logfile
 $BINECHO "Strumenti di debug" >> logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source debug.sql \W;' >> logfile
+
+$BINECHO "Carico i dati" >> logfile
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql \W;' >> logfile

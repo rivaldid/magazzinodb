@@ -158,7 +158,7 @@ END IF;
 END //
 DELIMITER ;
 
-
+-- OK MA DA NON USARE MAI!!!
 DELIMITER //
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_merce//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_merce`( 
@@ -182,6 +182,35 @@ CALL SCARICO(in_utente,'Aggiornamento',in_1st_id_merce,in_quantita,in_posizione,
 CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,tags_2nd,in_quantita,in_posizione,in_data,CONCAT('Carico di sistema per aggiornamento merce magazzino (da ',tags_1st,' a ',tags_2nd,')'),NULL,NULL);
 
 END IF;
+END //
+DELIMITER ;
+
+
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS aggiornamento_registro//
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_registro`(
+IN in_id_registro INT,
+IN in_gruppo INT,
+IN in_data DATE,
+IN in_file TEXT,
+OUT ritorno INT
+)
+BEGIN
+
+DECLARE temp_contatto VARCHAR(45);
+DECLARE temp_tipo VARCHAR(45);
+DECLARE temp_numero VARCHAR(45);
+
+IF (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE id_registro=in_id_registro)) THEN
+	SELECT contatto,tipo,numero FROM REGISTRO WHERE id_registro=in_id_registro INTO temp_contatto,temp_tipo,temp_numero;
+	CALL input_registro(temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file);
+	SET @ritorno := 0;
+ELSE
+	SET @ritorno := 1;
+END IF;
+
+SELECT 'aggiornamento_registro' AS chiamata, @ritorno AS risultato, CONCAT_WS(' ',in_id_registro,temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file) AS riferimenti;
+
 END //
 DELIMITER ;
 
