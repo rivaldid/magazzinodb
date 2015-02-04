@@ -1,4 +1,4 @@
-==========>Tue Feb 3 19:53:28 CET 2015
+==========>Wed Feb 4 11:21:58 CET 2015
 Carico la base
 Carico le funzioni
 Carico le procedure
@@ -9,235 +9,247 @@ Carico le viste sui dati
 Carico le viste per il service
 Strumenti di debug
 Carico i dati
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 87 1 P06 SALA1-ISOLA_STORAGE 2014-06-17 2014-06-17 Progetto EMC2 destinazione vblock isola storage
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 14 6 B1L03 SALA1-ISOLA_STORAGE 2014-06-17 2014-06-17 Richiesto da Facility referente Lucati progetto EMC2 destinazione vblock isola storage
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 72 3 P17 SALA1-ISOLA7 2014-02-11 2014-02-11 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 73 1 P17 SALA1-ISOLA7 2014-02-11 2014-02-11 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 75 2 P17 SALA1-ISOLA7 2014-02-13 2014-02-13 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 90 1 P08 SALA1-ISOLA_STORAGE 2014-06-24 2014-06-24 attivita per conto di EMC2, spostato in sala il giorno stesso
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 91 1 B1L13 SALA1-ISOLA_STORAGE 2014-06-26 2014-06-26 cablaggio cavi alimentazione armadio rack vmax postel
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Prossimita 61 220 UFFICIO3 UFFICIO3 2014-06-27 2014-06-27 Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Prossimita 86 200 UFFICIO3 UFFICIO3 2014-06-27 2014-06-27 Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 89 6 P16 SALA2 2014-06-20 2014-06-27 Implementazione infrstruttura Sun per Fase2, destinazioni ISOLE 10 13 16
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 54 6 P02 SALA1-ISOLA5 2014-06-30 2014-06-30 email di Farina, progetto FULL MVNO. consegnato da Accessi a Lorusso
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 80 A1L08 SALA2 2014-06-30 2014-06-30 allestimento switch fase2, referente Florio
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 30 A2L08 SALA2 2014-06-30 2014-06-30 allestimento switch fase2, referente Florio
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 54 2 P01 SALA1 2014-07-10 2014-07-10 progetto FULL MVNO per conto di Farina Andrea
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 92 1 P17 SALA2 2014-07-18 2014-07-18 allestimento centera sala2 referente lucati gennarelli
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 54 1 P17 SALA2 2014-07-18 2014-07-18 allestimento centera sala2 referente lucati gennarelli
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 2 2 A2L05 A2L05 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 2 695 P16 P16 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 2 695 B1L06 B1L06 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 49 50 A1L11 A1L11 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 88 15 P16 P16 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 88 15 B1L01 B1L01 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Polo Immobiliare 2 32 A2L05 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Polo Immobiliare 48 4 A2L10 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Polo Immobiliare 47 4 A2L09 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile TLC 46 100 A1L07 SALA2 2014-08-07 2014-08-07 progetto non pervenuto
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 46 100 A1L07 A1L07 2014-09-01 2014-09-01 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 46 71 A2L08 A2L08 2014-09-01 2014-09-01 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile TLC 46 60 A2L07 TLC 2014-09-01 2014-09-01 Attivita site DC2 ditta OSAT, referente Napoli
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 200 A1L06 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 80 A1L07 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 32 A2L08 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema POSTECOM 5 4 B1L04 LOCALE_SECURITY 2014-09-24 2014-09-24 PROGETTO VIDEOSORVEGLIANZA
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 94 1 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 74 1 P17 P17 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 84 2 P05 P05 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 59 56 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 55 4560 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 56 4560 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 83 1 B2L04 B2L04 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 38 2 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile Tec 39 10 P10 SALA2 2014-06-01 2014-06-30 cablaggio storage sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 39 8 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 63 7 P16 P16 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 14 21 B1L03 B1L03 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 200 A2L06 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage ln san sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 46 8 A2L08 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage lan san sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Facility 6 4 A2L04 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage lan san sala2
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Postemobile TLC 13 2 P10 SALA1-ISOLA5 2014-09-29 2014-03-10 progetto telepresence isola5 sala1
-chiamata	risultato	riferimenti
-SCARICO	0	Vilardi Aggiornamento 68 6 P06 P06 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Sistema 68 4 P30 SALA2 2014-09-26 2014-09-26 scarico 4 dei 6 switch wsc4948e progetto mvno
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Sistema 85 2 P05 SALA1 2014-09-26 2014-09-26 Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site
-chiamata	risultato	riferimenti
-SCARICO	0	Sistema Sistema 93 2 P06 SALA1 2014-09-26 2014-09-26 Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 3 12 P01 SALA2+TLC 2014-09-30 2014-09-30 cablaggio storage lan san sala2
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 4 12 P01 SALA2+TLC 2014-09-30 2014-09-30 cablaggio storage lan san sala2
-chiamata	risultato	riferimenti
-SCARICO	0	MURATO48 Facility 54 79 P02 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
-chiamata	risultato	riferimenti
-SCARICO	0	MURATO48 Facility 47 16 A2L09 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
-chiamata	risultato	riferimenti
-SCARICO	0	MURATO48 Facility 2 10 A2L05 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
-chiamata	risultato	riferimenti
-SCARICO	0	MURATO48 Facility 46 198 A1L08 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
-chiamata	risultato	riferimenti
-SCARICO	0	MURATO48 Facility 19 24 A2L13 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Aggiornamento 54 88 B1L09 B1L09 2014-10-21 2014-10-21 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 107 2 P09 SALA2-ISOLA13 2014-10-23 2014-10-23 progetto safe program
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 107 6 P18 SALA2-ISOLA13 2014-10-23 2014-10-23 progetto safe program
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 109 1 P06 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 110 1 P06 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 111 1 P15 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 76 8 A2L11 SALA2 2014-10-28 2014-10-28 progetto coss sala2 cablaggio (item73)
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 78 41 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 79 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 80 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 81 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 82 10 B2L04 B2L04 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 78 41 C2L05 C2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 79 40 C2L05 C2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 82 10 C2L04 C2L04 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Geico Lender 82 39 C2L04 SALA2-ISOLA13 2014-10-29 2014-10-29 richiesti da Gheriani, compartimentazione corridoi isola13
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Geico Lender 81 11 C2L05 SALA2-ISOLA13 2014-10-30 2014-10-30 richiesti da La Tona, compartimentazione corridoi isola13
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Geico Lender 80 11 C2L05 SALA2-ISOLA13 2014-10-30 2014-10-30 richiesti da La Tona, compartimentazione corridoi isola13
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 54 69 P02 SALA2-ISOLA13 2014-10-29 2014-10-29 GECT per CRM, opensource
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 2 22 A2L05 SALA2-ISOLA13 2014-10-29 2014-10-29 GECT per CRM, opensource
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 47 22 A2L09 SALA2-ISOLA13 2014-10-30 2014-10-30 monitoraggio opensource sala2
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 112 2 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 6 8 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 scarico per movimentazione cerce
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 54 22 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 scarico per movimentazione merce
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 113 1 P08 SALA2 2014-11-05 2014-11-05 
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 114 7 P08 SALA2 2014-11-11 2014-11-11 
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Aggiornamento 115 1 C2-L13 C2-L13 2014-11-11 2014-11-11 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 76 31 A2L11 A2L11 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 46 102 A1L08 A1L08 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 46 51 A2L08 A2L08 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 115 1 C2-L14 SALA2-ISOLA13 2014-11-18 2014-11-18 
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Gestione Accessi 94 1 P03 SALA1 2014-11-21 2014-11-24 Materiale avanzato dalla installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 59 30 B1L03 SALA2 ISOLA10 2014-11-26 2014-11-27 PROG ANTIRICICLAGGIO
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 49 8 A2L11 SALA2 ISOLA10 2014-11-26 2014-11-27 PROG ANTIRICICLAGGIO
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 54 8 P02 SALA1 ISOLA1 2014-11-26 2014-11-27 PROG CERT
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 120 1 P18 SALA2 ISOLA10 2014-12-04 2014-12-04 PROGETTO ANTIRICICLAGGIO
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 121 1 P18 SALA2 ISOLA10 2014-12-04 2014-12-04 PROGETTO ANTIRICICLAGGIO
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 49 26 A2L11 SALA2 2014-12-05 2014-12-05 MOVING ARTE ANTICA
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 118 1 P09 SALA2-ISOLA10-F2P1 2014-12-15 2014-12-15 progetto antiriciclaggio antiterrorismo, soluzione a tendere
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 119 6 P09 SALA2-ISOLA10-F2P1 2014-12-15 2014-12-15 progetto antiriciclaggio antiterrorismo, soluzione a tendere
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 98 1 P05 SALA1 ISOLA1 2014-12-12 2014-12-18 progetto nas rete cert
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Aggiornamento 95 1 P25 P25 2014-12-29 2014-12-29 Scarico di sistema per aggiornamento posizioni magazzino (da P25 a P33)
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 54 182 P02 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 2 42 A2L05 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 47 8 A2L09 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 48 18 A1L09 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 54 38 P02 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 2 8 A2L05 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 48 4 A1L09 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Aggiornamento 74 1 P13 P13 2015-01-15 2015-01-15 Scarico di sistema per aggiornamento posizioni magazzino (da P13 a Z1L04)
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 140 1 M08 SALA2 2015-01-27 2015-01-28 progetto superdome2
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI POSTEL 125 1 P23 RESTITUZIONE 2015-01-29 2015-01-30 RESTITUZIONE MERCE POSTEL
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 97 1 P34 SALA1 2015-01-29 2015-01-30 INSTALLAZIONE CENTERA
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Facility 139 1 M08 SALA1-ISOLA7 2015-01-29 2015-01-30 
-chiamata	risultato	riferimenti
-SCARICO	0	PISCAZZI Aggiornamento 135 1 P21 P21 2015-01-30 2015-01-30 Scarico di sistema per aggiornamento posizioni magazzino (da P21 a UFFICIO_RESPONSABILE)
-chiamata	risultato	riferimenti
-SCARICO	0	MANZOGI9 Facility 59 4 B1L03 SALA1 2015-02-02 2015-02-02 APPARATO CENTERA
+risultato	riferimenti
+0	SCARICO Sistema Facility 87 1 P06 SALA1-ISOLA_STORAGE 2014-06-17 2014-06-17 Progetto EMC2 destinazione vblock isola storage
+risultato	riferimenti
+0	SCARICO Sistema Facility 14 6 B1L03 SALA1-ISOLA_STORAGE 2014-06-17 2014-06-17 Richiesto da Facility referente Lucati progetto EMC2 destinazione vblock isola storage
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 72 3 P17 SALA1-ISOLA7 2014-02-11 2014-02-11 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 73 1 P17 SALA1-ISOLA7 2014-02-11 2014-02-11 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 75 2 P17 SALA1-ISOLA7 2014-02-13 2014-02-13 progetto full mvno isola7, referente Farina per Postemobile Mobile (tec)
+risultato	riferimenti
+0	SCARICO Sistema Facility 90 1 P08 SALA1-ISOLA_STORAGE 2014-06-24 2014-06-24 attivita per conto di EMC2, spostato in sala il giorno stesso
+risultato	riferimenti
+0	SCARICO Sistema Facility 91 1 B1L13 SALA1-ISOLA_STORAGE 2014-06-26 2014-06-26 cablaggio cavi alimentazione armadio rack vmax postel
+risultato	riferimenti
+0	SCARICO Sistema Prossimita 61 220 UFFICIO3 UFFICIO3 2014-06-27 2014-06-27 Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3
+risultato	riferimenti
+0	SCARICO Sistema Prossimita 86 200 UFFICIO3 UFFICIO3 2014-06-27 2014-06-27 Scarico rimanenze perche assegnate alla struttura Prossimita, custodite in armadio ufficio3
+risultato	riferimenti
+0	SCARICO Sistema Facility 89 6 P16 SALA2 2014-06-20 2014-06-27 Implementazione infrstruttura Sun per Fase2, destinazioni ISOLE 10 13 16
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 54 6 P02 SALA1-ISOLA5 2014-06-30 2014-06-30 email di Farina, progetto FULL MVNO. consegnato da Accessi a Lorusso
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 80 A1L08 SALA2 2014-06-30 2014-06-30 allestimento switch fase2, referente Florio
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 30 A2L08 SALA2 2014-06-30 2014-06-30 allestimento switch fase2, referente Florio
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 54 2 P01 SALA1 2014-07-10 2014-07-10 progetto FULL MVNO per conto di Farina Andrea
+risultato	riferimenti
+0	SCARICO Sistema Facility 92 1 P17 SALA2 2014-07-18 2014-07-18 allestimento centera sala2 referente lucati gennarelli
+risultato	riferimenti
+0	SCARICO Sistema Facility 54 1 P17 SALA2 2014-07-18 2014-07-18 allestimento centera sala2 referente lucati gennarelli
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 2 2 A2L05 A2L05 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 2 695 P16 P16 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 2 695 B1L06 B1L06 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 49 50 A1L11 A1L11 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 88 15 P16 P16 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 88 15 B1L01 B1L01 2014-07-24 2014-07-24 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Sistema Polo Immobiliare 2 32 A2L05 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
+risultato	riferimenti
+0	SCARICO Sistema Polo Immobiliare 48 4 A2L10 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
+risultato	riferimenti
+0	SCARICO Sistema Polo Immobiliare 47 4 A2L09 SALA2 2014-08-11 2014-08-11 Futura site coss Sala2
+risultato	riferimenti
+0	SCARICO Sistema Postemobile TLC 46 100 A1L07 SALA2 2014-08-07 2014-08-07 progetto non pervenuto
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 46 100 A1L07 A1L07 2014-09-01 2014-09-01 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 46 71 A2L08 A2L08 2014-09-01 2014-09-01 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Sistema Postemobile TLC 46 60 A2L07 TLC 2014-09-01 2014-09-01 Attivita site DC2 ditta OSAT, referente Napoli
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 200 A1L06 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 80 A1L07 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 32 A2L08 SALA2+TLC 2014-07-16 2014-07-16 referente Napoli, site modulo 2 dcto cablaggio sala2 e tlc
+risultato	riferimenti
+0	SCARICO Sistema POSTECOM 5 4 B1L04 LOCALE_SECURITY 2014-09-24 2014-09-24 PROGETTO VIDEOSORVEGLIANZA
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 94 1 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 74 1 P17 P17 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 84 2 P05 P05 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 59 56 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 55 4560 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 56 4560 P01 P01 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 83 1 B2L04 B2L04 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 38 2 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Sistema Postemobile Tec 39 10 P10 SALA2 2014-06-01 2014-06-30 cablaggio storage sala2
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 39 8 P10 P10 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 63 7 P16 P16 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 14 21 B1L03 B1L03 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 200 A2L06 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage ln san sala2
+risultato	riferimenti
+0	SCARICO Sistema Facility 46 8 A2L08 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage lan san sala2
+risultato	riferimenti
+0	SCARICO Sistema Facility 6 4 A2L04 SALA2+TLC 2014-09-26 2014-09-29 cablaggio storage lan san sala2
+risultato	riferimenti
+0	SCARICO Sistema Postemobile TLC 13 2 P10 SALA1-ISOLA5 2014-09-29 2014-03-10 progetto telepresence isola5 sala1
+risultato	riferimenti
+0	SCARICO Vilardi Aggiornamento 68 6 P06 P06 2014-09-26 2014-09-26 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO Sistema Sistema 68 4 P30 SALA2 2014-09-26 2014-09-26 scarico 4 dei 6 switch wsc4948e progetto mvno
+risultato	riferimenti
+0	SCARICO Sistema Sistema 85 2 P05 SALA1 2014-09-26 2014-09-26 Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site
+risultato	riferimenti
+0	SCARICO Sistema Sistema 93 2 P06 SALA1 2014-09-26 2014-09-26 Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 3 12 P01 SALA2+TLC 2014-09-30 2014-09-30 cablaggio storage lan san sala2
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 4 12 P01 SALA2+TLC 2014-09-30 2014-09-30 cablaggio storage lan san sala2
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 54 79 P02 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 47 16 A2L09 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 2 10 A2L05 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 46 198 A1L08 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 19 24 A2L13 SALA1-SALA2 2014-10-17 2014-10-17 ref. Lucati, safe program dcx upgrade postel
+risultato	riferimenti
+0	SCARICO PISCAZZI Aggiornamento 54 88 B1L09 B1L09 2014-10-21 2014-10-21 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 107 2 P09 SALA2-ISOLA13 2014-10-23 2014-10-23 progetto safe program
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 107 6 P18 SALA2-ISOLA13 2014-10-23 2014-10-23 progetto safe program
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 109 1 P06 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 110 1 P06 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 111 1 P15 SALA2-ISOLA13 2014-10-30 2014-10-30 scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 76 8 A2L11 SALA2 2014-10-28 2014-10-28 progetto coss sala2 cablaggio (item73)
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 78 41 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 79 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 80 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 81 40 B2L05 B2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 82 10 B2L04 B2L04 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 78 41 C2L05 C2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 79 40 C2L05 C2L05 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 82 10 C2L04 C2L04 2014-10-30 2014-10-30 Scarico invocato dal sistema per aggiornamento giacenza magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Geico Lender 82 39 C2L04 SALA2-ISOLA13 2014-10-29 2014-10-29 richiesti da Gheriani, compartimentazione corridoi isola13
+risultato	riferimenti
+0	SCARICO MANZOGI9 Geico Lender 81 11 C2L05 SALA2-ISOLA13 2014-10-30 2014-10-30 richiesti da La Tona, compartimentazione corridoi isola13
+risultato	riferimenti
+0	SCARICO MANZOGI9 Geico Lender 80 11 C2L05 SALA2-ISOLA13 2014-10-30 2014-10-30 richiesti da La Tona, compartimentazione corridoi isola13
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 54 69 P02 SALA2-ISOLA13 2014-10-29 2014-10-29 GECT per CRM, opensource
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 2 22 A2L05 SALA2-ISOLA13 2014-10-29 2014-10-29 GECT per CRM, opensource
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 47 22 A2L09 SALA2-ISOLA13 2014-10-30 2014-10-30 monitoraggio opensource sala2
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 112 2 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 6 8 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 scarico per movimentazione cerce
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 54 22 P22 SALA2-ISOLA13 2014-11-03 2014-11-03 scarico per movimentazione merce
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 113 1 P08 SALA2 2014-11-05 2014-11-05 
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 114 7 P08 SALA2 2014-11-11 2014-11-11 
+risultato	riferimenti
+0	SCARICO PISCAZZI Aggiornamento 115 1 C2-L13 C2-L13 2014-11-11 2014-11-11 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 76 31 A2L11 A2L11 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 46 102 A1L08 A1L08 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 46 51 A2L08 A2L08 2014-11-17 2014-11-17 Scarico invocato dal sistema per aggiornamento posizione magazzino
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 115 1 C2-L14 SALA2-ISOLA13 2014-11-18 2014-11-18 
+risultato	riferimenti
+0	SCARICO MANZOGI9 Gestione Accessi 94 1 P03 SALA1 2014-11-21 2014-11-24 Materiale avanzato dalla installazione del VBLOCK AVAMAR rispedito (per conto di EMC2 ) a VCE
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 59 30 B1L03 SALA2 ISOLA10 2014-11-26 2014-11-27 PROG ANTIRICICLAGGIO
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 49 8 A2L11 SALA2 ISOLA10 2014-11-26 2014-11-27 PROG ANTIRICICLAGGIO
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 54 8 P02 SALA1 ISOLA1 2014-11-26 2014-11-27 PROG CERT
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 120 1 P18 SALA2 ISOLA10 2014-12-04 2014-12-04 PROGETTO ANTIRICICLAGGIO
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 121 1 P18 SALA2 ISOLA10 2014-12-04 2014-12-04 PROGETTO ANTIRICICLAGGIO
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 49 26 A2L11 SALA2 2014-12-05 2014-12-05 MOVING ARTE ANTICA
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 118 1 P09 SALA2-ISOLA10-F2P1 2014-12-15 2014-12-15 progetto antiriciclaggio antiterrorismo, soluzione a tendere
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 119 6 P09 SALA2-ISOLA10-F2P1 2014-12-15 2014-12-15 progetto antiriciclaggio antiterrorismo, soluzione a tendere
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 98 1 P05 SALA1 ISOLA1 2014-12-12 2014-12-18 progetto nas rete cert
+risultato	riferimenti
+0	SCARICO MANZOGI9 Aggiornamento 95 1 P25 P25 2014-12-29 2014-12-29 Scarico di sistema per aggiornamento posizioni magazzino (da P25 a P33)
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 54 182 P02 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 2 42 A2L05 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 47 8 A2L09 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 48 18 A1L09 SALA1 2015-01-09 2015-01-09 VMWARE 4,5,6,7,8 VMAX DTT E TP MEDIAMANAGER
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 54 38 P02 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 2 8 A2L05 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 48 4 A1L09 SALA1 2015-01-12 2015-01-12 VMWARE 9 SERVER MASTER BACKUP. COMPLETAMENTO SITE
+risultato	riferimenti
+0	SCARICO PISCAZZI Aggiornamento 74 1 P13 P13 2015-01-15 2015-01-15 Scarico di sistema per aggiornamento posizioni magazzino (da P13 a Z1L04)
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 140 1 M08 SALA2 2015-01-27 2015-01-28 progetto superdome2
+risultato	riferimenti
+0	SCARICO PISCAZZI POSTEL 125 1 P23 RESTITUZIONE 2015-01-29 2015-01-30 RESTITUZIONE MERCE POSTEL
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 97 1 P34 SALA1 2015-01-29 2015-01-30 INSTALLAZIONE CENTERA
+risultato	riferimenti
+0	SCARICO PISCAZZI Facility 139 1 M08 SALA1-ISOLA7 2015-01-29 2015-01-30 
+risultato	riferimenti
+0	SCARICO PISCAZZI Aggiornamento 135 1 P21 P21 2015-01-30 2015-01-30 Scarico di sistema per aggiornamento posizioni magazzino (da P21 a UFFICIO_RESPONSABILE)
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 59 4 B1L03 SALA1 2015-02-02 2015-02-02 APPARATO CENTERA
+risultato	riferimenti
+0	SCARICO MURATO48 Facility 54 39 P02 SALA2 2015-02-04 2015-02-04 ref. Florio, progetto moving server SAP
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 141 4 P05 SALA2 2015-02-03 2015-02-04 PROGETTO SITE VMWARE FASE 5
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 143 1 P16 SALA2 2015-02-03 2015-02-04 PROGETTO SITE VMWARE FASE 5
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 6 16 P05 SALA2 2015-02-03 2015-02-04 PROGETTO SITE VMWARE FASE 5
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 54 44 P05 SALA2 2015-02-03 2015-02-04 PROGETTO SITE VMWARE FASE 5
+risultato	riferimenti
+0	SCARICO MANZOGI9 Facility 54 11 P16 SALA2 2015-02-03 2015-02-04 PROGETTO SITE VMWARE FASE 5

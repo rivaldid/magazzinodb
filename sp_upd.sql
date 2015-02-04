@@ -61,7 +61,7 @@ DELIMITER ;
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 -- *********************************************************************
 
-
+/*
 DELIMITER //
 -- DROP PROCEDURE IF EXISTS upd_instestazione_registro//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_instestazione_registro`( 
@@ -75,6 +75,7 @@ END IF;
 UPDATE REGISTRO SET contatto = in_contatto WHERE id_registro = in_id_registro;
 END //
 DELIMITER ;
+
 
 
 DELIMITER //
@@ -112,7 +113,7 @@ END IF;
 SELECT @ritorno AS 'risultato';
 END //
 DELIMITER ;
-
+*/
 
 DELIMITER //
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_quantita//
