@@ -204,7 +204,7 @@ DECLARE temp_numero VARCHAR(45);
 
 IF (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE id_registro=in_id_registro)) THEN
 	SELECT contatto,tipo,numero FROM REGISTRO WHERE id_registro=in_id_registro INTO temp_contatto,temp_tipo,temp_numero;
-	CALL input_registro(temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file);
+	CALL input_registro(temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file,@my_id_registro);
 	SET @ritorno := 0;
 ELSE
 	SET @ritorno := 1;
