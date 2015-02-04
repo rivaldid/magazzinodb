@@ -127,7 +127,7 @@ DELIMITER ;
 
 
 -- ---------------------- AGGIORNAMENTO MAGAZZINO ---------------------- 
-DELIMITER //
+/*DELIMITER //
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`(
 IN in_utente VARCHAR(45),
@@ -180,3 +180,4 @@ END IF; -- end test valori
 END //
 DELIMITER ;
 DROP PROCEDURE aggiornamento_magazzino;
+*/

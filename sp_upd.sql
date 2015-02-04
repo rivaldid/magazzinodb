@@ -210,7 +210,7 @@ ELSE
 	SET @ritorno := 1;
 END IF;
 
-SELECT 'aggiornamento_registro' AS chiamata, @ritorno AS risultato, CONCAT_WS(' ',in_id_registro,temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file) AS riferimenti;
+SELECT @ritorno AS risultato,CONCAT_WS(' ','aggiornamento_registro',in_id_registro,temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file) AS riferimenti;
 
 END //
 DELIMITER ;

@@ -1191,6 +1191,7 @@ CALL SCARICO('MANZOGI9','Facility','54','11','P16','SALA2','2015-02-03','2015-02
 -- CALL input_registro(contatto,tipo,numero,gruppo,data,file,@id_registro);
 -- CALL aggiornamento_magazzino_quantita(utente, id_merce, posizione, quantita, nuova_quantita, data);
 -- CALL aggiornamento_magazzino_posizione(utente, id_merce, posizione, nuova_posizione, quantita, data);
+-- CALL aggiornamento_registro(id_registro, gruppo, data, file, @myvar);
 
 -- **************** <DEPRECATE> ********************************************************************************************************************
 -- CALL upd_giacenza_magazzino(utente,id_merce, posizione, quantita, data);
