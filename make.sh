@@ -36,3 +36,6 @@ $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source debug.sql \W;' >> $logf
 
 $BINECHO "Carico i dati" >> $logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql \W;' >> $logfile
+
+$BINECHO "Carico i dati@web" >> $logfile
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source ../GMDCTO/log/dati2.log \W;' >> $logfile
