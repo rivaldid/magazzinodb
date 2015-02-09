@@ -1063,7 +1063,8 @@ CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','
 CALL upd_posizione_magazzino('PISCAZZI','54','B1L09','P02','2014-10-21');
 CALL SCARICO('PISCAZZI','Facility','107','2','P09','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
 CALL SCARICO('PISCAZZI','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
-CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','1','P16','2014-10-27','site sala2','Tecnotrans S.r.l.','');
+CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','2','P16','2014-10-27','site sala2','Tecnotrans S.r.l.','');
+CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','MATERIALE ACCESSORIO COSS','2','P07','2014-10-27','site sala2','Tecnotrans S.r.l.','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224523/087/01 C','2014-10-16','DDT-HP-GW0F_22452308701_C.pdf','HP TFT7600 KVM KIT','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224662/034/01 C','2014-10-17','DDT-HP-GW0F_22466203401_C.pdf','HP CONSOLE INTERFACE ADAPTER','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 24378/023/01 C','2014-10-15','DDT-HP-GW0F_22437802301_C.pdf','SERVER HP BL460C','8','P15','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');

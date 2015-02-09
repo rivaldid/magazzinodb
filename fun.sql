@@ -30,3 +30,16 @@ DELIMITER //
 CREATE DEFINER=`magazzino`@`localhost` FUNCTION `doc_exists`(in_fornitore VARCHAR(45), in_tipo_doc VARCHAR(45), in_num_doc VARCHAR(45)) RETURNS TINYINT(1)
 RETURN (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE contatto=in_fornitore AND tipo=in_tipo_doc AND numero=in_num_doc));//
 DELIMITER ;
+
+DELIMITER //
+-- DROP FUNCTION IF EXISTS `next_reintegro_doc`//
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `next_reintegro_doc`() RETURNS VARCHAR(45)
+BEGIN
+DECLARE foo VARCHAR(45);
+SET foo=(SELECT MAX(CAST(numero AS UNSIGNED))+1 FROM REGISTRO WHERE tipo='Reintegro');
+IF (foo IS NULL) THEN
+SET foo='1';
+END IF;
+RETURN foo; 
+END//
+DELIMITER ;
