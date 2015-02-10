@@ -191,6 +191,9 @@ DELIMITER //
 -- DROP PROCEDURE IF EXISTS aggiornamento_registro//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_registro`(
 IN in_id_registro INT,
+IN in_contatto VARCHAR(45),
+IN in_tipo VARCHAR(45),
+IN in_numero VARCHAR(45),
 IN in_gruppo INT,
 IN in_data DATE,
 IN in_file TEXT,
@@ -202,15 +205,26 @@ DECLARE temp_contatto VARCHAR(45);
 DECLARE temp_tipo VARCHAR(45);
 DECLARE temp_numero VARCHAR(45);
 
-IF (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE id_registro=in_id_registro)) THEN
-	SELECT contatto,tipo,numero FROM REGISTRO WHERE id_registro=in_id_registro INTO temp_contatto,temp_tipo,temp_numero;
-	CALL input_registro(temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file,@my_id_registro);
-	SET @ritorno := 0;
-ELSE
-	SET @ritorno := 1;
-END IF;
+DECLARE my_id_registro INT;
 
-SELECT @ritorno AS risultato,CONCAT_WS(' ','aggiornamento_registro',in_id_registro,temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file) AS riferimenti;
+IF (in_id_registro IS NOT NULL) THEN
+	IF (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE id_registro=in_id_registro)) THEN
+		SELECT contatto,tipo,numero FROM REGISTRO WHERE id_registro=in_id_registro INTO temp_contatto,temp_tipo,temp_numero;
+		CALL input_registro(temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file,@my_id_registro);
+		SET @ritorno := 0;
+	ELSE
+		SET @ritorno := 1;
+	END IF;
+	SELECT @ritorno AS risultato,CONCAT_WS(' ','aggiornamento_registro',in_id_registro,temp_contatto,temp_tipo,temp_numero,in_gruppo,in_data,in_file) AS riferimenti;
+ELSE
+	IF ((in_contatto IS NOT NULL) AND (in_tipo IS NOT NULL) AND (in_numero IS NOT NULL)) THEN
+		CALL input_registro(in_contatto,in_tipo,in_numero,in_gruppo,in_data,in_file,@my_id_registro);
+		SET @ritorno := 0;
+	ELSE
+		SET @ritorno := 1;
+	END IF;
+	SELECT @ritorno AS risultato,CONCAT_WS(' ','aggiornamento_registro',my_id_registro,in_contatto,in_tipo,in_numero,in_gruppo,in_data,in_file) AS riferimenti;
+END IF;
 
 END //
 DELIMITER ;
