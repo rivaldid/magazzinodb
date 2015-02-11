@@ -1037,7 +1037,10 @@ CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc(
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'vmax panel emc2 eco76906','10','P12','2014-09-26','pannelli vmax imballati',NULL,NULL);
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'enclosure blade postel c7000','1','P34','2014-09-26','materiale postel imballato',NULL,NULL);
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC','11','P19','2014-09-26','ref Napoli spedizione UPS Standard, colli da 5kg cad.',NULL,NULL);
-CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC BLADE WS-X6748-10G-TX CISCO CATALYST','2','P29','2014-09-26','apparecchiature smontate ref. Napoli',NULL,NULL);
+CALL CARICO('PISCAZZI','ITALTEL','DDT','NVLS 60077438','2014-12-29','DDT_ITALTEL_NVLS60077438.pdf','APPARATI POSTEMOBILE-TLC BLADE WS-X6748-GE-TX CISCO CATALYST','2','M07','2014-09-26','Saldo network 133637',NULL,NULL);
+CALL CARICO('PISCAZZI','ITALTEL','DDT','NVLS 60077438','2014-12-29','DDT_ITALTEL_NVLS60077438.pdf','APPARATI POSTEMOBILE-TLC BLADE WS-X6724-SFP','2','M07','2014-09-26','Saldo network 133637',NULL,NULL);
+CALL CARICO('PISCAZZI','ITALTEL','DDT','NVLS 60077438','2014-12-29','DDT_ITALTEL_NVLS60077438.pdf','APPARATI POSTEMOBILE-TLC BLADE PWR-2700-AC','2','M07','2014-09-26','Saldo network 133637',NULL,NULL);
+CALL CARICO('PISCAZZI','ITALTEL','DDT','NVLS 60077438','2014-12-29','DDT_ITALTEL_NVLS60077438.pdf','APPARATI POSTEMOBILE-TLC BLADE GLC-SX-MMD','48','M07','2014-09-26','Saldo network 133637',NULL,NULL);
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC n2k-c2248-e-1ge','6','P29','2014-09-26','switch postemobile cablaggio sala2 ref. Napoli',NULL,NULL);
 CALL CARICO('Sistema','Poste Italiane S.p.A.','Sistema',(SELECT next_system_doc()),'2014-09-26',NULL,'APPARATI POSTEMOBILE-TLC n7k-m224xp-23l','2','P29','2014-09-26','switch postemobile cablaggio sala2 ref. Napoli',NULL,NULL);
 CALL SCARICO('Sistema','Sistema','85','2','P05','SALA1','2014-09-26','2014-09-26','Rimozione dal magazzino causa assenza, apparecchiatura montata in precedenti site',@myvar);
@@ -1050,7 +1053,7 @@ CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-0
 CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
 CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
 -- CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
-CALL CARICO('PISCAZZI','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TELECOM-294_RZ_2014.pdf','APPARATI RACK TELECOM KMS6 RS/6000','6','M8-M9','2014-10-08','moving telecom da Rozzano','DYNAMICOS',NULL);
+CALL CARICO('PISCAZZI','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TELECOM-294_RZ_2014.pdf','APPARATI RACK TELECOM KMS6 RS/6000','6','M08-M09','2014-10-08','moving telecom da Rozzano','DYNAMICOS',NULL);
 CALL SCARICO('MURATO48','Facility','54','79','P02','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO('MURATO48','Facility','47','16','A2L09','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO('MURATO48','Facility','2','10','A2L05','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
@@ -1059,18 +1062,18 @@ CALL SCARICO('MURATO48','Facility','19','24','A2L13','SALA1-SALA2','2014-10-17',
 CALL CARICO('MANZOGI9','Tecnotrans S.r.l','DDT','40009','2014-10-16','DDT-FUJITSU-40009.pdf','BRETELLA UTP-CAT6 3M','88','B1L09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','BRETELLA FO-LC-LC-50/125 5M','32','P09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','2','P09','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
-CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
+-- CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 CALL upd_posizione_magazzino('PISCAZZI','54','B1L09','P02','2014-10-21');
-CALL SCARICO('PISCAZZI','Facility','107','2','P09','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
-CALL SCARICO('PISCAZZI','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
-CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','2','P16','2014-10-27','site sala2','Tecnotrans S.r.l.','');
-CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','MATERIALE ACCESSORIO COSS','2','P07','2014-10-27','site sala2','Tecnotrans S.r.l.','');
+CALL SCARICO('PISCAZZI','Facility','107','2','P29','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
+-- CALL SCARICO('PISCAZZI','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
+CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','2','P16','2014-10-27','site sala2 isola storage','Tecnotrans S.r.l.','');
+CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','MATERIALE ACCESSORIO COSS','2','P07','2014-10-27','site sala2 isola storage','Tecnotrans S.r.l.','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224523/087/01 C','2014-10-16','DDT-HP-GW0F_22452308701_C.pdf','HP TFT7600 KVM KIT','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224662/034/01 C','2014-10-17','DDT-HP-GW0F_22466203401_C.pdf','HP CONSOLE INTERFACE ADAPTER','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 24378/023/01 C','2014-10-15','DDT-HP-GW0F_22437802301_C.pdf','SERVER HP BL460C','8','P15','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 -- CALL SCARICO('MANZOGI9','Facility','109','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
-CALL SCARICO('MANZOGI9','Facility','110','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
-CALL SCARICO('MANZOGI9','Facility','111','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
+CALL SCARICO('MANZOGI9','Facility','110','1','P09','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
+CALL SCARICO('MANZOGI9','Facility','111','1','P16','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
 CALL SCARICO('MANZOGI9','Facility','76','8','A2L11','SALA2','2014-10-28','2014-10-28','progetto coss sala2 cablaggio (item73)',@myvar);
 CALL upd_posizione_magazzino('MANZOGI9','78','B2L05','C2L05','2014-10-30');
 CALL upd_posizione_magazzino('MANZOGI9','79','B2L05','C2L05','2014-10-30');
@@ -1090,19 +1093,19 @@ CALL SCARICO('MANZOGI9','Facility','47','22','A2L09','SALA2-ISOLA13','2014-10-30
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','40013','2014-10-16','DDT-FUJITSU-40013.pdf','BRETELLA UTP-CAT6 3M','22','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Tecnotrans S.r.l.','4100169594');
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','SERVER FUJITSU RX600 8S-D3141S26361 K1402 V400 YLCE007830 YLCE007831','2','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','BRETELLA FO-LC-LC-50/125 5M','8','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
-CALL SCARICO('PISCAZZI','Facility','112','2','P15','SALA2-ISOLA13','2014-11-03','2014-11-03','',@myvar);
+-- CALL SCARICO('PISCAZZI','Facility','112','2','P15','SALA2-ISOLA13','2014-11-03','2014-11-03','',@myvar);
 CALL SCARICO('PISCAZZI','Facility','6','8','P22','SALA2-ISOLA13','2014-11-03','2014-11-03','scarico per movimentazione cerce',@myvar);
 CALL SCARICO('PISCAZZI','Facility','54','22','P22','SALA2-ISOLA13','2014-11-03','2014-11-03','scarico per movimentazione merce',@myvar);
 CALL CARICO('PISCAZZI','Facility','MDS','185','2014-11-03','','BRETELLA FO-LC-LC-50/125 5M','8','A2L04','2014-11-03','reintegro merce per movimentazione interna','','');
 CALL CARICO('PISCAZZI','Facility','MDS','185','2014-11-03','','BRETELLA UTP-CAT6 3M','22','P02','2014-11-03','reintegro merce per movimentazione interna','','');
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','SO 300214556','2014-06-27','DDT-FUJITSU-SO_300214556.pdf','APPARATO PER COSS','1','P08','2014-11-05','','','');
-CALL SCARICO('PISCAZZI','Facility','113','2','P22','SALA2-ISOLA13','2014-11-05','2014-11-05','',@myvar);
+CALL SCARICO('PISCAZZI','Facility','113','1','P06','SALA2-ISOLA13','2014-11-05','2014-11-05','',@myvar);
 
 -- lifegoeson@web
 CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','988','2014-11-04','DDT-EMC-988.jpg','PB-DCX-48PORT BLADE-8G','7','P08','2014-11-07','','Safe Watcher S.r.l.','');
-CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','14 - 010000','2014-11-10','DDT-EMC-14-010000.jpg','DCX-48PORT BLADE 8G','1','C2-L13','2014-11-11','','Safe Watcher S.r.l.','');
-CALL SCARICO('PISCAZZI','Facility','114','1','P08','SALA2','2014-11-11','2014-11-11','',@myvar);
-CALL upd_posizione_magazzino('PISCAZZI','115','C2-L13','C2-L14','2014-11-11');
+CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','DDT','14 - 010000','2014-11-10','DDT-EMC-14-010000.jpg','DCX-48PORT BLADE 8G','1','C2L13','2014-11-11','','Safe Watcher S.r.l.','');
+CALL SCARICO('PISCAZZI','Facility','114','1','P06','SALA2','2014-11-11','2014-11-11','',@myvar);
+CALL upd_posizione_magazzino('PISCAZZI','115','C2L13','C2L14','2014-11-11');
 CALL CARICO('MANZOGI9','INFORDATA','DDT','106/14','2014-11-11','DDT_INFORDATA_106-14.pdf','BRETELLA FO-LC-LC-50/125 10M','100','B1L01','2014-11-17','','NEXI Distribuzione','');
 CALL CARICO('MANZOGI9','INFORDATA','DDT','106/14','2014-11-11','DDT_INFORDATA_106-14.pdf','BRETELLA FO-LC-LC-50/125 5M','25','A2L04','2014-11-17','','NEXI Distribuzione','');
 CALL CARICO('MANZOGI9','INFORDATA','DDT','106/14','2014-11-11','DDT_INFORDATA_106-14.pdf','BRETELLA FO-LC-LC-50/125 20M','50','A2L11','2014-11-17','','NEXI Distribuzione','');
@@ -1113,7 +1116,7 @@ CALL upd_posizione_magazzino('MANZOGI9','47','A2L11','A1L11','2014-11-17');
 CALL upd_posizione_magazzino('MANZOGI9','46','A1L08','A2L07','2014-11-17');
 CALL upd_posizione_magazzino('MANZOGI9','46','A2L08','A2L07','2014-11-17');
 CALL CARICO('PISCAZZI','HMS IT S.p.A.','DDT','RO 38','2014-11-13','DDT-HMSITS.p.A.-RO38.jpg','SERVER X3850 X5-JB9+JBA','3','P15','2014-11-18','OGNI SERVER DIVISO IN DUE COLLI ','HMS IT S.p.A.','4100169026');
--- CALL SCARICO('MANZOGI9','Facility','115','1','C2-L14','SALA2-ISOLA13','2014-11-18','2014-11-18','',@myvar);
+-- CALL SCARICO('MANZOGI9','Facility','115','1','C2L14','SALA2-ISOLA13','2014-11-18','2014-11-18','',@myvar);
 -- *********************************************************************
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 DROP PROCEDURE upd_giacenza_magazzino;
@@ -1130,12 +1133,12 @@ CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 219473/0
 CALL CARICO('MANZOGI9','Hewlett Packard Italiana S.p.A.','DDT','GW0F 218122/019/01 C','2014-08-05','DDT-HP-GW0F21812201901C.pdf','HP 4GB 1RX4 PC3L-10600R-9 Kit','6','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
 CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
-CALL SCARICO('MANZOGI9','Facility','120','1','P09','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
-CALL SCARICO('MANZOGI9','Facility','121','1','P18','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('MANZOGI9','Facility','120','1','P15','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
+CALL SCARICO('MANZOGI9','Facility','121','1','A2L05','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO('MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-12-05','MOVING ARTE ANTICA',@myvar);
 CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086','2014-12-03','Letteradivettura-PosteMobileS.p.a.-J100026900086.pdf','MATERIALE ELETTRICO','1','P06','2014-12-12','Mail del 10/12 da FARINA ANDREA','SDA Express Courier','');
 -- CALL SCARICO('PISCAZZI','Facility','118','1','A2L05','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
-CALL SCARICO('PISCAZZI','Facility','119','1','P09','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
+CALL SCARICO('PISCAZZI','Facility','119','1','C2L13','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO('PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2014-12-18','progetto nas rete cert',@myvar);
 CALL CARICO('PISCAZZI','Emmegi','DDT','3797','2014-12-17','DDT-Emmegi-3797.jpg','BRETELLA UTP-CAT6 5M','46','B1L05','2014-12-22','','BRT SPA','4501193782');
 CALL CARICO('MANZOGI9','ICT Logistica S.p.A.','Lettera_di_vettura','186','2014-12-24','Letteradivettura-ICTLogisticaS.p.A.-186.pdf','BROCADE 38.6 KG','1','P36','2014-12-29','MATERIALE POSTEL VARIO','Safe Watcher S.r.l.','');
@@ -1167,9 +1170,9 @@ CALL CARICO('PISCAZZI','Hewlett Packard International Sarl','DDT','GW0F233259/00
 CALL CARICO('PISCAZZI','Hewlett Packard International Sarl','DDT','GW0F233412/001/01C','2015-01-22','DDT-HewlettPackardInternationalSarl-GW0F23341200101C.pdf','HP SUPERDOME 2','1','M08','2015-01-27','','MITSafetrans S.r.l.','');
 CALL SCARICO('PISCAZZI','Facility','140','1','M08','SALA2','2015-01-27','2015-01-28','progetto superdome2',@myvar);
 CALL CARICO('PISCAZZI','Facility','Sistema','51',NULL,'','BRETELLA FO-LC-LC-50/125 10M','100','A2L05','2015-01-30','reintegro fibre HP','','');
-CALL SCARICO('PISCAZZI','POSTEL','125','1','P36','RESTITUZIONE','2015-01-29','2015-01-30','RESTITUZIONE MERCE POSTEL',@myvar);
+CALL SCARICO('PISCAZZI','POSTEL','125','1','P18','RESTITUZIONE','2015-01-29','2015-01-30','RESTITUZIONE MERCE POSTEL',@myvar);
 CALL SCARICO('PISCAZZI','Facility','97','1','P34','SALA1','2015-01-29','2015-01-30','INSTALLAZIONE CENTERA',@myvar);
-CALL SCARICO('PISCAZZI','Facility','139','1','M08','SALA1-ISOLA7','2015-01-29','2015-01-30','',@myvar);
+CALL SCARICO('PISCAZZI','Facility','139','1','P21','SALA1-ISOLA7','2015-01-29','2015-01-30','',@myvar);
 CALL aggiornamento_magazzino_posizione('PISCAZZI','135','P21','UFFICIO_RESPONSABILE','1','2015-01-30');
 CALL SCARICO('MANZOGI9','Facility','59','4','B1L03','SALA1','2015-02-02','2015-02-02','APPARATO CENTERA',@myvar);
 CALL CARICO('MANZOGI9','INFORDATA','DDT','189753004','2015-01-27','DDT-INFORDATA-189753004.pdf','SERVER FUJITSU S26361-K1484-V200','4','P05','2015-02-02','PROGETTO SITE VMWARE FASE 5','Tecnotrans S.r.l','4100176202');
@@ -1179,13 +1182,46 @@ CALL CARICO('MANZOGI9','Facility','MDS','215','2015-01-30','','BRETELLA UTP-CAT6
 CALL SCARICO('MURATO48','Facility','54','39','P02','SALA2','2015-02-04','2015-02-04','ref. Florio, progetto moving server SAP',@myvar);
 CALL CARICO('MANZOGI9','INFORDATA','BDC','18975807','2015-01-27','BDC-INFORDATA-1510188544.pdf','SERVER FUJITSU RX600 S6','1','P16','2015-01-29','PROGETTO SITE VMWARE FASE 8','Tecnotrans S.r.l','4100176976');
 CALL CARICO('MANZOGI9','INFORDATA','DDT','40006','2015-01-26','DDT-INFORDATA-40006.pdf','BRETELLA UTP-CAT6 3M','11','P16','2015-01-29','PROGETTO SITE VMWARE FASE 8','Tecnotrans S.r.l','4100176976');
-CALL SCARICO('MANZOGI9','Facility','141','1','M08','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 5',@myvar);
-CALL SCARICO('MANZOGI9','Facility','143','1','B2L08','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 8',@myvar);
+CALL SCARICO('MANZOGI9','Facility','141','1','P22','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 5',@myvar);
+CALL SCARICO('MANZOGI9','Facility','143','1','M08','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 8',@myvar);
 CALL SCARICO('MANZOGI9','Facility','6','16','P05','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 5',@myvar);
 CALL SCARICO('MANZOGI9','Facility','54','44','P05','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 5',@myvar);
 CALL SCARICO('MANZOGI9','Facility','54','11','P16','SALA2','2015-02-03','2015-02-04','PROGETTO SITE VMWARE FASE 8',@myvar);
 CALL CARICO('MANZOGI9','Accessi','Reintegro','1','2015-02-04','','BRETELLA FO-SC-SC-50/125 5M','20','A2L04','2015-02-04','REINTEGRO DA INSTALLAZIONE PROGETTO SITE VMWARE FASE 5','Sistema','');
 CALL CARICO('MANZOGI9','Accessi','Reintegro','1','2015-02-04','','BRETELLA UTP-CAT6 3M','55','P01','2015-02-04','REINTEGRO DA INSTALLAZIONE PROGETTO SITE VMWARE FASE 5','Sistema','');
+
+CALL SCARICO('LORUSSO6','Facility','116','2','P22','SALA2-ISOLA13','2015-01-13','2015-02-05','Data collaudo',@myvar);
+CALL aggiornamento_registro(NULL,'INFORDATA','DDT','2015-DDTCL-0000339','478','2015-02-02','DDT-INFORDATA-2015-DDTCL-0000339.pdf',@myvar);
+CALL CARICO('PISCAZZI','INFORDATA','DDT','2015-DDTCL-0000339','2015-02-02','','CAVI ALIMENTAZIONE PROLUNGA MONITOR MT 1.8','16','UFFICIO_RESPONSABILE','2015-02-02','VMWARE FASE 5','BRT SPA','4100176202');
+-- CALL CARICO('PISCAZZI','Emmegi','DDT','2015-DDTCL-0000339','2015-02-02','','CAVI ALIMENTAZIONE PROLUNGA MONITOR MT 1.8','16','UFFICIO_RESPONSABILE','2015-02-02','VMWARE FASE 5','BRT SPA','');
+-- CALL CARICO('PISCAZZI','INFORDATA','DDT','189753004','2015-01-27','DDT-INFORDATA-189753004.jpg','Server fujitsu RX4770','4','SALA2-ISOLA13','2015-02-02','mooving Rozzano','Rhenus Logistics','');
+CALL CARICO('PISCAZZI','INFORDATA','DDT','189753004','2014-12-31','DDT-INFORDATA-189753004.jpg','SERVER FUJITSU RX4770','4','P13','2015-01-27','VMWARE FASE 5','Rhenus Logistics','');
+CALL SCARICO('PISCAZZI','Facility','146','4','B2L08','SALA2-ISOLA13','2014-12-31','2015-02-06','',@myvar);
+CALL SCARICO('MANZOGI9','Facility','108','2','P12','SALA2','2014-10-27','2015-02-06','SITE SALA 2',@myvar);
+CALL SCARICO('MANZOGI9','Facility','109','2','M08-M09','SALA2','2014-10-27','2015-02-06','SITE SALA 2',@myvar);
+CALL aggiornamento_magazzino_posizione('PISCAZZI','106','M8-M9','M10','6','2015-02-10');
+CALL aggiornamento_magazzino_posizione('PISCAZZI','84','P32','P31','2','2015-02-10');
+CALL aggiornamento_registro(NULL,'Italtel S.p.A.','DDT','NVLS 60072390','488','2013-10-23','DDT-ItaltelS.p.A.-NVLS60072390.pdf',@myvar);
+
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS60074913','2014-06-30','DDT-ItaltelS.p.A.-NVLS60074913.jpg','NEXUS 2232PP','16','M7','2014-06-30','POSTE MOBILE\r\nSALDO NETWORK 130483','CEVA LOGISTIC ITALIA SRL','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS60074913','2014-06-30','DDT-ItaltelS.p.A.-NVLS60074913.jpg','N2K-C2248TF-E','16','M7','2014-06-30','POSTE MOBILE\r\nSALDO NETWORK 130483','CEVA LOGISTIC ITALIA SRL','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS60074913','2014-06-30','DDT-ItaltelS.p.A.-NVLS60074913.jpg','NEXUS 7000 F2 48 PORT','4','M7','2014-06-30','POSTE MOBILE\r\nSALDO NETWORK 130483','CEVA LOGISTIC ITALIA SRL','');
+CALL aggiornamento_registro(NULL,'Italtel S.p.A.','DDT','NVLS 60073110','490','2013-12-23','DDT-ItaltelS.p.A.-NVLS60073110.jpg',@myvar);
+CALL aggiornamento_registro(NULL,'Italtel S.p.A.','DDT','NVLS 60073100','491','2013-12-20','DDT-ItaltelS.p.A.-NVLS60073100.jpg',@myvar);
+CALL aggiornamento_registro(NULL,'Italtel S.p.A.','DDT','NVLS 60074311','492','2014-05-19','DDT-ItaltelS.p.A.-NVLS60074311.jpg',@myvar);
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS 60073100','2013-12-20','DDT-ItaltelS.p.A.-NVLS60073100.jpg',' ASR9006-AC-V2','2','P19','2013-12-20','SALDO NETWORK 128618','CEVA LOGISTIC ITALIA SRL','');
+CALL SCARICO('PISCAZZI','PostemobileTLC','148','2','A2L04','SALA1','2013-12-20','2015-02-11','INSTALLATO',@myvar);
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS 60073110','2013-12-23','DDT-ItaltelS.p.A.-NVLS60073110.jpg','ASA5585-S10X-K9','2','SALA1','2013-12-23','SALDO NETWORK 128617','CEVA LOGISTIC ITALIA SRL','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS 60073110','2013-12-23','DDT-ItaltelS.p.A.-NVLS60073110.jpg','SFP-10G-SR','24','SALA1','2013-12-23','SALDO NETWORK 128617','CEVA LOGISTIC ITALIA SRL','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS 60073110','2013-12-23','DDT-ItaltelS.p.A.-NVLS60073110.jpg','N7K-C7009-B2S2E-R','2','SALA1','2013-12-23','SALDO NETWORK 128617','CEVA LOGISTIC ITALIA SRL','');
+CALL SCARICO('PISCAZZI','PostemobileTLC','149','2','UFFICIO_RESPONSABILE','SALA1','2013-12-23','2015-02-11','INSTALLATA',@myvar);
+CALL SCARICO('PISCAZZI','PostemobileTLC','150','4','P13','SALA2-ISOLA13','2013-12-23','2015-02-11','INSTALLATA',@myvar);
+CALL SCARICO('PISCAZZI','PostemobileTLC','151','2','M7','SALA2-ISOLA13','2013-12-23','2015-02-11','INSTALLATA',@myvar);
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS60077459','2014-12-31','DDT-ItaltelS.p.A.-NVLS60077459.pdf','ASR1002_X','2','P21','2015-01-07','SALDO NETWORK 133653','CEVA LOGISTIC ITALIA SRL','');
+CALL CARICO('PISCAZZI','Italtel S.p.A.','DDT','NVLS60077459','2014-12-31','DDT-ItaltelS.p.A.-NVLS60077459.pdf','GLC-T','12','P21','2015-01-07','SALDO NETWORK 133653','CEVA LOGISTIC ITALIA SRL','');
+-- CALL SCARICO('MANZOGI9','Facility','111','2','P16','SALA2-ISOLA_STORAGE','2014-10-27','2015-02-11','site sala2 isola storage',@myvar);
+CALL SCARICO('MANZOGI9','Facility','112','2','P07','SALA2-ISOLA_STORAGE','2014-10-27','2015-02-11','site sala2 isola storage',@myvar);
+
 
 
 -- ' exemple
