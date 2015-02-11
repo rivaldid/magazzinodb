@@ -38,4 +38,4 @@ $BINECHO "Carico i dati" >> $logfile
 $BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source dati.sql \W;' >> $logfile
 
 $BINECHO "Carico i dati@web" >> $logfile
-$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source ../GMDCTO/log/dati2.log \W;' >> $logfile
+$BINMYSQL -umagazzino -pmagauser -D magazzino -e 'source ../GMDCTO/log/dati2.sql \W;' >> $logfile
