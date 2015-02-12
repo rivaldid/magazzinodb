@@ -67,6 +67,7 @@ DELIMITER ;
 DELIMITER //
 -- DROP PROCEDURE IF EXISTS SCARICO //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `SCARICO`(
+IN in_mds INT,
 IN in_utente VARCHAR(45),
 IN in_richiedente VARCHAR(45),
 IN in_id_merce TEXT,
@@ -105,8 +106,12 @@ ELSE
 		CALL input_utenti(in_utente,@my_id_utente);
 		
 		-- DOCUMENTO
-		SELECT MAX(CAST(numero AS UNSIGNED))+1 INTO my_mds FROM REGISTRO WHERE tipo='MDS';
-		CALL input_registro(in_richiedente, 'MDS', my_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
+		IF (in_mds IS NULL) THEN
+			SELECT MAX(CAST(numero AS UNSIGNED))+1 INTO my_mds FROM REGISTRO WHERE tipo='MDS';
+			CALL input_registro(in_richiedente, 'MDS', my_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
+		ELSE
+			CALL input_registro(in_richiedente, 'MDS', in_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
+		END IF;
 		
 		-- OPERAZIONI
 		CALL input_operazioni('0', @my_id_utente, @my_id_registro, in_id_merce, in_quantita, in_destinazione, in_data_scarico, CONCAT(in_note_scarico,' PROVENIENZA ',in_posizione), @my_id_operazioni);
@@ -120,7 +125,7 @@ ELSE
 
 END IF;
 
-SELECT @ritorno AS risultato, CONCAT_WS(' ','SCARICO',in_utente,in_richiedente,in_id_merce,in_quantita,in_posizione,in_destinazione,in_data_doc_scarico,in_data_scarico,in_note_scarico) AS riferimenti;
+SELECT @ritorno AS risultato, CONCAT_WS(' ','SCARICO',in_utente,in_richiedente,in_id_merce,in_quantita,in_posizione,in_destinazione,in_mds,my_mds,in_data_doc_scarico,in_data_scarico,in_note_scarico) AS riferimenti;
 
 END //
 DELIMITER ;
