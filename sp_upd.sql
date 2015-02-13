@@ -40,6 +40,7 @@ IN in_nuova_posizione VARCHAR(45),
 IN in_data DATE
 ) 
 BEGIN
+
 DECLARE temp_quantita INT;
 DECLARE temp_tags TEXT;
 
@@ -183,6 +184,46 @@ CALL SCARICO(NULL,in_utente,'Aggiornamento',in_1st_id_merce,in_quantita,in_posiz
 CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,tags_2nd,in_quantita,in_posizione,in_data,CONCAT('Carico di sistema per aggiornamento merce magazzino (da ',tags_1st,' a ',tags_2nd,')'),NULL,NULL);
 
 END IF;
+END //
+DELIMITER ;
+
+
+
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`( 
+IN in_utente VARCHAR(45),
+IN in_id_merce INT,
+IN in_posizione VARCHAR(45),
+IN in_nuova_posizione VARCHAR(45),
+IN in_quantita INT,
+IN in_nuova_quantita INT,
+IN in_data DATE
+)
+BEGIN
+
+-- CALL aggiornamento_magazzino_posizione(utente, id_merce, posizione, nuova_posizione, quantita, data);
+-- CALL aggiornamento_magazzino_quantita(utente, id_merce, posizione, quantita, nuova_quantita, data);
+
+IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione AND quantita=in_quantita)) THEN
+
+IF (COALESCE(in_nuova_posizione,in_nuova_quantita,'') != '') THEN
+
+	IF (COALESCE(in_nuova_posizione, '') != '') THEN
+		CALL aggiornamento_magazzino_posizione(in_utente,in_id_merce,in_posizione,in_nuova_posizione,in_quantita,in_data);
+		IF (COALESCE(in_nuova_quantita, '') != '') THEN
+			CALL aggiornamento_magazzino_quantita(in_utente,in_id_merce,in_nuova_posizione,in_quantita,in_nuova_quantita,in_data);
+		END IF;
+	END IF;
+
+	IF (COALESCE(in_nuova_quantita, '') != '') THEN
+		CALL aggiornamento_magazzino_quantita(in_utente,in_id_merce,in_posizione,in_quantita,in_nuova_quantita,in_data);
+	END IF;
+
+END IF;
+
+END IF;
+
 END //
 DELIMITER ;
 
