@@ -210,6 +210,7 @@ IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizio
 IF (COALESCE(in_nuova_posizione,in_nuova_quantita,'') != '') THEN
 
 	IF (COALESCE(in_nuova_posizione, '') != '') THEN
+	-- IF (in_nuova_posizione IS NOT NULL) AND (in_nuova_posizione != '') THEN
 		CALL aggiornamento_magazzino_posizione(in_utente,in_id_merce,in_posizione,in_nuova_posizione,in_quantita,in_data);
 		IF (COALESCE(in_nuova_quantita, '') != '') THEN
 			CALL aggiornamento_magazzino_quantita(in_utente,in_id_merce,in_nuova_posizione,in_quantita,in_nuova_quantita,in_data);
@@ -217,6 +218,7 @@ IF (COALESCE(in_nuova_posizione,in_nuova_quantita,'') != '') THEN
 	END IF;
 
 	IF (COALESCE(in_nuova_quantita, '') != '') THEN
+	-- IF (in_nuova_quantita IS NOT NULL) AND (in_nuova_quantita != '') THEN
 		CALL aggiornamento_magazzino_quantita(in_utente,in_id_merce,in_posizione,in_quantita,in_nuova_quantita,in_data);
 	END IF;
 
