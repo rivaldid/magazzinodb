@@ -43,7 +43,7 @@ DELIMITER //
 -- DROP VIEW IF EXISTS vista_magazzino_parzxtot //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_parzxtot` AS 
 -- SELECT tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
-SELECT id_merce,tags,GROUP_CONCAT(DISTINCT CONCAT(posizione,'(',quantita,')')) AS posizioni,SUM(quantita) AS tot FROM vista_magazzino GROUP BY tags
+SELECT id_merce,tags,GROUP_CONCAT(DISTINCT CONCAT(posizione,'(',quantita,')') SEPARATOR ' ') AS posizioni,SUM(quantita) AS tot FROM vista_magazzino GROUP BY tags
 //
 DELIMITER ;
 
