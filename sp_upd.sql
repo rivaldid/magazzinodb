@@ -236,7 +236,7 @@ CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_registro`(
 IN in_id_registro INT,
 IN in_contatto VARCHAR(45),
 IN in_tipo VARCHAR(45),
-IN in_numero VARCHAR(45),
+IN in_numero VARCHAR(256),
 IN in_gruppo INT,
 IN in_data DATE,
 IN in_file TEXT,

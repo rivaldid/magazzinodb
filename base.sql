@@ -109,7 +109,7 @@ CREATE TABLE `REGISTRO` (
   `id_registro` int(11) NOT NULL AUTO_INCREMENT,
   `contatto` varchar(45) NOT NULL,
   `tipo` varchar(45) NOT NULL,
-  `numero` varchar(45) NOT NULL,
+  `numero` varchar(256) NOT NULL,
   `gruppo` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `file` text DEFAULT NULL,

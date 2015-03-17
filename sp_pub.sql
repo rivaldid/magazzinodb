@@ -5,7 +5,7 @@ CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `CARICO`(
 IN in_utente VARCHAR(45),
 IN in_fornitore VARCHAR(45),
 IN in_tipo_doc VARCHAR(45),
-IN in_num_doc VARCHAR(45),
+IN in_num_doc VARCHAR(256),
 IN in_data_doc DATE,
 IN in_scansione TEXT,
 IN in_tags TEXT,
