@@ -52,20 +52,28 @@ DELIMITER ;
 DELIMITER //
 -- DROP VIEW IF EXISTS vista_magazzino_ng //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_ng` AS 
-SELECT MERCE.tags,MAGAZZINO.posizione,MAGAZZINO.quantita,
-CONCAT(
-IF(REGISTRO.file IS NULL OR REGISTRO.file = '', NULL, CONCAT('<a href="\\".registro."\\"',REGISTRO.file,'">')),
-IF(MERCE.tags LIKE 'BRETELL%', NULL, GROUP_CONCAT(	CONCAT( 'Caricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')') SEPARATOR ' ')),
-IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a>')
-) AS documento,
-GROUP_CONCAT(CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) SEPARATOR ' ') AS ordine, OPERAZIONI.note
+SELECT
+CONCAT_WS(' ',
+MERCE.tags,
+IF(MERCE.tags LIKE 'BRETELL%',NULL,
+	GROUP_CONCAT(
+		CONCAT(
+			IF(REGISTRO.file IS NULL OR REGISTRO.file = '', NULL, CONCAT('<p><a href="/GMDCTO/registro/',REGISTRO.file,'">')),
+			'Caricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')',
+            IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a></p>')
+            )
+	SEPARATOR ' ')
+)
+) AS MERCE,
+MAGAZZINO.posizione,MAGAZZINO.quantita,
+IF(MERCE.tags LIKE 'BRETELL%', NULL,GROUP_CONCAT(CONCAT_WS(' ',vista_ordini.tipo,vista_ordini.numero,OPERAZIONI.note) SEPARATOR ' ')) AS NOTE
 FROM MAGAZZINO
 LEFT JOIN MERCE USING(id_merce)
 LEFT JOIN OPERAZIONI USING(id_merce,posizione)
 LEFT JOIN REGISTRO USING(id_registro)
 LEFT JOIN vista_ordini USING(id_operazioni)
 WHERE MAGAZZINO.quantita>0
-GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione;
+GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
 //
 DELIMITER ;
 
