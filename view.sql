@@ -13,6 +13,7 @@ DELIMITER //
 -- DROP VIEW IF EXISTS TRANSITI //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS 
 SELECT
+OPERAZIONI.id_merce,
 UTENTI.label AS utente,
 OPERAZIONI.data,
 CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status, posizione, 
@@ -53,6 +54,7 @@ DELIMITER //
 -- DROP VIEW IF EXISTS vista_magazzino_ng //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_ng` AS 
 SELECT
+MERCE.id_merce,
 CONCAT_WS(' ',
 MERCE.tags,
 IF(MERCE.tags LIKE 'BRETELL%',NULL,
