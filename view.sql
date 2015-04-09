@@ -80,6 +80,35 @@ GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
 DELIMITER ;
 
 
+
+DELIMITER //
+-- DROP VIEW IF EXISTS vista_magazzino_ng_full //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_ng_full` AS 
+SELECT
+MERCE.id_merce,
+CONCAT_WS(' ',
+MERCE.tags,
+GROUP_CONCAT(
+	CONCAT(
+		IF(REGISTRO.file IS NULL OR REGISTRO.file = '', NULL, CONCAT('<p><a href="/GMDCTO/registro/',REGISTRO.file,'">')),
+		'Caricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')',
+		IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a></p>')
+		)
+SEPARATOR ' ')
+) AS MERCE,
+MAGAZZINO.posizione,MAGAZZINO.quantita,
+GROUP_CONCAT(CONCAT_WS(' ',vista_ordini.tipo,vista_ordini.numero,OPERAZIONI.note) SEPARATOR ' ') AS NOTE
+FROM MAGAZZINO
+LEFT JOIN MERCE USING(id_merce)
+LEFT JOIN OPERAZIONI USING(id_merce,posizione)
+LEFT JOIN REGISTRO USING(id_registro)
+LEFT JOIN vista_ordini USING(id_operazioni)
+WHERE MAGAZZINO.quantita>0
+GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
+//
+DELIMITER ;
+
+
 -- DELIMITER //
 -- DROP VIEW IF EXISTS vista_magazzino3 //
 -- CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS 
