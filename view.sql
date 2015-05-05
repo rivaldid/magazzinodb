@@ -13,6 +13,7 @@ DELIMITER //
 -- DROP VIEW IF EXISTS TRANSITI //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS 
 SELECT
+OPERAZIONI.id_operazioni,
 OPERAZIONI.id_merce,
 UTENTI.label AS utente,
 OPERAZIONI.data,
