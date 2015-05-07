@@ -186,3 +186,27 @@ END //
 DELIMITER ;
 DROP PROCEDURE aggiornamento_magazzino;
 */
+
+
+-- ---------------------- REVERT ---------------------- 
+DELIMITER //
+-- DROP PROCEDURE IF EXISTS revert//
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `revert`(
+IN in_utente VARCHAR(45),
+IN in_id_operazioni INT
+) 
+BEGIN
+
+DECLARE my_direzione INT;
+
+SET @my_direzione := (SELECT direzione FROM OPERAZIONI WHERE id_operazioni=in_id_operazioni);
+
+IF (@my_direzione) THEN
+	SELECT 'INGRESSO';
+	SELECT id_merce,posizione,quantita FROM OPERAZIONI;
+ELSE
+	SELECT 'USCITA';
+END IF;
+
+END //
+DELIMITER ;
