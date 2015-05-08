@@ -197,15 +197,18 @@ IN in_id_operazioni INT
 ) 
 BEGIN
 
-DECLARE my_direzione INT;
+DECLARE my_id_merce INT;
+DECLARE my_direzione VARCHAR(45);
+DECLARE my_posizione VARCHAR(45);
+DECLARE my_quantita INT;
+DECLARE my_note TEXT;
 
-SET @my_direzione := (SELECT direzione FROM OPERAZIONI WHERE id_operazioni=in_id_operazioni);
+SELECT id_merce,direzione,posizione,quantita,note INTO @my_id_merce,@my_direzione,@my_posizione,@my_quantita,@my_note FROM OPERAZIONI WHERE id_operazioni=in_id_operazioni;
 
-IF (@my_direzione) THEN
-	SELECT 'INGRESSO';
-	SELECT id_merce,posizione,quantita FROM OPERAZIONI;
+IF @my_direzione THEN
+	-- rev di un ingresso: quindi uscita
 ELSE
-	SELECT 'USCITA';
+	-- rev di una uscita: quindi ingresso
 END IF;
 
 END //
