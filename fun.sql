@@ -61,3 +61,8 @@ RETURN foo;
 END//
 DELIMITER ;
 
+DELIMITER //
+-- DROP FUNCTION IF EXISTS `get_provenienza`//
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_provenienza`(in_id_operazioni INT) RETURNS VARCHAR(45)
+RETURN (SELECT IF(note LIKE '%PROVENIENZA%',TRIM(SUBSTRING_INDEX(note,'PROVENIENZA',-1)),'LIMBO') AS provenienza FROM OPERAZIONI WHERE id_operazioni=in_id_operazioni);//
+DELIMITER ;

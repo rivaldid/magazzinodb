@@ -207,8 +207,12 @@ SELECT id_merce,direzione,posizione,quantita,note INTO @my_id_merce,@my_direzion
 
 IF @my_direzione THEN
 	-- rev di un ingresso: quindi uscita
+	-- SELECT CONCAT("Annullamento relativo al transito di carico #",in_id_operazioni);
+	CALL SCARICO(NULL,in_utente,'Annullamento',@my_id_merce,@my_quantita,@my_posizione,'Pozzo',CURDATE(),CURDATE(),CONCAT('Annullamento relativo al transito di carico #',in_id_operazioni),@myvar);
 ELSE
 	-- rev di una uscita: quindi ingresso
+	-- SELECT CONCAT("Annullamento relativo al transito di scarico #",in_id_operazioni);
+	CALL CARICO(in_utente,'Annullamento','Sistema',(SELECT next_system_doc()),CURDATE(),NULL,(SELECT tags FROM MERCE WHERE id_merce=@my_id_merce),@my_quantita,(SELECT get_provenienza(in_id_operazioni)),CURDATE(),CONCAT("Annullamento relativo al transito di scarico #",in_id_operazioni),NULL,NULL);
 END IF;
 
 END //
