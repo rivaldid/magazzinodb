@@ -124,3 +124,14 @@ SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as document
 //
 DELIMITER ;
 
+
+DELIMITER //
+-- DROP VIEW IF EXISTS report_transiti_mensile //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `report_transiti_mensile` AS 
+SELECT DATE_FORMAT(data,'%d/%m/%Y') AS data,utente,status,posizione,
+tags,quantita,CONCAT(documento,' del ',DATE_FORMAT(data_doc,'%d/%m/%Y')) AS riferimento,
+note, ordine FROM TRANSITI WHERE 1 AND 
+data >= DATE_FORMAT(NOW(),'%Y-%m-01') - INTERVAL 1 MONTH AND 
+data < DATE_FORMAT(NOW(),'%Y-%m-01') ORDER BY data ASC;
+//
+DELIMITER ;
