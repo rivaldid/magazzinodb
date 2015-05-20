@@ -47,6 +47,9 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/vserv.sql \W;" >> $logfile
 $BINECHO $A "Strumenti di debug" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" >> $logfile
 
+$BINECHO $A "Strumenti di login" $B >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/login.sql \W;" >> $logfile
+
 $BINECHO "</div>" >> $logfile
 
 $BINECHO $A "Carico i dati" $B >> $logfile
