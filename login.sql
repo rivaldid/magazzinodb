@@ -4,6 +4,7 @@ USE magazzino;
 -- get_permission(rete,progetto);
 -- get_cognome(rete);
 -- get_rete(cognome);
+-- call input_trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT);
 
 -- base
 DROP TABLE IF EXISTS `account`;
@@ -133,9 +134,19 @@ IN IN_PHP_AUTH_USER VARCHAR(45),
 IN IN_HTTP_USER_AGENT TEXT
 ) 
 BEGIN 
+IF (IN_PHP_AUTH_USER != 'vilardid') THEN
 INSERT INTO trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT)
 VALUES(IN_REQUEST_TIME,IN_REQUEST_URI,IN_HTTP_REFERER,IN_REMOTE_ADDR,IN_REMOTE_USER,IN_PHP_AUTH_USER,IN_HTTP_USER_AGENT);
+END IF;
 END //
+DELIMITER ;
+
+-- vista
+DELIMITER //
+-- DROP VIEW IF EXISTS vista_ordini //
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_trace` AS 
+SELECT id_trace,DATE_FORMAT(FROM_UNIXTIME(REQUEST_TIME),'%Y-%m-%d %H.%i.%s') AS data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM trace;
+//
 DELIMITER ;
 
 -- dati
@@ -168,3 +179,4 @@ CALL input_permission('LOMBA693','magazzino','1');
 CALL input_permission('GENNARE3','magazzino','1');
 CALL input_permission('FLORIOCR','magazzino','1');
 CALL input_permission('LUCATIFR','magazzino','1');
+
