@@ -1,5 +1,3 @@
-USE magazzino;
-
 -- ------------------------- debugging TRANSITI ------------------------- 
 
 DELIMITER //

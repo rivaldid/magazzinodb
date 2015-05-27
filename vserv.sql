@@ -1,6 +1,3 @@
-USE magazzino;
-
-
 DELIMITER //
 -- DROP VIEW IF EXISTS vserv_etichette //
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_etichette` AS 

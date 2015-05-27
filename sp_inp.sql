@@ -1,4 +1,7 @@
-USE magazzino;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+DELIMITER //
 
 
 -- ---------------------- INPUT PROPRIETA ----------------------
@@ -9,22 +12,20 @@ USE magazzino;
 -- -- 4 tipi di documento
 -- -- 5 rubrica 
 --
-DELIMITER //
+
 -- DROP PROCEDURE IF EXISTS input_proprieta //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_proprieta`( 
 IN in_sel INT, 
-IN in_label VARCHAR(45) 
+IN in_label TEXT 
 ) 
 BEGIN 
 IF NOT (SELECT EXISTS(SELECT 1 FROM proprieta WHERE sel=in_sel AND label=in_label)) THEN 
 INSERT INTO proprieta(sel,label) VALUES(in_sel, in_label); 
 END IF;
 END //
-DELIMITER ;
 
 
 -- ---------------------- INPUT UTENTI ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_utenti //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`( 
 IN in_label VARCHAR(45), 
@@ -38,11 +39,9 @@ ELSE
 SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE label=in_label);
 END IF;
 END //
-DELIMITER ;
 
 
 -- ---------------------- INPUT REGISTRO ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_registro //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_registro`( 
 IN in_contatto VARCHAR(45),
@@ -106,11 +105,9 @@ IF (in_numero IS NOT NULL) THEN
 END IF;
 
 END //
-DELIMITER ;
 
 
 -- ---------------------- MERCE ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_merce //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_merce`( 
 IN in_tags TEXT,
@@ -131,11 +128,9 @@ IF (in_tags IS NOT NULL) THEN
 	
 END IF;
 END //
-DELIMITER ;
 
 
 -- ---------------------- OPERAZIONI ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_operazioni //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_operazioni`(
 IN in_direzione INT,
@@ -167,11 +162,9 @@ IF (in_posizione IS NOT NULL) THEN
 END IF;
 
 END //
-DELIMITER ;
 
 
 -- ---------------------- ORDINI ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_ordini //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_ordini`(
 IN in_id_operazioni INT,
@@ -199,11 +192,9 @@ IF (in_id_operazioni IS NOT NULL) THEN
 	
 END IF;
 END //
-DELIMITER ;
 
 
 -- ---------------------- MAGAZZINO ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS input_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_magazzino`( 
 IN in_direzione INT,
@@ -237,6 +228,64 @@ ELSE
 	
 END IF;
 END //
+
+
+-- INSERIMENTO DATI ACCOUNT DI RETE
+-- DROP PROCEDURE IF EXISTS input_accounts //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_accounts`( 
+IN in_rete VARCHAR(45), 
+IN in_cognome VARCHAR(45) 
+) 
+BEGIN 
+IF NOT (SELECT account_exists(in_rete)) THEN 
+INSERT INTO account(rete,cognome) VALUES(in_rete, in_cognome); 
+END IF;
+END //
+
+
+-- DROP PROCEDURE IF EXISTS input_permission //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_permission`( 
+IN in_rete VARCHAR(45), 
+IN in_progetto VARCHAR(45), 
+IN in_livello INT
+) 
+BEGIN 
+IF (SELECT account_exists(in_rete)) THEN 
+	IF (SELECT permission_exists(in_rete,in_progetto)) THEN 
+		UPDATE permission SET livello=in_livello WHERE rete=in_rete AND progetto=in_progetto;
+	ELSE
+		INSERT INTO permission(rete,progetto,livello) VALUES(in_rete,in_progetto,in_livello); 
+	END IF;
+END IF;
+END //
+
+
+-- mysql> select inet_aton('10.98.2.171'),inet_ntoa('174195371');
+-- +--------------------------+------------------------+
+-- | inet_aton('10.98.2.171') | inet_ntoa('174195371') |
+-- +--------------------------+------------------------+
+-- |                174195371 | 10.98.2.171            |
+-- +--------------------------+------------------------+
+
+
+-- DROP PROCEDURE IF EXISTS input_trace //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_trace`( 
+IN IN_REQUEST_TIME INT UNSIGNED,
+IN IN_REQUEST_URI TEXT,
+IN IN_HTTP_REFERER TEXT,
+IN IN_REMOTE_ADDR VARCHAR(45),
+IN IN_REMOTE_USER VARCHAR(45),
+IN IN_PHP_AUTH_USER VARCHAR(45),
+IN IN_HTTP_USER_AGENT TEXT
+) 
+BEGIN 
+IF (IN_PHP_AUTH_USER != 'vilardid') THEN
+INSERT INTO trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT)
+VALUES(IN_REQUEST_TIME,IN_REQUEST_URI,IN_HTTP_REFERER,IN_REMOTE_ADDR,IN_REMOTE_USER,IN_PHP_AUTH_USER,IN_HTTP_USER_AGENT);
+END IF;
+END //
+
+
 DELIMITER ;
 
-
+/*!40101 SET character_set_client = @saved_cs_client */;

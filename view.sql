@@ -1,16 +1,11 @@
-USE magazzino;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 
-
-DELIMITER //
--- DROP VIEW IF EXISTS vista_ordini //
+DROP VIEW IF EXISTS vista_ordini;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_ordini` AS 
-SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro
-//
-DELIMITER ;
+SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro;
 
-
-DELIMITER //
--- DROP VIEW IF EXISTS TRANSITI //
+DROP VIEW IF EXISTS TRANSITI;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `TRANSITI` AS 
 SELECT
 OPERAZIONI.id_operazioni,
@@ -28,31 +23,23 @@ JOIN MERCE USING(id_merce)
 JOIN REGISTRO USING(id_registro)
 JOIN UTENTI USING (id_utenti)
 LEFT JOIN vista_ordini USING(id_operazioni)
-ORDER BY data DESC
-//
-DELIMITER ;
+ORDER BY data DESC;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vista_magazzino //
+
+DROP VIEW IF EXISTS vista_magazzino;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino` AS 
-SELECT id_merce,posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE quantita > 0 ORDER BY posizione,tags DESC
-//
-DELIMITER ;
+SELECT id_merce,posizione,tags,quantita FROM MAGAZZINO JOIN MERCE USING(id_merce) WHERE quantita > 0 ORDER BY posizione,tags DESC;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vista_magazzino_parzxtot //
+DROP VIEW IF EXISTS vista_magazzino_parzxtot;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_parzxtot` AS 
 -- SELECT tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
-SELECT id_merce,tags,GROUP_CONCAT(DISTINCT CONCAT(posizione,'(',quantita,')') SEPARATOR ' ') AS posizioni,SUM(quantita) AS tot FROM vista_magazzino GROUP BY tags
-//
-DELIMITER ;
+SELECT id_merce,tags,GROUP_CONCAT(DISTINCT CONCAT(posizione,'(',quantita,')') SEPARATOR ' ') AS posizioni,SUM(quantita) AS tot FROM vista_magazzino GROUP BY tags;
 
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vista_magazzino_ng //
+DROP VIEW IF EXISTS vista_magazzino_ng;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_ng` AS 
 SELECT
 MERCE.id_merce,
@@ -77,13 +64,10 @@ LEFT JOIN REGISTRO USING(id_registro)
 LEFT JOIN vista_ordini USING(id_operazioni)
 WHERE MAGAZZINO.quantita>0
 GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
-//
-DELIMITER ;
 
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vista_magazzino_ng_full //
+DROP VIEW IF EXISTS vista_magazzino_ng_full;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_ng_full` AS 
 SELECT
 MERCE.id_merce,
@@ -106,32 +90,33 @@ LEFT JOIN REGISTRO USING(id_registro)
 LEFT JOIN vista_ordini USING(id_operazioni)
 WHERE MAGAZZINO.quantita>0
 GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
-//
-DELIMITER ;
 
 
--- DELIMITER //
+
 -- DROP VIEW IF EXISTS vista_magazzino3 //
 -- CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS 
 -- SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
 -- //
 -- DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vista_documenti //
+DROP VIEW IF EXISTS vista_documenti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS 
 SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,data FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data DESC;
-//
-DELIMITER ;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS report_transiti_mensile //
+DROP VIEW IF EXISTS report_transiti_mensile;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `report_transiti_mensile` AS 
 SELECT DATE_FORMAT(data,'%d/%m/%Y') AS data,utente,status,posizione,
 tags,quantita,CONCAT(documento,' del ',DATE_FORMAT(data_doc,'%d/%m/%Y')) AS riferimento,
 note, ordine FROM TRANSITI WHERE 1 AND 
 data >= DATE_FORMAT(NOW(),'%Y-%m-01') - INTERVAL 1 MONTH AND 
 data < DATE_FORMAT(NOW(),'%Y-%m-01') ORDER BY data ASC;
-//
-DELIMITER ;
+
+
+-- VISTA ACCESSI ACCOUNT DI RETE
+DROP VIEW IF EXISTS vista_ordini;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_trace` AS 
+SELECT id_trace,DATE_FORMAT(FROM_UNIXTIME(REQUEST_TIME),'%Y-%m-%d %H.%i.%s') AS data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM trace;
+
+
+/*!40101 SET character_set_client = @saved_cs_client */;

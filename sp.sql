@@ -1,7 +1,10 @@
-USE magazzino;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+DELIMITER //
 
 -- ---------------------- tokenizza tags ----------------------
-DELIMITER //
+
 -- DROP PROCEDURE IF EXISTS tokenizza_tags //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `tokenizza_tags`(IN tokens TEXT)
 BEGIN
@@ -19,14 +22,13 @@ myloop: LOOP
 END LOOP myloop;
 
 END //
-DELIMITER ;
 
 
 -- ---------------------- fix proprieta tags ----------------------
 -- note: genera(va) un warning // FIXATO!
 -- DECLARE CONTINUE HANDLER FOR NOT FOUND SET @done = TRUE;
 -- | Error | 1329 | No data - zero rows fetched, selected, or processed |
-DELIMITER //
+
 -- DROP PROCEDURE IF EXISTS fix_proprieta_tags //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `fix_proprieta_tags`()
 BEGIN
@@ -51,4 +53,7 @@ BEGIN
 	CLOSE cursor_i;
 
 END //
+
 DELIMITER ;
+
+/*!40101 SET character_set_client = @saved_cs_client */;

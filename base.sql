@@ -125,9 +125,10 @@ DROP TABLE IF EXISTS `proprieta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proprieta` (
+  `id_proprieta` int(11) NOT NULL AUTO_INCREMENT,
   `sel` int(11) NOT NULL,
-  `label` varchar(45) NOT NULL,
-  PRIMARY KEY (`sel`,`label`)
+  `label` text NOT NULL,
+  PRIMARY KEY (`id_proprieta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -144,6 +145,48 @@ CREATE TABLE `UTENTI` (
   PRIMARY KEY (`id_utenti`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+
+-- ACCOUNT DI RETE
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `rete` varchar(45) NOT NULL,
+  `cognome` varchar(45) NOT NULL,
+  PRIMARY KEY (`rete`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- PERMISSION ACCOUNT DI RETE
+DROP TABLE IF EXISTS `permission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `permission` (
+  `rete` varchar(45) NOT NULL,
+  `progetto` varchar(45) NOT NULL,
+  `livello` int NOT NULL,
+  PRIMARY KEY (`rete`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- TRACING ACCOUNT DI RETE
+DROP TABLE IF EXISTS `trace`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `trace` (
+  `id_trace` INT(11) NOT NULL AUTO_INCREMENT,
+  `REQUEST_TIME` INT UNSIGNED NOT NULL,
+  `REQUEST_URI` TEXT NOT NULL,
+  `HTTP_REFERER` TEXT NOT NULL,
+  `REMOTE_ADDR` VARCHAR(45) NOT NULL,
+  `REMOTE_USER` VARCHAR(45) NOT NULL,
+  `PHP_AUTH_USER` VARCHAR(45) NOT NULL,
+  `HTTP_USER_AGENT` TEXT NOT NULL,
+  PRIMARY KEY (`id_trace`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

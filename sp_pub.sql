@@ -1,5 +1,9 @@
--- ---------------------- CARICO ---------------------- 
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
 DELIMITER //
+
+-- ---------------------- CARICO ---------------------- 
 -- DROP PROCEDURE IF EXISTS CARICO //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `CARICO`(
 IN in_utente VARCHAR(45),
@@ -60,11 +64,9 @@ END IF;
 CALL input_ordini(@my_id_operazioni, @my_id_oda, in_trasportatore);
 
 END //
-DELIMITER ;
 
 
 -- ---------------------- SCARICO ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS SCARICO //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `SCARICO`(
 IN in_mds INT,
@@ -128,11 +130,9 @@ END IF;
 SELECT @ritorno AS risultato, CONCAT_WS(' ','SCARICO',in_utente,in_richiedente,in_id_merce,in_quantita,in_posizione,in_destinazione,in_mds,my_mds,in_data_doc_scarico,in_data_scarico,in_note_scarico) AS riferimenti;
 
 END //
-DELIMITER ;
 
 
--- ---------------------- AGGIORNAMENTO MAGAZZINO ---------------------- 
-/*DELIMITER //
+/*-- ---------------------- AGGIORNAMENTO MAGAZZINO ---------------------- 
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`(
 IN in_utente VARCHAR(45),
@@ -183,13 +183,11 @@ END IF; -- end test valori
 
 
 END //
-DELIMITER ;
 DROP PROCEDURE aggiornamento_magazzino;
 */
 
 
 -- ---------------------- REVERT ---------------------- 
-DELIMITER //
 -- DROP PROCEDURE IF EXISTS revert//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `revert`(
 IN in_utente VARCHAR(45),
@@ -216,4 +214,14 @@ ELSE
 END IF;
 
 END //
+
 DELIMITER ;
+
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+-- PUBLIC API ACCOUNT DI RETE
+-- get_permission(rete,progetto);
+-- get_cognome(rete);
+-- get_rete(cognome);
+-- call input_trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT);
