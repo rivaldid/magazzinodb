@@ -1,16 +1,18 @@
+DELIMITER //
+
+
 -- *********************************************************************
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 -- *********************************************************************
 
-DELIMITER //
--- DROP PROCEDURE IF EXISTS upd_giacenza_magazzino//
+DROP PROCEDURE IF EXISTS upd_giacenza_magazzino //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_giacenza_magazzino`(
 IN in_utente VARCHAR(45),
 IN in_id_merce INT,
 IN in_posizione VARCHAR(45),
 IN in_quantita INT,
 IN in_data DATE
-) 
+)
 BEGIN
 DECLARE temp_quantita INT;
 DECLARE temp_tags TEXT;
@@ -26,17 +28,16 @@ CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_da
 END IF;
 
 END //
-DELIMITER ;
 
-DELIMITER //
--- DROP PROCEDURE IF EXISTS upd_posizione_magazzino//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_posizione_magazzino`( 
+
+DROP PROCEDURE IF EXISTS upd_posizione_magazzino //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_posizione_magazzino`(
 IN in_utente VARCHAR(45),
 IN in_id_merce INT,
 IN in_vecchia_posizione VARCHAR(45),
 IN in_nuova_posizione VARCHAR(45),
 IN in_data DATE
-) 
+)
 BEGIN
 
 DECLARE temp_quantita INT;
@@ -53,7 +54,6 @@ CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_da
 END IF;
 
 END //
-DELIMITER ;
 
 
 -- *********************************************************************
@@ -61,25 +61,21 @@ DELIMITER ;
 -- *********************************************************************
 
 /*
-DELIMITER //
--- DROP PROCEDURE IF EXISTS upd_instestazione_registro//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_instestazione_registro`( 
+-- DROP PROCEDURE IF EXISTS upd_instestazione_registro //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_instestazione_registro`(
 IN in_id_registro INT,
 IN in_contatto VARCHAR(45)
-) 
+)
 BEGIN
 IF (in_contatto IS NOT NULL) THEN
 CALL input_proprieta('5',in_contatto);
 END IF;
 UPDATE REGISTRO SET contatto = in_contatto WHERE id_registro = in_id_registro;
 END //
-DELIMITER ;
 
 
-
-DELIMITER //
--- DROP PROCEDURE IF EXISTS upd_doc_carico//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_doc_carico`( 
+-- DROP PROCEDURE IF EXISTS upd_doc_carico //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `upd_doc_carico`(
 IN in_id_operazioni INT,
 IN in_fornitore VARCHAR(45),
 IN in_tipo_doc VARCHAR(45),
@@ -88,7 +84,7 @@ IN in_gruppo INT,
 IN in_data_doc DATE,
 IN in_scansione VARCHAR(45),
 OUT ritorno INT
-) 
+)
 BEGIN
 DECLARE my_id_registro INT;
 
@@ -97,56 +93,53 @@ IF (in_id_operazioni IS NOT NULL) THEN
 	CALL input_registro(in_fornitore, in_tipo_doc, in_num_doc, in_gruppo, in_data_doc, in_scansione, @my_id_registro);
 
 	IF (SELECT EXISTS(SELECT 1 FROM OPERAZIONI WHERE id_operazioni = in_id_operazioni)) THEN
-		
+
 		UPDATE OPERAZIONI SET id_registro=@my_id_registro WHERE id_operazioni=in_id_operazioni;
 		SET @ritorno = 0;
-		
-	ELSE	
-		
+
+	ELSE
+
 		SET @ritorno = 1;
-		
+
 	END IF;
-	
+
 END IF;
 
 SELECT @ritorno AS 'risultato';
 END //
-DELIMITER ;
 */
 
-DELIMITER //
--- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_quantita//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_quantita`( 
+
+DROP PROCEDURE IF EXISTS aggiornamento_magazzino_quantita //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_quantita`(
 IN in_utente VARCHAR(45),
 IN in_id_merce INT,
 IN in_posizione VARCHAR(45),
 IN in_1st_quantita INT,
 IN in_2nd_quantita INT,
 IN in_data DATE
-) 
+)
 BEGIN
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione AND quantita=in_1st_quantita)) THEN
 
 CALL SCARICO(NULL,in_utente,'Aggiornamento',in_id_merce,in_1st_quantita,in_posizione,in_posizione,in_data,in_data,CONCAT('Scarico di sistema per aggiornamento giacenze magazzino (da ',in_1st_quantita,' a ',in_2nd_quantita,')'),@myvar);
 CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_data,NULL,(SELECT tags FROM MERCE WHERE id_merce=in_id_merce),in_2nd_quantita,in_posizione,in_data,CONCAT('Carico di sistema per aggiornamento giacenze magazzino (da ',in_1st_quantita,' a ',in_2nd_quantita,')'),NULL,NULL);
-		
+
 END IF; -- end esistenza
 
 END //
-DELIMITER ;
 
 
-DELIMITER //
--- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_posizione//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_posizione`( 
+DROP PROCEDURE IF EXISTS aggiornamento_magazzino_posizione //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_posizione`(
 IN in_utente VARCHAR(45),
 IN in_id_merce INT,
 IN in_1st_posizione VARCHAR(45),
 IN in_2nd_posizione VARCHAR(45),
 IN in_quantita INT,
 IN in_data DATE
-) 
+)
 BEGIN
 
 IF (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_1st_posizione AND quantita=in_quantita)) THEN
@@ -156,19 +149,18 @@ CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_da
 
 END IF;
 END //
-DELIMITER ;
+
 
 -- OK MA DA NON USARE MAI!!!
-DELIMITER //
--- DROP PROCEDURE IF EXISTS aggiornamento_magazzino_merce//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_merce`( 
+DROP PROCEDURE IF EXISTS aggiornamento_magazzino_merce //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino_merce`(
 IN in_utente VARCHAR(45),
 IN in_1st_id_merce INT,
 IN in_2nd_id_merce INT,
 IN in_posizione VARCHAR(45),
 IN in_quantita INT,
 IN in_data DATE
-) 
+)
 BEGIN
 
 DECLARE tags_1st TEXT;
@@ -183,13 +175,10 @@ CALL CARICO(in_utente,'Aggiornamento','Sistema',(SELECT next_system_doc()),in_da
 
 END IF;
 END //
-DELIMITER ;
 
 
-
-DELIMITER //
--- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`( 
+DROP PROCEDURE IF EXISTS aggiornamento_magazzino //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`(
 IN in_utente VARCHAR(45),
 IN in_id_merce INT,
 IN in_posizione VARCHAR(45),
@@ -225,11 +214,9 @@ END IF;
 END IF;
 
 END //
-DELIMITER ;
 
 
-DELIMITER //
--- DROP PROCEDURE IF EXISTS aggiornamento_registro//
+DROP PROCEDURE IF EXISTS aggiornamento_registro //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_registro`(
 IN in_id_registro INT,
 IN in_contatto VARCHAR(45),
@@ -268,6 +255,6 @@ ELSE
 END IF;
 
 END //
+
+
 DELIMITER ;
-
-

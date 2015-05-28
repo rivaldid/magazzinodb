@@ -1,6 +1,3 @@
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-
 DROP VIEW IF EXISTS vista_ordini;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_ordini` AS 
 SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro;
@@ -92,12 +89,10 @@ WHERE MAGAZZINO.quantita>0
 GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
 
 
-
--- DROP VIEW IF EXISTS vista_magazzino3 //
+-- DROP VIEW IF EXISTS vista_magazzino3;
 -- CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino3` AS 
--- SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags
--- //
--- DELIMITER ;
+-- SELECT id_merce, tags, SUM(quantita) AS tot, GROUP_CONCAT(posizione) AS posizioni FROM vista_magazzino GROUP BY tags;
+
 
 DROP VIEW IF EXISTS vista_documenti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS 
@@ -119,4 +114,3 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_trace` AS
 SELECT id_trace,DATE_FORMAT(FROM_UNIXTIME(REQUEST_TIME),'%Y-%m-%d %H.%i.%s') AS data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM trace;
 
 
-/*!40101 SET character_set_client = @saved_cs_client */;

@@ -535,7 +535,7 @@ INSERT INTO MERCE(id_merce, tags) VALUES('75','APPARATI DISTRIBUTION_POWER');
 INSERT INTO MERCE(id_merce, tags) VALUES('76','BRETELLA FO-LC-LC-50/125 25M');
 INSERT INTO MERCE(id_merce, tags) VALUES('77','BRETELLA FO-LC-LC-50/125 40M');
 INSERT INTO MERCE(id_merce, tags) VALUES('78','Pannelli Plastica 1UR Plexiglass');
-INSERT INTO MERCE(id_merce, tags) VALUES('79','Pannelli Plastica 2UR Plexiglass'); 
+INSERT INTO MERCE(id_merce, tags) VALUES('79','Pannelli Plastica 2UR Plexiglass');
 INSERT INTO MERCE(id_merce, tags) VALUES('80','Pannelli Plastica 3UR Plexiglass');
 INSERT INTO MERCE(id_merce, tags) VALUES('81','Pannelli Plastica 5UR Plexiglass');
 INSERT INTO MERCE(id_merce, tags) VALUES('82','Pannelli Plastica 10UR Plexiglass');
@@ -1085,7 +1085,6 @@ CALL input_registro('IRCE SPA','Lettera_di_vettura','171000026829','334',NULL,NU
 CALL input_registro('IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 CALL input_registro('Safe Watcher S.r.l.','DDT','14 - 005951',NULL,'2014-07-10','DDT-SAFE_WATCHER-14-005951.pdf',@myvar);
 CALL input_registro('LUPPRIANS','DDT','P1028767 VB001851 CSC',NULL,'2014-03-03','DDT-LUPPRIANS-P1028767-VB001851-CSC.pdf',@myvar);
--- CALL upd_doc_carico('235','IRCE SPA','DDT','002279','334','2013-12-20','DDT-IRCE_SPA-002279.pdf',@myvar);
 CALL CARICO('PISCAZZI','Telecom Italia','DDT','294/RZ/2014','2014-10-02','DDT-TELECOM-294_RZ_2014.pdf','APPARATI RACK TELECOM KMS6 RS/6000','6','M08-M09','2014-10-08','moving telecom da Rozzano','DYNAMICOS',NULL);
 CALL SCARICO(NULL,'MURATO48','Facility','54','79','P02','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
 CALL SCARICO(NULL,'MURATO48','Facility','47','16','A2L09','SALA1-SALA2','2014-10-17','2014-10-17','ref. Lucati, safe program dcx upgrade postel',@myvar);
@@ -1095,16 +1094,13 @@ CALL SCARICO(NULL,'MURATO48','Facility','19','24','A2L13','SALA1-SALA2','2014-10
 CALL CARICO('MANZOGI9','Tecnotrans S.r.l','DDT','40009','2014-10-16','DDT-FUJITSU-40009.pdf','BRETELLA UTP-CAT6 3M','88','B1L09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','BRETELLA FO-LC-LC-50/125 5M','32','P09','2014-10-20','reintegro anticipo materiale safe program dcx upgrade postel','Tecnotrans S.r.l.','4100164299');
 CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','2','P09','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
--- CALL CARICO('MANZOGI9','Fujitsu Technology Solutions S.r.l.','DDT','189659216','2014-10-15','DDT-FUJITSU-189659216.pdf','APPARATI SERVER HP S26361-K1402-V400 8S-D3141 PY RX600 S6','6','P18','2014-10-20','safe program dcx postel','Tecnotrans S.r.l.','4100164299');
 CALL upd_posizione_magazzino('PISCAZZI','54','B1L09','P02','2014-10-21');
 CALL SCARICO(NULL,'PISCAZZI','Facility','107','2','P29','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
--- CALL SCARICO(NULL,'PISCAZZI','Facility','107','6','P18','SALA2-ISOLA13','2014-10-23','2014-10-23','progetto safe program',@myvar);
 CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','RACK COSS','2','P16','2014-10-27','site sala2 isola storage','Tecnotrans S.r.l.','');
 CALL CARICO('MANZOGI9','Poste Italiane DC Rozzano','DDT','322/RZ/2014','2014-10-27','DDT-Poste_Italiane_DC_Rozzano-322RZ2014.pdf','MATERIALE ACCESSORIO COSS','2','P07','2014-10-27','site sala2 isola storage','Tecnotrans S.r.l.','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224523/087/01 C','2014-10-16','DDT-HP-GW0F_22452308701_C.pdf','HP TFT7600 KVM KIT','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 224662/034/01 C','2014-10-17','DDT-HP-GW0F_22466203401_C.pdf','HP CONSOLE INTERFACE ADAPTER','1','P06','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 24378/023/01 C','2014-10-15','DDT-HP-GW0F_22437802301_C.pdf','SERVER HP BL460C','8','P15','2014-10-24','104435 monitoraggio opensource','Gebrueder Weiss GmbH Transport und Logistik','');
--- CALL SCARICO(NULL,'MANZOGI9','Facility','109','1','P06','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','110','1','P09','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','111','1','P16','SALA2-ISOLA13','2014-10-30','2014-10-30','scarico per montaggio in sala2 progetto 104435 monitoraggio opensource imballi da ritirare dal magazzino a cura del fornitore',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','76','8','A2L11','SALA2','2014-10-28','2014-10-28','progetto coss sala2 cablaggio (item73)',@myvar);
@@ -1126,7 +1122,6 @@ CALL SCARICO(NULL,'MANZOGI9','Facility','47','22','A2L09','SALA2-ISOLA13','2014-
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','40013','2014-10-16','DDT-FUJITSU-40013.pdf','BRETELLA UTP-CAT6 3M','22','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Tecnotrans S.r.l.','4100169594');
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','SERVER FUJITSU RX600 8S-D3141S26361 K1402 V400 YLCE007830 YLCE007831','2','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
 CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','189659229','2014-10-15','DDT-FUJITSU-189659229.pdf','BRETELLA FO-LC-LC-50/125 5M','8','P22','2014-10-31','materiale per conto di infordata referente Lorusso','Rhenus Logistics','4100169594');
--- CALL SCARICO(NULL,'PISCAZZI','Facility','112','2','P15','SALA2-ISOLA13','2014-11-03','2014-11-03','',@myvar);
 CALL SCARICO(NULL,'PISCAZZI','Facility','6','8','P22','SALA2-ISOLA13','2014-11-03','2014-11-03','scarico per movimentazione cerce',@myvar);
 CALL SCARICO(NULL,'PISCAZZI','Facility','54','22','P22','SALA2-ISOLA13','2014-11-03','2014-11-03','scarico per movimentazione merce',@myvar);
 CALL CARICO('PISCAZZI','Facility','MDS','185','2014-11-03','','BRETELLA FO-LC-LC-50/125 5M','8','A2L04','2014-11-03','reintegro merce per movimentazione interna','','');
@@ -1149,7 +1144,6 @@ CALL upd_posizione_magazzino('MANZOGI9','47','A2L11','A1L11','2014-11-17');
 CALL upd_posizione_magazzino('MANZOGI9','46','A1L08','A2L07','2014-11-17');
 CALL upd_posizione_magazzino('MANZOGI9','46','A2L08','A2L07','2014-11-17');
 CALL CARICO('PISCAZZI','HMS IT S.p.A.','DDT','RO 38','2014-11-13','DDT-HMSITS.p.A.-RO38.jpg','SERVER X3850 X5-JB9+JBA','3','P15','2014-11-18','OGNI SERVER DIVISO IN DUE COLLI ','HMS IT S.p.A.','4100169026');
--- CALL SCARICO(NULL,'MANZOGI9','Facility','115','1','C2L14','SALA2-ISOLA13','2014-11-18','2014-11-18','',@myvar);
 -- *********************************************************************
 -- FUNZIONI DEPRECATE: upd_giacenza_magazzino - upd_posizione_magazzino
 DROP PROCEDURE upd_giacenza_magazzino;
@@ -1170,7 +1164,6 @@ CALL SCARICO(NULL,'MANZOGI9','Facility','120','1','P15','SALA2-ISOLA10','2014-12
 CALL SCARICO(NULL,'MANZOGI9','Facility','121','1','A2L05','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-12-05','MOVING ARTE ANTICA',@myvar);
 CALL CARICO('MANZOGI9','PosteMobile S.p.a.','Lettera_di_vettura','J100026900086','2014-12-03','Letteradivettura-PosteMobileS.p.a.-J100026900086.pdf','MATERIALE ELETTRICO','1','P06','2014-12-12','Mail del 10/12 da FARINA ANDREA','SDA Express Courier','');
--- CALL SCARICO(NULL,'PISCAZZI','Facility','118','1','A2L05','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO(NULL,'PISCAZZI','Facility','119','1','C2L13','SALA2-ISOLA10-F2P1','2014-12-15','2014-12-15','progetto antiriciclaggio antiterrorismo, soluzione a tendere',@myvar);
 CALL SCARICO(NULL,'PISCAZZI','Facility','98','1','P05','SALA1 ISOLA1','2014-12-12','2014-12-18','progetto nas rete cert',@myvar);
 CALL CARICO('PISCAZZI','Emmegi','DDT','3797','2014-12-17','DDT-Emmegi-3797.jpg','BRETELLA UTP-CAT6 5M','46','B1L05','2014-12-22','','BRT SPA','4501193782');
@@ -1225,8 +1218,6 @@ CALL CARICO('MANZOGI9','Accessi','Reintegro','1','2015-02-04','','BRETELLA UTP-C
 CALL SCARICO(NULL,'LORUSSO6','Facility','116','2','P22','SALA2-ISOLA13','2015-01-13','2015-02-05','Data collaudo',@myvar);
 CALL aggiornamento_registro(NULL,'INFORDATA','DDT','2015-DDTCL-0000339','478','2015-02-02','DDT-INFORDATA-2015-DDTCL-0000339.pdf',@myvar);
 CALL CARICO('PISCAZZI','INFORDATA','DDT','2015-DDTCL-0000339','2015-02-02','','CAVI ALIMENTAZIONE PROLUNGA MONITOR MT 1.8','16','UFFICIO_RESPONSABILE','2015-02-02','VMWARE FASE 5','BRT SPA','4100176202');
--- CALL CARICO('PISCAZZI','Emmegi','DDT','2015-DDTCL-0000339','2015-02-02','','CAVI ALIMENTAZIONE PROLUNGA MONITOR MT 1.8','16','UFFICIO_RESPONSABILE','2015-02-02','VMWARE FASE 5','BRT SPA','');
--- CALL CARICO('PISCAZZI','INFORDATA','DDT','189753004','2015-01-27','DDT-INFORDATA-189753004.jpg','Server fujitsu RX4770','4','SALA2-ISOLA13','2015-02-02','mooving Rozzano','Rhenus Logistics','');
 CALL CARICO('PISCAZZI','INFORDATA','DDT','189753004','2014-12-31','DDT-INFORDATA-189753004.jpg','SERVER FUJITSU RX4770','4','P13','2015-01-27','VMWARE FASE 5','Rhenus Logistics','');
 CALL SCARICO(NULL,'PISCAZZI','Facility','146','4','B2L08','SALA2-ISOLA13','2014-12-31','2015-02-06','',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','108','2','P12','SALA2','2014-10-27','2015-02-06','SITE SALA 2',@myvar);

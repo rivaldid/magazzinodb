@@ -1,115 +1,78 @@
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_etichette //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_etichette` AS 
+DROP VIEW IF EXISTS vserv_etichette;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_etichette` AS
 SELECT label FROM proprieta WHERE sel = 1;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_contatti //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_contatti` AS 
+
+DROP VIEW IF EXISTS vserv_contatti;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_contatti` AS
 SELECT label FROM proprieta WHERE sel = 5 ORDER BY label;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_tipodoc //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tipodoc` AS 
+
+DROP VIEW IF EXISTS vserv_tipodoc;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tipodoc` AS
 SELECT label FROM proprieta WHERE sel = 4 ORDER BY label;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_numdoc //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numdoc` AS 
+
+DROP VIEW IF EXISTS vserv_numdoc;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numdoc` AS
 SELECT numero FROM REGISTRO ORDER BY numero;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_posizioni //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_posizioni` AS 
+
+DROP VIEW IF EXISTS vserv_posizioni;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_posizioni` AS
 SELECT label FROM proprieta WHERE sel = 2 ORDER BY label;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_destinazioni //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_destinazioni` AS 
+
+DROP VIEW IF EXISTS vserv_destinazioni;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_destinazioni` AS
 SELECT label FROM proprieta WHERE sel = 3;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_numoda //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numoda` AS 
+
+DROP VIEW IF EXISTS vserv_numoda;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numoda` AS
 SELECT numero FROM REGISTRO WHERE tipo = 'ODA' ORDER BY numero;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_transiti //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti` AS 
+
+DROP VIEW IF EXISTS vserv_transiti;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti` AS
 SELECT * FROM TRANSITI;
-//
-DELIMITER ;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_magazzino //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino` AS 
+DROP VIEW IF EXISTS vserv_magazzino;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino` AS
 SELECT tags,posizioni,tot FROM vista_magazzino_parzxtot;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_magazzino_id //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS 
+
+DROP VIEW IF EXISTS vserv_magazzino_id;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS
 SELECT id_merce,tags,posizioni,tot FROM vista_magazzino_parzxtot;
-//
-DELIMITER ;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_registro //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_registro` AS 
+DROP VIEW IF EXISTS vserv_registro;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_registro` AS
 SELECT contatto, tipo, numero, gruppo, data, file FROM REGISTRO;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_merce //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_merce` AS 
+
+DROP VIEW IF EXISTS vserv_merce;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_merce` AS
 SELECT * FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0;
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_utenti //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_utenti` AS 
+
+DROP VIEW IF EXISTS vserv_utenti;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_utenti` AS
 SELECT label FROM UTENTI;
-//
-DELIMITER ;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_tags2 //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags2` AS 
+DROP VIEW IF EXISTS vserv_tags2;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags2` AS
 SELECT label from proprieta WHERE sel='1' and label LIKE 'UTP%' OR label LIKE 'FO%';
-//
-DELIMITER ;
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_tags3 //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS 
+
+DROP VIEW IF EXISTS vserv_tags3;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS
 SELECT label from proprieta WHERE sel='1' and label like '%M';
-//
-DELIMITER ;
 
 
-DELIMITER //
--- DROP VIEW IF EXISTS vserv_gruppi_doc //
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS 
+DROP VIEW IF EXISTS vserv_gruppi_doc;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS
 SELECT id_registro,gruppo,CONCAT_WS(' - ',contatto,tipo,numero) as documento,data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento') ORDER BY data DESC;
-//
-DELIMITER ;

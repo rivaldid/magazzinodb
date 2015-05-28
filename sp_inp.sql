@@ -1,6 +1,3 @@
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-
 DELIMITER //
 
 
@@ -10,30 +7,29 @@ DELIMITER //
 -- -- 2 posizioni
 -- -- 3 destinazioni
 -- -- 4 tipi di documento
--- -- 5 rubrica 
+-- -- 5 rubrica
 --
-
--- DROP PROCEDURE IF EXISTS input_proprieta //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_proprieta`( 
-IN in_sel INT, 
-IN in_label TEXT 
-) 
-BEGIN 
-IF NOT (SELECT EXISTS(SELECT 1 FROM proprieta WHERE sel=in_sel AND label=in_label)) THEN 
-INSERT INTO proprieta(sel,label) VALUES(in_sel, in_label); 
+DROP PROCEDURE IF EXISTS input_proprieta //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_proprieta`(
+IN in_sel INT,
+IN in_label TEXT
+)
+BEGIN
+IF NOT (SELECT EXISTS(SELECT 1 FROM proprieta WHERE sel=in_sel AND label=in_label)) THEN
+INSERT INTO proprieta(sel,label) VALUES(in_sel, in_label);
 END IF;
 END //
 
 
--- ---------------------- INPUT UTENTI ---------------------- 
--- DROP PROCEDURE IF EXISTS input_utenti //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`( 
-IN in_label VARCHAR(45), 
-OUT out_id_utenti INT 
-) 
-BEGIN 
-IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE label=in_label)) THEN 
-INSERT INTO UTENTI(label) VALUES(in_label); 
+-- ---------------------- INPUT UTENTI ----------------------
+DROP PROCEDURE IF EXISTS input_utenti //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`(
+IN in_label VARCHAR(45),
+OUT out_id_utenti INT
+)
+BEGIN
+IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE label=in_label)) THEN
+INSERT INTO UTENTI(label) VALUES(in_label);
 SET out_id_utenti=LAST_INSERT_ID();
 ELSE
 SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE label=in_label);
@@ -41,9 +37,9 @@ END IF;
 END //
 
 
--- ---------------------- INPUT REGISTRO ---------------------- 
--- DROP PROCEDURE IF EXISTS input_registro //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_registro`( 
+-- ---------------------- INPUT REGISTRO ----------------------
+DROP PROCEDURE IF EXISTS input_registro //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_registro`(
 IN in_contatto VARCHAR(45),
 IN in_tipo VARCHAR(45),
 IN in_numero VARCHAR(256),
@@ -51,7 +47,7 @@ IN in_gruppo INT,
 IN in_data DATE,
 IN in_file TEXT,
 OUT out_id_registro INT
-) 
+)
 BEGIN
 
 DECLARE max_gruppo INT;
@@ -78,7 +74,7 @@ IF (in_numero IS NOT NULL) THEN
 			SET in_gruppo = 1;
 		END IF;
 	END IF;
-	
+
 	-- test if not exists
 	IF NOT (SELECT EXISTS(SELECT 1 FROM REGISTRO WHERE contatto=in_contatto AND tipo=in_tipo AND numero=in_numero)) THEN
 		INSERT INTO REGISTRO(contatto,tipo,numero,gruppo,data,file) VALUES(in_contatto, in_tipo, in_numero, in_gruppo, in_data, in_file);
@@ -97,9 +93,9 @@ IF (in_numero IS NOT NULL) THEN
 		IF (in_file IS NOT NULL) THEN
 			UPDATE REGISTRO SET file=in_file WHERE contatto=in_contatto AND tipo=in_tipo AND numero=in_numero;
 		END IF;
-		
+
 		SELECT id_registro INTO out_id_registro FROM REGISTRO WHERE contatto = in_contatto AND tipo = in_tipo AND numero = in_numero;
-		
+
 	END IF;
 
 END IF;
@@ -107,31 +103,31 @@ END IF;
 END //
 
 
--- ---------------------- MERCE ---------------------- 
--- DROP PROCEDURE IF EXISTS input_merce //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_merce`( 
+-- ---------------------- MERCE ----------------------
+DROP PROCEDURE IF EXISTS input_merce //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_merce`(
 IN in_tags TEXT,
 OUT out_id_merce INT
 )
 BEGIN
 IF (in_tags IS NOT NULL) THEN
-	
+
 	-- tags in proprieta
 	CALL tokenizza_tags(in_tags);
-	
+
 	IF NOT (SELECT EXISTS(SELECT 1 FROM MERCE WHERE tags=in_tags)) THEN
 		INSERT INTO MERCE(tags) VALUES(in_tags);
 		SET out_id_merce = LAST_INSERT_ID();
 	ELSE
 		SELECT id_merce INTO out_id_merce FROM MERCE WHERE tags = in_tags;
 	END IF;
-	
+
 END IF;
 END //
 
 
--- ---------------------- OPERAZIONI ---------------------- 
--- DROP PROCEDURE IF EXISTS input_operazioni //
+-- ---------------------- OPERAZIONI ----------------------
+DROP PROCEDURE IF EXISTS input_operazioni //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_operazioni`(
 IN in_direzione INT,
 IN in_id_utenti INT,
@@ -147,25 +143,25 @@ BEGIN
 
 -- posizione
 IF (in_posizione IS NOT NULL) THEN
-	
+
 	CALL input_proprieta('2',in_posizione);
-	
+
 	-- il resto
 	IF ((in_direzione IS NOT NULL) AND (in_id_registro IS NOT NULL) AND (in_id_merce IS NOT NULL) AND (in_quantita IS NOT NULL)) THEN
-			
+
 			INSERT INTO OPERAZIONI(direzione,id_utenti,id_registro,id_merce,quantita,posizione,data,note)
 			VALUES (in_direzione,in_id_utenti,in_id_registro,in_id_merce,in_quantita,in_posizione,in_data,in_note);
 			SET out_id_operazioni = LAST_INSERT_ID();
-	
-	END IF;		
+
+	END IF;
 
 END IF;
 
 END //
 
 
--- ---------------------- ORDINI ---------------------- 
--- DROP PROCEDURE IF EXISTS input_ordini //
+-- ---------------------- ORDINI ----------------------
+DROP PROCEDURE IF EXISTS input_ordini //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_ordini`(
 IN in_id_operazioni INT,
 IN in_id_oda INT,
@@ -175,28 +171,28 @@ BEGIN
 IF (in_id_operazioni IS NOT NULL) THEN
 
 	IF NOT (SELECT EXISTS(SELECT 1 FROM ORDINI WHERE id_operazioni = in_id_operazioni)) THEN
-		
+
 		IF ((in_id_oda IS NOT NULL) OR (in_trasportatore IS NOT NULL)) THEN
 			INSERT INTO ORDINI(id_operazioni, id_registro_ordine, trasportatore) VALUES(in_id_operazioni, in_id_oda, in_trasportatore);
 		END IF;
-		
-	ELSE	
+
+	ELSE
 		IF (in_id_oda IS NOT NULL) THEN
 			UPDATE ORDINI SET id_registro_ordine=in_id_oda WHERE id_operazioni=in_id_operazioni;
 		END IF;
-		
+
 		IF (in_trasportatore IS NOT NULL) THEN
 			UPDATE ORDINI SET trasportatore=in_trasportatore WHERE id_operazioni=in_id_operazioni;
 		END IF;
 	END IF;
-	
+
 END IF;
 END //
 
 
--- ---------------------- MAGAZZINO ---------------------- 
--- DROP PROCEDURE IF EXISTS input_magazzino //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_magazzino`( 
+-- ---------------------- MAGAZZINO ----------------------
+DROP PROCEDURE IF EXISTS input_magazzino //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_magazzino`(
 IN in_direzione INT,
 IN in_id_merce INT,
 IN in_posizione VARCHAR(45),
@@ -215,61 +211,53 @@ IF NOT (SELECT EXISTS(SELECT 1 FROM MAGAZZINO WHERE id_merce = in_id_merce AND p
 ELSE
 
 	SELECT quantita INTO stored_quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione;
-	
+
 	IF (in_direzione = 1) THEN
 		UPDATE MAGAZZINO SET quantita = stored_quantita + in_quantita WHERE id_merce = in_id_merce AND posizione = in_posizione;
 	END IF;
-	
+
 	IF (in_direzione = 0) THEN
 		IF (stored_quantita >= in_quantita) THEN
 			UPDATE MAGAZZINO SET quantita = stored_quantita - in_quantita WHERE id_merce = in_id_merce AND posizione = in_posizione;
 		END IF;
 	END IF;
-	
+
 END IF;
 END //
 
 
 -- INSERIMENTO DATI ACCOUNT DI RETE
--- DROP PROCEDURE IF EXISTS input_accounts //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_accounts`( 
-IN in_rete VARCHAR(45), 
-IN in_cognome VARCHAR(45) 
-) 
-BEGIN 
-IF NOT (SELECT account_exists(in_rete)) THEN 
-INSERT INTO account(rete,cognome) VALUES(in_rete, in_cognome); 
+DROP PROCEDURE IF EXISTS input_accounts //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_accounts`(
+IN in_rete VARCHAR(45),
+IN in_cognome VARCHAR(45)
+)
+BEGIN
+IF NOT (SELECT account_exists(in_rete)) THEN
+INSERT INTO account(rete,cognome) VALUES(in_rete, in_cognome);
 END IF;
 END //
 
 
--- DROP PROCEDURE IF EXISTS input_permission //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_permission`( 
-IN in_rete VARCHAR(45), 
-IN in_progetto VARCHAR(45), 
+DROP PROCEDURE IF EXISTS input_permission //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_permission`(
+IN in_rete VARCHAR(45),
+IN in_progetto VARCHAR(45),
 IN in_livello INT
-) 
-BEGIN 
-IF (SELECT account_exists(in_rete)) THEN 
-	IF (SELECT permission_exists(in_rete,in_progetto)) THEN 
+)
+BEGIN
+IF (SELECT account_exists(in_rete)) THEN
+	IF (SELECT permission_exists(in_rete,in_progetto)) THEN
 		UPDATE permission SET livello=in_livello WHERE rete=in_rete AND progetto=in_progetto;
 	ELSE
-		INSERT INTO permission(rete,progetto,livello) VALUES(in_rete,in_progetto,in_livello); 
+		INSERT INTO permission(rete,progetto,livello) VALUES(in_rete,in_progetto,in_livello);
 	END IF;
 END IF;
 END //
 
 
--- mysql> select inet_aton('10.98.2.171'),inet_ntoa('174195371');
--- +--------------------------+------------------------+
--- | inet_aton('10.98.2.171') | inet_ntoa('174195371') |
--- +--------------------------+------------------------+
--- |                174195371 | 10.98.2.171            |
--- +--------------------------+------------------------+
-
-
--- DROP PROCEDURE IF EXISTS input_trace //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_trace`( 
+DROP PROCEDURE IF EXISTS input_trace //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_trace`(
 IN IN_REQUEST_TIME INT UNSIGNED,
 IN IN_REQUEST_URI TEXT,
 IN IN_HTTP_REFERER TEXT,
@@ -277,8 +265,8 @@ IN IN_REMOTE_ADDR VARCHAR(45),
 IN IN_REMOTE_USER VARCHAR(45),
 IN IN_PHP_AUTH_USER VARCHAR(45),
 IN IN_HTTP_USER_AGENT TEXT
-) 
-BEGIN 
+)
+BEGIN
 IF (IN_PHP_AUTH_USER != 'vilardid') THEN
 INSERT INTO trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT)
 VALUES(IN_REQUEST_TIME,IN_REQUEST_URI,IN_HTTP_REFERER,IN_REMOTE_ADDR,IN_REMOTE_USER,IN_PHP_AUTH_USER,IN_HTTP_USER_AGENT);
@@ -288,4 +276,3 @@ END //
 
 DELIMITER ;
 
-/*!40101 SET character_set_client = @saved_cs_client */;

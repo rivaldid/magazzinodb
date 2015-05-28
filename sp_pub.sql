@@ -1,10 +1,7 @@
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-
 DELIMITER //
 
--- ---------------------- CARICO ---------------------- 
--- DROP PROCEDURE IF EXISTS CARICO //
+-- ---------------------- CARICO ----------------------
+DROP PROCEDURE IF EXISTS CARICO //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `CARICO`(
 IN in_utente VARCHAR(45),
 IN in_fornitore VARCHAR(45),
@@ -66,8 +63,8 @@ CALL input_ordini(@my_id_operazioni, @my_id_oda, in_trasportatore);
 END //
 
 
--- ---------------------- SCARICO ---------------------- 
--- DROP PROCEDURE IF EXISTS SCARICO //
+-- ---------------------- SCARICO ----------------------
+DROP PROCEDURE IF EXISTS SCARICO //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `SCARICO`(
 IN in_mds INT,
 IN in_utente VARCHAR(45),
@@ -93,20 +90,20 @@ DECLARE my_quantita INT;
 SET my_quantita := (SELECT quantita FROM MAGAZZINO WHERE id_merce=in_id_merce AND posizione=in_posizione);
 
 IF (my_quantita IS NULL) THEN
-	
+
 	SET @ritorno := 1;
 
-ELSE 
-	
+ELSE
+
 	IF (in_quantita>my_quantita) THEN
-	
+
 		SET @ritorno := 2;
-	
+
 	ELSE
-		
+
 		-- UTENTE
 		CALL input_utenti(in_utente,@my_id_utente);
-		
+
 		-- DOCUMENTO
 		IF (in_mds IS NULL) THEN
 			SELECT MAX(CAST(numero AS UNSIGNED))+1 INTO my_mds FROM REGISTRO WHERE tipo='MDS';
@@ -114,13 +111,13 @@ ELSE
 		ELSE
 			CALL input_registro(in_richiedente, 'MDS', in_mds, NULL, in_data_doc_scarico, NULL, @my_id_registro);
 		END IF;
-		
+
 		-- OPERAZIONI
 		CALL input_operazioni('0', @my_id_utente, @my_id_registro, in_id_merce, in_quantita, in_destinazione, in_data_scarico, CONCAT(in_note_scarico,' PROVENIENZA ',in_posizione), @my_id_operazioni);
-		
+
 		-- MAGAZZINO
 		CALL input_magazzino('0', in_id_merce, in_posizione, in_quantita);
-		
+
 		SET @ritorno := 0;
 
 	END IF;
@@ -132,7 +129,7 @@ SELECT @ritorno AS risultato, CONCAT_WS(' ','SCARICO',in_utente,in_richiedente,i
 END //
 
 
-/*-- ---------------------- AGGIORNAMENTO MAGAZZINO ---------------------- 
+/*-- ---------------------- AGGIORNAMENTO MAGAZZINO ----------------------
 -- DROP PROCEDURE IF EXISTS aggiornamento_magazzino//
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_magazzino`(
 IN in_utente VARCHAR(45),
@@ -145,7 +142,7 @@ IN in_2nd_id_merce INT,
 IN in_2nd_posizione VARCHAR(45),
 IN in_2nd_quantita INT,
 IN in_data DATE
-) 
+)
 BEGIN
 
 
@@ -166,17 +163,17 @@ IF ((in_1st_id_merce IS NOT NULL) AND (in_1st_posizione IS NOT NULL) AND (in_1st
 
 -- 001
 IF ((in_2nd_id_merce IS NULL) AND (in_2nd_posizione IS NULL) AND (in_2nd_quantita IS NOT NULL)) THEN
-CALL aggiornamento_magazzino_quantita(in_utente,in_1st_id_merce,in_1st_posizione,in_1st_quantita,in_2nd_quantita,in_data);		
+CALL aggiornamento_magazzino_quantita(in_utente,in_1st_id_merce,in_1st_posizione,in_1st_quantita,in_2nd_quantita,in_data);
 END IF;
 
 -- 010
 IF ((in_2nd_id_merce IS NULL) AND (in_2nd_posizione IS NOT NULL) AND (in_2nd_quantita IS NULL)) THEN
-CALL aggiornamento_magazzino_posizione(in_utente,in_1st_id_merce,in_1st_posizione,in_2nd_posizione,in_1st_quantita,in_data);	
+CALL aggiornamento_magazzino_posizione(in_utente,in_1st_id_merce,in_1st_posizione,in_2nd_posizione,in_1st_quantita,in_data);
 END IF;
 
 -- 100
 IF ((in_2nd_id_merce IS NOT NULL) AND (in_2nd_posizione IS NULL) AND (in_2nd_quantita IS NULL)) THEN
-CALL aggiornamento_magazzino_merce(in_utente,in_1st_id_merce,in_2nd_id_merce,in_1st_posizione,in_1st_quantita,in_data);	
+CALL aggiornamento_magazzino_merce(in_utente,in_1st_id_merce,in_2nd_id_merce,in_1st_posizione,in_1st_quantita,in_data);
 END IF;
 
 END IF; -- end test valori
@@ -187,12 +184,12 @@ DROP PROCEDURE aggiornamento_magazzino;
 */
 
 
--- ---------------------- REVERT ---------------------- 
--- DROP PROCEDURE IF EXISTS revert//
+-- ---------------------- REVERT ----------------------
+DROP PROCEDURE IF EXISTS revert //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `revert`(
 IN in_utente VARCHAR(45),
 IN in_id_operazioni INT
-) 
+)
 BEGIN
 
 DECLARE my_id_merce INT;
@@ -215,13 +212,12 @@ END IF;
 
 END //
 
-DELIMITER ;
-
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 
 -- PUBLIC API ACCOUNT DI RETE
 -- get_permission(rete,progetto);
 -- get_cognome(rete);
 -- get_rete(cognome);
 -- call input_trace(REQUEST_TIME,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT);
+
+
+DELIMITER ;
