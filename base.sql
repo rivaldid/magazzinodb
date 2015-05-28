@@ -105,12 +105,14 @@ CREATE TABLE `proprieta` (
 DROP TABLE IF EXISTS `UTENTI`;
 CREATE TABLE `UTENTI` (
   `id_utenti` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(45) NOT NULL,
+  `rete` varchar(45) NOT NULL,
+  `cognome` varchar(45) NOT NULL,
+  `permission` int NOT NULL,
   PRIMARY KEY (`id_utenti`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- ACCOUNT DI RETE
+/*-- ACCOUNT DI RETE
 DROP TABLE IF EXISTS `account`;
 CREATE TABLE `account` (
   `rete` varchar(45) NOT NULL,
@@ -125,7 +127,7 @@ CREATE TABLE `permission` (
   `progetto` varchar(45) NOT NULL,
   `livello` int NOT NULL,
   PRIMARY KEY (`rete`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;*/
 
 -- TRACING ACCOUNT DI RETE
 DROP TABLE IF EXISTS `trace`;

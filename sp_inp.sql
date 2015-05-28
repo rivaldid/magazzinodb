@@ -21,22 +21,6 @@ END IF;
 END //
 
 
--- ---------------------- INPUT UTENTI ----------------------
-DROP PROCEDURE IF EXISTS input_utenti //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`(
-IN in_label VARCHAR(45),
-OUT out_id_utenti INT
-)
-BEGIN
-IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE label=in_label)) THEN
-INSERT INTO UTENTI(label) VALUES(in_label);
-SET out_id_utenti=LAST_INSERT_ID();
-ELSE
-SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE label=in_label);
-END IF;
-END //
-
-
 -- ---------------------- INPUT REGISTRO ----------------------
 DROP PROCEDURE IF EXISTS input_registro //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_registro`(
@@ -226,24 +210,27 @@ END IF;
 END //
 
 
--- INSERIMENTO DATI ACCOUNT DI RETE
-DROP PROCEDURE IF EXISTS input_accounts //
-CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_accounts`(
+-- ---------------------- INPUT UTENTI ----------------------
+DROP PROCEDURE IF EXISTS input_utenti //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_utenti`(
 IN in_rete VARCHAR(45),
-IN in_cognome VARCHAR(45)
+OUT out_id_utenti INT
 )
 BEGIN
-IF NOT (SELECT account_exists(in_rete)) THEN
-INSERT INTO account(rete,cognome) VALUES(in_rete, in_cognome);
+IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE rete=in_rete)) THEN
+INSERT INTO UTENTI(rete) VALUES(in_rete);
+SET out_id_utenti=LAST_INSERT_ID();
+ELSE
+SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE rete=in_rete);
 END IF;
 END //
 
-
+-- ---------------------- INPUT PERMISSION ------------------
 DROP PROCEDURE IF EXISTS input_permission //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_permission`(
 IN in_rete VARCHAR(45),
-IN in_progetto VARCHAR(45),
-IN in_livello INT
+IN in_cognome VARCHAR(45),
+IN in_permisison INT
 )
 BEGIN
 IF (SELECT account_exists(in_rete)) THEN
