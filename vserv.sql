@@ -60,7 +60,7 @@ SELECT * FROM MAGAZZINO LEFT JOIN MERCE USING(id_merce) WHERE quantita>0;
 
 DROP VIEW IF EXISTS vserv_utenti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_utenti` AS
-SELECT label FROM UTENTI;
+SELECT rete FROM UTENTI;
 
 
 DROP VIEW IF EXISTS vserv_tags2;

@@ -217,13 +217,14 @@ IN in_rete VARCHAR(45),
 OUT out_id_utenti INT
 )
 BEGIN
-IF NOT (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE rete=in_rete)) THEN
-INSERT INTO UTENTI(rete) VALUES(in_rete);
-SET out_id_utenti=LAST_INSERT_ID();
+IF (SELECT account_exists(in_rete)) THEN
+	SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE rete=in_rete);
 ELSE
-SET out_id_utenti=(SELECT id_utenti FROM UTENTI WHERE rete=in_rete);
+	INSERT INTO UTENTI(rete) VALUES(in_rete);
+	SET out_id_utenti=LAST_INSERT_ID();
 END IF;
 END //
+
 
 -- ---------------------- INPUT PERMISSION ------------------
 DROP PROCEDURE IF EXISTS input_permission //
@@ -234,15 +235,14 @@ IN in_permisison INT
 )
 BEGIN
 IF (SELECT account_exists(in_rete)) THEN
-	IF (SELECT permission_exists(in_rete,in_progetto)) THEN
-		UPDATE permission SET livello=in_livello WHERE rete=in_rete AND progetto=in_progetto;
-	ELSE
-		INSERT INTO permission(rete,progetto,livello) VALUES(in_rete,in_progetto,in_livello);
-	END IF;
+	UPDATE UTENTI SET cognome=in_cognome,permission=in_permission WHERE rete=in_rete;
+ELSE
+	INSERT INTO UTENTE(rete,cognome,permission) VALUES(in_rete,in_cognome,in_permission);
 END IF;
 END //
 
 
+-- ---------------------- INPUT TRACE -----------------------
 DROP PROCEDURE IF EXISTS input_trace //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_trace`(
 IN IN_REQUEST_TIME INT UNSIGNED,

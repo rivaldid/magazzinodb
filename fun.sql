@@ -71,34 +71,20 @@ RETURN (SELECT IF(note LIKE '%PROVENIENZA%',TRIM(SUBSTRING_INDEX(note,'PROVENIEN
 END //
 
 
--- FUNCTION ACCOUNT DI RETE
+-- FUNCTION ACCOUNT DI RETE:
 DROP FUNCTION IF EXISTS `account_exists` //
 CREATE DEFINER=`magazzino`@`localhost` FUNCTION `account_exists`(in_rete VARCHAR(45))
 RETURNS TINYINT(1)
 BEGIN
-RETURN (SELECT EXISTS(SELECT 1 FROM account WHERE rete=in_rete));
-END //
-
-
-DROP FUNCTION IF EXISTS `permission_exists` //
-CREATE DEFINER=`magazzino`@`localhost` FUNCTION `permission_exists`(in_rete VARCHAR(45),in_progetto VARCHAR(45))
-RETURNS TINYINT(1)
-BEGIN
-RETURN (SELECT EXISTS(SELECT 1 FROM permission WHERE rete=in_rete AND progetto=in_progetto));
+RETURN (SELECT EXISTS(SELECT 1 FROM UTENTI WHERE rete=in_rete));
 END //
 
 
 DROP FUNCTION IF EXISTS `get_permission` //
-CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_permission`(in_rete VARCHAR(45),in_progetto VARCHAR(45))
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_permission`(in_rete VARCHAR(45))
 RETURNS INT
 BEGIN
-DECLARE risultato INT;
-IF (SELECT permission_exists(in_rete,in_progetto)) THEN
-	SET risultato=(SELECT livello FROM permission WHERE rete=in_rete AND progetto=in_progetto);
-ELSE
-	SET risultato=0;
-END IF;
-RETURN risultato;
+RETURN (SELECT permission FROM UTENTI WHERE rete=in_rete);
 END //
 
 
@@ -106,16 +92,8 @@ DROP FUNCTION IF EXISTS `get_cognome` //
 CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_cognome`(in_rete VARCHAR(45))
 RETURNS VARCHAR(45)
 BEGIN
-RETURN (SELECT cognome FROM account WHERE rete=in_rete);
+RETURN (SELECT cognome FROM UTENTI WHERE rete=in_rete);
 END //
 
-
-DROP FUNCTION IF EXISTS `get_rete` //
-CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_rete`(in_cognome VARCHAR(45))
-RETURNS VARCHAR(45)
-BEGIN
-RETURN (SELECT rete FROM account WHERE cognome=in_cognome);
-END //
 
 DELIMITER ;
-
