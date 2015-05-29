@@ -1,37 +1,22 @@
 USE magazzino;
 
 -- DATI RELATIVI AGLI ACCOUNT DI RETE
-TRUNCATE TABLE accounts;
-TRUNCATE TABLE permission;
+TRUNCATE TABLE UTENTI;
 TRUNCATE TABLE trace;
-CALL input_accounts('LORUSSO6','Lorusso');
-CALL input_accounts('VILARDID','Vilardi');
-CALL input_accounts('MARCHIS6','Marchisotti');
-CALL input_accounts('NICAST28','Nicastro');
-CALL input_accounts('FUCITOF2','Fucito');
-CALL input_accounts('PISCAZZI','Piscazzi');
-CALL input_accounts('MURATO48','Muratore');
-CALL input_accounts('MANZOGI9','Manzo');
-CALL input_accounts('TUTTOLO5','Tuttolomondo');
-CALL input_accounts('DALES177','DAlessio');
-CALL input_accounts('LOMBA693','Lombardo');
-CALL input_accounts('GENNARE3','Gennarelli');
-CALL input_accounts('FLORIOCR','Florio');
-CALL input_accounts('LUCATIFR','Lucati');
-CALL input_permission('LORUSSO6','magazzino','2');
-CALL input_permission('VILARDID','magazzino','2');
-CALL input_permission('PISCAZZI','magazzino','2');
-CALL input_permission('MURATO48','magazzino','2');
-CALL input_permission('MANZOGI9','magazzino','2');
-CALL input_permission('MARCHIS6','magazzino','1');
-CALL input_permission('NICAST28','magazzino','1');
-CALL input_permission('FUCITOF2','magazzino','1');
-CALL input_permission('TUTTOLO5','magazzino','1');
-CALL input_permission('DALES177','magazzino','1');
-CALL input_permission('LOMBA693','magazzino','1');
-CALL input_permission('GENNARE3','magazzino','1');
-CALL input_permission('FLORIOCR','magazzino','1');
-CALL input_permission('LUCATIFR','magazzino','1');
+CALL input_permission('LORUSSO6','Lorusso','2');
+CALL input_permission('VILARDID','Vilardi','2');
+CALL input_permission('MARCHIS6','Marchisotti','1');
+CALL input_permission('NICAST28','Nicastro','1');
+CALL input_permission('FUCITOF2','Fucito','1');
+CALL input_permission('PISCAZZI','Piscazzi','2');
+CALL input_permission('MURATO48','Muratore','2');
+CALL input_permission('MANZOGI9','Manzo','2');
+CALL input_permission('TUTTOLO5','Tuttolomondo','1');
+CALL input_permission('DALES177','DAlessio','1');
+CALL input_permission('LOMBA693','Lombardo','1');
+CALL input_permission('GENNARE3','Gennarelli','1');
+CALL input_permission('FLORIOCR','Florio','1');
+CALL input_permission('LUCATIFR','Lucati','1');
 
 -- proprieta
 TRUNCATE TABLE proprieta;

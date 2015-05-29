@@ -231,13 +231,13 @@ DROP PROCEDURE IF EXISTS input_permission //
 CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `input_permission`(
 IN in_rete VARCHAR(45),
 IN in_cognome VARCHAR(45),
-IN in_permisison INT
+IN in_permission INT
 )
 BEGIN
 IF (SELECT account_exists(in_rete)) THEN
 	UPDATE UTENTI SET cognome=in_cognome,permission=in_permission WHERE rete=in_rete;
 ELSE
-	INSERT INTO UTENTE(rete,cognome,permission) VALUES(in_rete,in_cognome,in_permission);
+	INSERT INTO UTENTI(rete,cognome,permission) VALUES(in_rete,in_cognome,in_permission);
 END IF;
 END //
 

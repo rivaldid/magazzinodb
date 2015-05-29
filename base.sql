@@ -106,7 +106,7 @@ DROP TABLE IF EXISTS `UTENTI`;
 CREATE TABLE `UTENTI` (
   `id_utenti` int(11) NOT NULL AUTO_INCREMENT,
   `rete` varchar(45) NOT NULL,
-  `cognome` varchar(45) NOT NULL,
+  `cognome` varchar(45),
   `permission` int NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_utenti`),
   UNIQUE KEY (`rete`)
