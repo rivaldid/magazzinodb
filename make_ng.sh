@@ -15,7 +15,7 @@ BINDATE="/bin/date"
 
 A="<h3> -->"
 B="</h3>"
-C="<P style=\"line-height:0.1em\">"
+C="<P>"
 D="</P>"
 
 foo() {
