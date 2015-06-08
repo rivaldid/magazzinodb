@@ -1426,7 +1426,7 @@ CALL CARICO('MANZOGI9','ITALTEL','DDT','NVLS 68031570','2015-05-27','DDT-ITALTEL
 CALL SCARICO('347','MANZOGI9','PosteMobile','201','2','P20','SALA2','2015-06-04','2015-06-04','materiale per installazione tor progetto crm',@myvar);
 CALL SCARICO('348','MANZOGI9','PostemobileTLC','46','4','A2L08','SALA2-ISOLA10','2015-06-04','2015-06-04','TOR PROGETTO CRM GETC SUN 1_2',@myvar);
 CALL SCARICO('349','MURATO48','Facility','54','14','P02','SALA2-ISOLA13','2015-06-05','2015-06-05','',@myvar);
-
+CALL SCARICO('350','MURATO48','Facility','6','4','A2L09','SALA2_ISOLA11','2015-06-05','2015-06-05','',@myvar);
 
 
 -- ' exemple
