@@ -1427,7 +1427,24 @@ CALL SCARICO('347','MANZOGI9','PosteMobile','201','2','P20','SALA2','2015-06-04'
 CALL SCARICO('348','MANZOGI9','PostemobileTLC','46','4','A2L08','SALA2-ISOLA10','2015-06-04','2015-06-04','TOR PROGETTO CRM GETC SUN 1_2',@myvar);
 CALL SCARICO('349','MURATO48','Facility','54','14','P02','SALA2-ISOLA13','2015-06-05','2015-06-05','',@myvar);
 CALL SCARICO('350','MURATO48','Facility','6','4','A2L09','SALA2_ISOLA11','2015-06-05','2015-06-05','',@myvar);
-
+CALL CARICO('PISCAZZI','INFORDATA','DDT','40016','2015-05-20','DDT-INFORDATA-40016.pdf','BRETELLA UTP-CAT6 3M','65','P38','2015-06-03','PER POSTECOM','Tecnotrans S.r.l','4501196166');
+CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','191057506','2015-05-20','DDT-FujitsuTechnologySolutionsS.r.l.-191057506.pdf','RACK T7 TECNOSTEEL','2','P37','2015-06-03','','Rhenus Logistics','4501196166');
+CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','191057506','2015-05-20','DDT-FujitsuTechnologySolutionsS.r.l.-191057506.pdf','SERVER FUJITSU RX4770 M1','5','P37','2015-06-03','DA PT 40822578 a 40822582','Rhenus Logistics','4501196166');
+CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','191057506','2015-05-03','DDT-FujitsuTechnologySolutionsS.r.l.-191057506.pdf','CONSOLE F9857N + F79857N\r\nPT 40077690+40077692','2','P37','2015-06-03','','Rhenus Logistics','4501196166');
+CALL CARICO('PISCAZZI','Fujitsu Technology Solutions S.r.l.','DDT','191057506','2015-05-03','DDT-FujitsuTechnologySolutionsS.r.l.-191057506.pdf','SWITCH F9816N\r\nPT 40077691 + 40077893','2','P37','2015-06-03','','Rhenus Logistics','4501196166');
+CALL SCARICO('351','PISCAZZI','Facility','54','65','P38','SALA2 ISOLA15','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','204','2','P37','SALA2 ISOLA15','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','202','2','P37','SALA2 ISOLA15','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','203','5','P37','SALA2 ISOLA15','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','205','2','P37','SALA2 ISOLA15','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','132','1','P37','SALA2','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('351','PISCAZZI','Facility','136','1','P37','SALA2','2015-06-03','2015-06-09','',@myvar);
+CALL SCARICO('352','PISCAZZI','Facility','54','46','P02','SALA2','2015-06-09','2015-06-09','',@myvar);
+CALL SCARICO('352','PISCAZZI','Facility','46','40','A2L08','SALA2','2015-06-09','2015-06-09','',@myvar);
+CALL SCARICO('352','PISCAZZI','Facility','2','20','A2L12','TLC','2015-06-09','2015-06-09','',@myvar);
+CALL CARICO('PISCAZZI','Poste Italiane DC Rozzano','N.N','N.N','2015-06-04','','SERVER RX600','4','SALA2-ISOLA13','2015-06-04','PT 40699666-40699669','ASSISTCOM','');
+CALL aggiornamento_magazzino_posizione('PISCAZZI','206','SALA2-ISOLA13','P28','4','2015-06-09');
+CALL SCARICO('354','PISCAZZI','Facility','206','4','P28','SALA2-ISOLA13','2015-06-04','2015-06-09','MOVING DA ROZZANO',@myvar);
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
