@@ -42,53 +42,30 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_report_transiti_mensile` AS
 SELECT * FROM report_transiti_mensile;
 
 
+-- viste magazzino: base, contro (subsel1 subsel2 jsubsel), detail, detail_simple (senza info sulle bretelle)
+-- output: merce posizione quantita id_merce +detail: note
+
 DROP VIEW IF EXISTS vserv_magazzino;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_id` AS
-SELECT tags,posizioni,tot,id_merce FROM vista_magazzino_parzxtot;
-
-
-DROP VIEW IF EXISTS vserv_magazzino_contro_subsel1;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_contro_subsel1` AS
-SELECT id_merce,quantita,posizione FROM OPERAZIONI JOIN REGISTRO USING(id_registro) WHERE direzione=0 AND contatto!='Aggiornamento';
-
-
-DROP VIEW IF EXISTS vserv_magazzino_contro_subsel2;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_contro_subsel2` AS
-SELECT id_merce,quantita,posizione FROM MAGAZZINO WHERE quantita>0;
-
-
-DROP VIEW IF EXISTS vserv_magazzino_contro_jsubsel;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_contro_jsubsel` AS
-SELECT 
-	vserv_magazzino_contro_subsel1.id_merce,
-	vserv_magazzino_contro_subsel1.quantita,
-	vserv_magazzino_contro_subsel1.posizione 
-FROM
-	vserv_magazzino_contro_subsel1 
-LEFT JOIN 
-	vserv_magazzino_contro_subsel2
-ON CONCAT(
-		vserv_magazzino_contro_subsel1.id_merce,
-		vserv_magazzino_contro_subsel1.quantita,
-		vserv_magazzino_contro_subsel1.posizione)
-	= CONCAT(
-		vserv_magazzino_contro_subsel2.id_merce,
-		vserv_magazzino_contro_subsel2.quantita,
-		vserv_magazzino_contro_subsel2.posizione)
-WHERE CONCAT(
-	vserv_magazzino_contro_subsel2.id_merce,
-	vserv_magazzino_contro_subsel2.quantita,
-	vserv_magazzino_contro_subsel2.posizione) IS NULL;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino` AS
+SELECT tags AS merce,posizioni AS posizione,tot AS quantita,id_merce FROM vista_magazzino_parzxtot;
 
 
 DROP VIEW IF EXISTS vserv_magazzino_contro;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_contro` AS
-SELECT 
-	MERCE.tags AS tags, 
-	GROUP_CONCAT(DISTINCT CONCAT(vserv_magazzino_contro_jsubsel.posizione,'(',vserv_magazzino_contro_jsubsel.quantita,')')) AS posizioni, 
-	sum(vserv_magazzino_contro_jsubsel.quantita) AS tot 
-FROM vserv_magazzino_contro_jsubsel
-JOIN MERCE ON vserv_magazzino_contro_jsubsel.id_merce=MERCE.id_merce GROUP BY MERCE.tags ORDER BY MERCE.tags;
+SELECT * FROM contromagazzino;
+
+
+DROP VIEW IF EXISTS vserv_magazzino_detail;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_detail` AS
+SELECT merce, posizione, quantita, id_merce, note FROM vista_magazzino_detail;
+
+
+DROP VIEW IF EXISTS vserv_magazzino_detail_simple;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_detail_simple` AS
+SELECT merce, posizione, quantita, id_merce, note FROM vista_magazzino_detail_simple;
+
+
+-- fine viste magazzino
 
 
 DROP VIEW IF EXISTS vserv_registro;
