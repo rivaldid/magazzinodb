@@ -42,8 +42,12 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_report_transiti_mensile` AS
 SELECT * FROM report_transiti_mensile;
 
 
--- viste magazzino: base, contro (subsel1 subsel2 jsubsel), detail, detail_simple (senza info sulle bretelle)
+-- viste magazzino: simple, base, contro (subsel1 subsel2 jsubsel), detail, detail_simple (senza info sulle bretelle)
 -- output: merce posizione quantita id_merce +detail: note
+
+DROP VIEW IF EXISTS vserv_magazzino_simple;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_simple` AS
+SELECT tags AS merce,posizione,quantita,id_merce FROM vista_magazzino;
 
 DROP VIEW IF EXISTS vserv_magazzino;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino` AS
