@@ -1,5 +1,21 @@
 DELIMITER //
 
+
+DROP FUNCTION IF EXISTS `strip_htmltags` //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `strip_htmltags`($str text) 
+RETURNS text
+BEGIN
+    DECLARE $start, $end INT DEFAULT 1;
+    LOOP
+        SET $start = LOCATE("<", $str, $start);
+        IF (!$start) THEN RETURN $str; END IF;
+        SET $end = LOCATE(">", $str, $start);
+        IF (!$end) THEN SET $end = $start; END IF;
+        SET $str = INSERT($str, $start, $end - $start + 1, "");
+    END LOOP;
+END //
+
+
 DROP FUNCTION IF EXISTS `split_string` //
 CREATE DEFINER=`magazzino`@`localhost` FUNCTION `split_string`(x TEXT, delim VARCHAR(12), pos INT)
 RETURNS TEXT

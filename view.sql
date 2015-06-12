@@ -1,6 +1,20 @@
+DROP VIEW IF EXISTS vista_documenti;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS
+SELECT 
+	id_registro,
+	IF(file IS NULL OR file = '', 
+		CONCAT_WS(' - ',tipo,numero,gruppo), 
+		CONCAT('<a href=\"dati/registro/',file,'">',CONCAT_WS(' - ',tipo,numero,gruppo),'</a>')
+	) AS documento,
+	contatto,
+	data 
+FROM REGISTRO 
+ORDER BY data DESC;
+
+
 DROP VIEW IF EXISTS vista_ordini;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_ordini` AS
-SELECT * FROM ORDINI LEFT JOIN REGISTRO ON id_registro_ordine = id_registro;
+SELECT * FROM ORDINI LEFT JOIN vista_documenti ON id_registro_ordine = id_registro;
 
 
 DROP VIEW IF EXISTS TRANSITI;
@@ -10,15 +24,33 @@ OPERAZIONI.id_operazioni,
 OPERAZIONI.id_merce,
 UTENTI.rete,
 OPERAZIONI.data,
-CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status, posizione,
-CONCAT(REGISTRO.contatto,' - ',REGISTRO.tipo,' - ',REGISTRO.numero) AS documento,
-REGISTRO.data as data_doc, REGISTRO.file AS doc_ingresso, tags,
-IF(direzione=0,IF(note LIKE '%PROVENIENZA%',CONCAT(quantita,' (da ',TRIM(SUBSTRING_INDEX(note,'PROVENIENZA',-1)),')'),quantita),quantita) AS quantita,
-CONCAT_WS(' ',IF(note='','Nessuna annotazione',IF(note LIKE '%PROVENIENZA%',TRIM(SUBSTRING_INDEX(note,'PROVENIENZA',1)),note)),IF(vista_ordini.trasportatore='','',CONCAT(' Trasportatore: ',vista_ordini.trasportatore))) as note,
-CONCAT(vista_ordini.tipo,' - ',vista_ordini.numero) AS ordine, vista_ordini.file AS doc_ordine
+CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status, 
+posizione,
+vista_documenti.documento AS documento,
+vista_documenti.data AS data_doc, 
+tags,
+IF(direzione=0,
+	IF(note LIKE '%PROVENIENZA%',
+		CONCAT(quantita,' (da ',TRIM(SUBSTRING_INDEX(note,'PROVENIENZA',-1)),')'),
+		quantita
+	),
+	quantita
+) AS quantita,
+CONCAT_WS(' ',
+	IF(note='',
+		'Nessuna annotazione',
+		IF(note LIKE '%PROVENIENZA%',
+			TRIM(SUBSTRING_INDEX(note,'PROVENIENZA',1)),
+			note)
+	),
+	IF(vista_ordini.trasportatore='',
+		'',
+		CONCAT(' Trasportatore: ',vista_ordini.trasportatore))
+) as note,
+vista_ordini.documento AS doc_ordine
 FROM OPERAZIONI
 JOIN MERCE USING(id_merce)
-JOIN REGISTRO USING(id_registro)
+JOIN vista_documenti USING(id_registro)
 JOIN UTENTI USING (id_utenti)
 LEFT JOIN vista_ordini USING(id_operazioni)
 ORDER BY data DESC;
@@ -40,23 +72,25 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_detail_simple` AS
 SELECT
 MERCE.id_merce,
 CONCAT_WS(' ',
-MERCE.tags,
-IF(MERCE.tags LIKE 'BRETELL%',NULL,
-	GROUP_CONCAT(
-		CONCAT(
-			IF(REGISTRO.file IS NULL OR REGISTRO.file = '', NULL, CONCAT('<p><a href="dati/registro/',REGISTRO.file,'">')),
-			'Caricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')',
-            IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a></p>')
-            )
-	SEPARATOR ' ')
-)
+	MERCE.tags,
+	IF(MERCE.tags LIKE 'BRETELL%',
+		NULL,
+		GROUP_CONCAT(
+			CONCAT_WS(' ','Caricati',OPERAZIONI.quantita,'con',vista_documenti.documento,'(',vista_documenti.contatto,')')
+		SEPARATOR ' ')
+	)
 ) AS merce,
 MAGAZZINO.posizione,MAGAZZINO.quantita,
-IF(MERCE.tags LIKE 'BRETELL%', NULL,GROUP_CONCAT(CONCAT_WS(' ',vista_ordini.tipo,vista_ordini.numero,OPERAZIONI.note) SEPARATOR ' ')) AS note
+IF(MERCE.tags LIKE 'BRETELL%', 
+	NULL,
+	GROUP_CONCAT(
+		CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note) 
+	SEPARATOR ' ')
+) AS note
 FROM MAGAZZINO
 LEFT JOIN MERCE USING(id_merce)
 LEFT JOIN OPERAZIONI USING(id_merce,posizione)
-LEFT JOIN REGISTRO USING(id_registro)
+LEFT JOIN vista_documenti USING(id_registro)
 LEFT JOIN vista_ordini USING(id_operazioni)
 WHERE MAGAZZINO.quantita>0
 GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
@@ -67,21 +101,22 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_detail` AS
 SELECT
 MERCE.id_merce,
 CONCAT_WS(' ',
-MERCE.tags,
-GROUP_CONCAT(
-	CONCAT(
-		IF(REGISTRO.file IS NULL OR REGISTRO.file = '', NULL, CONCAT('<p><a href="dati/registro/',REGISTRO.file,'">')),
-		'Caricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')',
-		IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a></p>')
-		)
-SEPARATOR ' ')
+	MERCE.tags,
+	IF(MERCE.tags LIKE 'BRETELL%',
+		NULL,
+		GROUP_CONCAT(
+			CONCAT_WS(' ','Caricati',OPERAZIONI.quantita,'con',vista_documenti.documento,'(',vista_documenti.contatto,')')
+		SEPARATOR ' ')
+	)
 ) AS merce,
 MAGAZZINO.posizione,MAGAZZINO.quantita,
-GROUP_CONCAT(CONCAT_WS(' ',vista_ordini.tipo,vista_ordini.numero,OPERAZIONI.note) SEPARATOR ' ') AS note
+GROUP_CONCAT(
+	CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note) 
+SEPARATOR ' ') AS note
 FROM MAGAZZINO
 LEFT JOIN MERCE USING(id_merce)
 LEFT JOIN OPERAZIONI USING(id_merce,posizione)
-LEFT JOIN REGISTRO USING(id_registro)
+LEFT JOIN vista_documenti USING(id_registro)
 LEFT JOIN vista_ordini USING(id_operazioni)
 WHERE MAGAZZINO.quantita>0
 GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
@@ -152,16 +187,11 @@ JOIN MERCE ON contromagazzino_jsubsel.id_merce=MERCE.id_merce
 GROUP BY MERCE.tags ORDER BY MERCE.tags;
 
 
-DROP VIEW IF EXISTS vista_documenti;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS
-SELECT id_registro,file,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,data FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data DESC;
-
-
 DROP VIEW IF EXISTS report_transiti_mensile;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `report_transiti_mensile` AS
 SELECT DATE_FORMAT(data,'%d/%m/%Y') AS data,rete,status,posizione,
-tags,quantita,CONCAT(documento,' del ',DATE_FORMAT(data_doc,'%d/%m/%Y')) AS riferimento,
-note, ordine FROM TRANSITI WHERE 1 AND
+tags,quantita,CONCAT(strip_htmltags(documento),' del ',DATE_FORMAT(data_doc,'%d/%m/%Y')) AS riferimento,
+note, strip_htmltags(doc_ordine) FROM TRANSITI WHERE 1 AND
 data >= DATE_FORMAT(NOW(),'%Y-%m-01') - INTERVAL 1 MONTH AND
 data < DATE_FORMAT(NOW(),'%Y-%m-01') ORDER BY data ASC;
 

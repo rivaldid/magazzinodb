@@ -35,7 +35,7 @@ SELECT numero FROM REGISTRO WHERE tipo = 'ODA' ORDER BY numero;
 
 DROP VIEW IF EXISTS vserv_transiti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti` AS
-SELECT doc_ingresso,doc_ordine,rete,DATE_FORMAT(data,'%d/%m/%Y') AS dataop,status,posizione,documento,DATE_FORMAT(data_doc,'%d/%m/%Y') AS data_doc,tags,quantita,note,ordine,id_merce,id_operazioni FROM TRANSITI;
+SELECT rete,DATE_FORMAT(data,'%d/%m/%Y') AS dataop,status,posizione,documento,DATE_FORMAT(data_doc,'%d/%m/%Y') AS data_doc,tags,quantita,note,doc_ordine,id_merce,id_operazioni FROM TRANSITI;
 
 DROP VIEW IF EXISTS vserv_report_transiti_mensile;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_report_transiti_mensile` AS
@@ -70,7 +70,7 @@ SELECT merce, posizione, quantita, id_merce, note FROM vista_magazzino_detail_si
 
 DROP VIEW IF EXISTS vserv_registro;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_registro` AS
-SELECT contatto, tipo, numero, gruppo, data, file FROM REGISTRO;
+SELECT contatto, documento, data FROM vista_documenti;
 
 
 DROP VIEW IF EXISTS vserv_merce;
