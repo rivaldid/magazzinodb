@@ -102,12 +102,9 @@ SELECT
 MERCE.id_merce,
 CONCAT_WS(' ',
 	MERCE.tags,
-	IF(MERCE.tags LIKE 'BRETELL%',
-		NULL,
-		GROUP_CONCAT(
-			CONCAT_WS(' ','Caricati',OPERAZIONI.quantita,'con',vista_documenti.documento,'(',vista_documenti.contatto,')')
-		SEPARATOR ' ')
-	)
+	GROUP_CONCAT(
+		CONCAT_WS(' ','Caricati',OPERAZIONI.quantita,'con',vista_documenti.documento,'(',vista_documenti.contatto,')')
+	SEPARATOR ' ')
 ) AS merce,
 MAGAZZINO.posizione,MAGAZZINO.quantita,
 GROUP_CONCAT(
