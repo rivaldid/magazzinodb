@@ -37,6 +37,9 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/fun.sql \W;" | foo
 $BINECHO $A "Carico le procedure" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di input" $B >> $logfile
+
+echo -ne '#####                     (33%)\r'
+
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp_inp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di aggiornamento dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp_upd.sql \W;" | foo
@@ -46,6 +49,8 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/sp_pub.sql \W;" | foo
 $BINECHO $A "Carico le viste sui dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/view.sql \W;" | foo
 
+echo -ne '#############             (66%)\r'
+
 $BINECHO $A "Carico le viste per il service" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/vserv.sql \W;" | foo
 $BINECHO $A "Strumenti di debug" $B >> $logfile
@@ -53,3 +58,5 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" | foo
 
 $BINECHO $A "Carico i dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" | foo
+
+echo -ne '#######################   (100%)\r'
