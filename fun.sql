@@ -112,4 +112,13 @@ RETURN (SELECT cognome FROM UTENTI WHERE rete=in_rete);
 END //
 
 
+-- FUNCTION session_handler
+DROP FUNCTION IF EXISTS `sh_record_exists` //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `sh_record_exists`(in_rete VARCHAR(45), in_page VARCHAR(45))
+RETURNS TINYINT(1)
+BEGIN
+RETURN (SELECT EXISTS(SELECT 1 FROM session_handler WHERE rete=in_rete AND page=in_page));
+END //
+
+
 DELIMITER ;
