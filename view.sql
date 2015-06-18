@@ -1,14 +1,14 @@
 DROP VIEW IF EXISTS vista_documenti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS
-SELECT 
+SELECT
 	id_registro,
-	IF(file IS NULL OR file = '', 
-		CONCAT_WS(' - ',tipo,numero,gruppo), 
+	IF(file IS NULL OR file = '',
+		CONCAT_WS(' - ',tipo,numero,gruppo),
 		CONCAT('<a href=\"dati/registro/',file,'">',CONCAT_WS(' - ',tipo,numero,gruppo),'</a>')
 	) AS documento,
 	contatto,
-	data 
-FROM REGISTRO 
+	data
+FROM REGISTRO
 ORDER BY data DESC;
 
 
@@ -24,10 +24,10 @@ OPERAZIONI.id_operazioni,
 OPERAZIONI.id_merce,
 UTENTI.rete,
 OPERAZIONI.data,
-CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status, 
+CASE direzione WHEN 0 THEN (SELECT 'USCITA') WHEN 1 THEN (SELECT 'INGRESSO') END AS status,
 posizione,
 vista_documenti.documento AS documento,
-vista_documenti.data AS data_doc, 
+vista_documenti.data AS data_doc,
 tags,
 IF(direzione=0,
 	IF(note LIKE '%PROVENIENZA%',
@@ -81,10 +81,10 @@ CONCAT_WS(' ',
 	)
 ) AS merce,
 MAGAZZINO.posizione,MAGAZZINO.quantita,
-IF(MERCE.tags LIKE 'BRETELL%', 
+IF(MERCE.tags LIKE 'BRETELL%',
 	NULL,
 	GROUP_CONCAT(
-		CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note) 
+		CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note)
 	SEPARATOR ' ')
 ) AS note
 FROM MAGAZZINO
@@ -108,7 +108,7 @@ CONCAT_WS(' ',
 ) AS merce,
 MAGAZZINO.posizione,MAGAZZINO.quantita,
 GROUP_CONCAT(
-	CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note) 
+	CONCAT_WS(' ',vista_ordini.documento,OPERAZIONI.note)
 SEPARATOR ' ') AS note
 FROM MAGAZZINO
 LEFT JOIN MERCE USING(id_merce)
@@ -126,7 +126,7 @@ GROUP BY MAGAZZINO.id_merce,MAGAZZINO.posizione ORDER BY MERCE.tags;
 
 DROP VIEW IF EXISTS contromagazzino_subsel1;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `contromagazzino_subsel1` AS
-SELECT 
+SELECT
 	id_merce,
 	quantita,
 	posizione,
@@ -135,7 +135,7 @@ SELECT
 	--	'Scaricati ',OPERAZIONI.quantita,' con ',REGISTRO.tipo,' - ',REGISTRO.numero,' (',REGISTRO.contatto,')',
 	--	IF(REGISTRO.file IS NULL OR REGISTRO.file = '',NULL,'</a></p>')
 	-- ) AS documento,
-	note 
+	note
 FROM OPERAZIONI JOIN REGISTRO USING(id_registro) WHERE direzione=0 AND contatto!='Aggiornamento';
 
 
@@ -146,15 +146,15 @@ SELECT id_merce,quantita,posizione FROM MAGAZZINO WHERE quantita>0;
 
 DROP VIEW IF EXISTS contromagazzino_jsubsel;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `contromagazzino_jsubsel` AS
-SELECT 
+SELECT
 	contromagazzino_subsel1.id_merce,
 	contromagazzino_subsel1.quantita,
 	contromagazzino_subsel1.posizione,
 	-- contromagazzino_subsel1.documento,
 	contromagazzino_subsel1.note
 FROM
-	contromagazzino_subsel1 
-LEFT JOIN 
+	contromagazzino_subsel1
+LEFT JOIN
 	contromagazzino_subsel2
 ON CONCAT(
 		contromagazzino_subsel1.id_merce,
@@ -172,15 +172,15 @@ WHERE CONCAT(
 
 DROP VIEW IF EXISTS contromagazzino;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `contromagazzino` AS
-SELECT 
-	MERCE.tags AS merce, 
-	GROUP_CONCAT(DISTINCT CONCAT(contromagazzino_jsubsel.posizione,'(',contromagazzino_jsubsel.quantita,')') SEPARATOR ' ') AS posizione, 
+SELECT
+	MERCE.tags AS merce,
+	GROUP_CONCAT(DISTINCT CONCAT(contromagazzino_jsubsel.posizione,'(',contromagazzino_jsubsel.quantita,')') SEPARATOR ' ') AS posizione,
 	sum(contromagazzino_jsubsel.quantita) AS quantita,
 	MERCE.id_merce,
 	-- GROUP_CONCAT(contromagazzino_jsubsel.documento SEPARATOR ' ') AS documento,
 	GROUP_CONCAT(contromagazzino_jsubsel.note SEPARATOR ' ') AS note
 FROM contromagazzino_jsubsel
-JOIN MERCE ON contromagazzino_jsubsel.id_merce=MERCE.id_merce 
+JOIN MERCE ON contromagazzino_jsubsel.id_merce=MERCE.id_merce
 GROUP BY MERCE.tags ORDER BY MERCE.tags;
 
 
