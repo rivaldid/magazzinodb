@@ -133,7 +133,7 @@ DROP TABLE IF EXISTS `session_handler`;
 CREATE TABLE `session_handler` (
   `rete` varchar(45) NOT NULL,
   `page` varchar(45) NOT NULL,
-  `data` TEXT NOT NULL,
-  `timestamp` INT UNSIGNED NOT NULL,
+  `contents` TEXT NOT NULL,
+  `date` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`rete`,`page`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

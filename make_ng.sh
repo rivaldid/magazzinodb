@@ -48,6 +48,8 @@ $BINECHO $A "Carico le APIs pubbliche" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp_pub.sql \W;" | foo
 $BINECHO $A "Carico le viste sui dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/view.sql \W;" | foo
+$BINECHO $A "Carico Session Handler" $B >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sh.sql \W;" | foo
 
 echo -ne '#############             (66%)\r'
 

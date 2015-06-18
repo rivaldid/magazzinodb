@@ -197,3 +197,9 @@ data < DATE_FORMAT(NOW(),'%Y-%m-01') ORDER BY data ASC;
 DROP VIEW IF EXISTS vista_trace;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_trace` AS
 SELECT id_trace,DATE_FORMAT(FROM_UNIXTIME(REQUEST_TIME),'%Y-%m-%d %H.%i.%s') AS data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM trace;
+
+
+-- VISTA SESSION HANDLER
+DROP VIEW IF EXISTS vista_sh;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_sh` AS
+SELECT rete,page,contents,DATE_FORMAT(FROM_UNIXTIME(date),'%Y-%m-%d %H.%i.%s') AS date_readable FROM session_handler;
