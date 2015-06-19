@@ -49,4 +49,22 @@ BEGIN
 
 END //
 
+
+-- ---------------------- session handler: cleanup rete x page ----------------------
+DROP PROCEDURE IF EXISTS sh_cleanup_retexpage //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `sh_cleanup_retexpage`(
+IN in_rete VARCHAR(45), 
+IN in_page VARCHAR(45)
+)
+BEGIN
+DECLARE numero_sessioni INT;
+DECLARE max_date INT UNSIGNED;
+SET @numero_sessioni = (SELECT COUNT(*) FROM session_handler WHERE rete=in_rete AND page=in_page);
+IF (@numero_sessioni>1) THEN
+	SET @max_date = (SELECT MAX(date) FROM session_handler);
+	DELETE FROM session_handler WHERE date < @max_date;
+END IF;
+END //
+
+
 DELIMITER ;

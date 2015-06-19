@@ -27,6 +27,7 @@ OUT out_contents TEXT
 )
 BEGIN
 IF (SELECT sh_record_exists(in_rete,in_page)) THEN
+	CALL sh_cleanup_retexpage(in_rete,in_page);
 	SELECT contents INTO @out_contents FROM session_handler WHERE rete=in_rete AND page=in_page;
 END IF;
 END //
