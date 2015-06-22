@@ -1447,7 +1447,13 @@ CALL aggiornamento_magazzino_posizione('PISCAZZI','206','SALA2-ISOLA13','P28','4
 CALL SCARICO('354','PISCAZZI','Facility','206','4','P28','SALA2-ISOLA13','2015-06-04','2015-06-09','MOVING DA ROZZANO',@myvar);
 CALL SCARICO('343','MANZOGI9','Facility','127','18','C1L11','SALA2','2015-06-11','2015-06-11','MOVING VMWARE DA ROZZANO - SOSTITUZIONE BRETELLE',@myvar);
 CALL SCARICO('344','MURATO48','Facility','48','1','A2L15','SALA2-ISOLA13','2015-06-11','2015-06-11','',@myvar);
-
+CALL CARICO('PISCAZZI','EMC Computer Systems Italia S.p.a.','BDC','1102001246','2015-06-18','BDC-EMCComputerSystemsItaliaS.p.a.-1102001246.pdf','battery pack 2.2kw','1','P26','2015-06-18','','DHL Express','');
+CALL SCARICO('345','PISCAZZI','Facility','199','1','P26','SALA1-ISOLA_STORAGE','2015-06-18','2015-06-19','',@myvar);
+CALL SCARICO('346','MURATO48','Facility','54','68','P02','SALA2','2015-06-19','2015-06-19','Progetto Garante privacy sala 2',@myvar);
+CALL SCARICO('346','MURATO48','Facility','76','31','B1L03','SALA2','2015-06-19','2015-06-19','Progetto Garante privacy sala 2',@myvar);
+CALL SCARICO('346','MURATO48','Facility','49','1','B1L02','SALA2','2015-06-19','2015-06-19','Progetto Garante privacy sala 2',@myvar);
+CALL CARICO('MANZOGI9','DGS S.p.A.','DDT','047-2015-A','2015-06-19','DDT-DGSS.p.A.-047-2015-A.pdf','CPAP-SG12600-NGPT-HPP FIREWALL','2','P20','2015-06-22','MATERIALE DPER IL PROGETTO RETE POSTEVITA','BRT SPA','');
+CALL CARICO('PISCAZZI','PosteMobile S.p.a.','DDT','047/2015A','2015-06-19','DDT-PosteMobileS.p.a.-0472015A.pdf','MATERIALE PER DR POSTE VITA','1','P20','2015-06-22','','DGS S.p.A.','');
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
