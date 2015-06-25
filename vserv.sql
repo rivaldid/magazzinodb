@@ -5,17 +5,17 @@ SELECT label FROM proprieta WHERE sel = 1;
 
 DROP VIEW IF EXISTS vserv_contatti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_contatti` AS
-SELECT label FROM proprieta WHERE sel = 5 ORDER BY label;
+SELECT label FROM proprieta WHERE sel = 5 AND label!=' ' ORDER BY label;
 
 
 DROP VIEW IF EXISTS vserv_tipodoc;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tipodoc` AS
-SELECT label FROM proprieta WHERE sel = 4 ORDER BY label;
+SELECT label FROM proprieta WHERE sel = 4 AND label!='Sistema' ORDER BY label;
 
 
 DROP VIEW IF EXISTS vserv_numdoc;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numdoc` AS
-SELECT numero FROM REGISTRO ORDER BY numero;
+SELECT numero FROM REGISTRO WHERE tipo!='MDS' AND tipo!='Sistema' ORDER BY numero;
 
 
 DROP VIEW IF EXISTS vserv_posizioni;
