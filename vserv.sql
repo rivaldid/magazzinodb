@@ -41,6 +41,10 @@ DROP VIEW IF EXISTS vserv_report_transiti_mensile;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_report_transiti_mensile` AS
 SELECT * FROM report_transiti_mensile;
 
+DROP VIEW IF EXISTS vserv_transiti_uscita;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti_uscita` AS
+SELECT * from vserv_transiti WHERE status='USCITA';
+
 
 -- viste magazzino: simple, base, contro (subsel1 subsel2 jsubsel), detail, detail_simple (senza info sulle bretelle)
 -- output: merce posizione quantita id_merce +detail: note
