@@ -1454,12 +1454,27 @@ CALL SCARICO('346','MURATO48','Facility','76','31','B1L03','SALA2','2015-06-19',
 CALL SCARICO('346','MURATO48','Facility','49','1','B1L02','SALA2','2015-06-19','2015-06-19','Progetto Garante privacy sala 2',@myvar);
 CALL CARICO('MANZOGI9','DGS S.p.A.','DDT','047-2015-A','2015-06-19','DDT-DGSS.p.A.-047-2015-A.pdf','CPAP-SG12600-NGPT-HPP FIREWALL','2','P20','2015-06-22','MATERIALE DPER IL PROGETTO RETE POSTEVITA','BRT SPA','');
 CALL CARICO('PISCAZZI','PosteMobile S.p.a.','DDT','047/2015A','2015-06-19','DDT-PosteMobileS.p.a.-0472015A.pdf','MATERIALE PER DR POSTE VITA','1','P20','2015-06-22','','DGS S.p.A.','');
-CALL CARICO('MANZOGI9','EMC','Lettera_di_vettura','15-006763','2015-06-23','Letteradivettura-EMC-15-006763.pdf','VPLEX + ACCESSORI','2','P37','2015-06-24','MATERIALE INSTALLAZIONE VPLEX PROGETTO POSTEVITA','Safe Watcher S.r.l.','');
 CALL CARICO('MANZOGI9','EMC','Lettera_di_vettura','15-006763','2015-06-23','Letteradivettura-EMC-15-006763.pdf','VPLEX + ACCESSORI','1','P38','2015-06-24','MATERIALE INSTALLAZIONE VPLEX PROGETTO POSTEVITA','Safe Watcher S.r.l.','');
 CALL SCARICO('347','MANZOGI9','Prossimita','202','2','P37','SALA2','2015-06-25','2015-06-25','MATERIALE INSTALLAZIONE VPLEX PROGETTO POSTEVITA',@myvar);
 CALL SCARICO('347','MANZOGI9','Prossimita','202','1','P38','SALA2','2015-06-25','2015-06-25','MATERIALE INSTALLAZIONE VPLEX PROGETTO POSTEVITA',@myvar);
 CALL SCARICO('348','MANZOGI9','PostemobileTec','200','2','P20','TLC','2015-06-25','2015-06-25','MATERIALE DR PROGETTO POSTEVITA',@myvar);
 CALL SCARICO('349','MURATO48','Facility','54','12','P02','SALA2','2015-06-26','2015-06-26','',@myvar);
+CALL SCARICO('355','MANZOGI9','Facility','46','28','A2L08','SALA2','2015-06-26','2015-06-26','INFRASTRUTTURA SAN ISOLA8 ISOLA14',@myvar);
+CALL SCARICO('355','MANZOGI9','Facility','4','8','C1L05','SALA2','2015-06-26','2015-06-26','INFRASTRUTTURA SAN ISOLA8 ISOLA14',@myvar);
+CALL SCARICO('355','MANZOGI9','Facility','3','8','C1L05','SALA2','2015-06-26','2015-06-26','INFRASTRUTTURA SAN ISOLA8 ISOLA14',@myvar);
+CALL CARICO('MANZOGI9','EMC Computer Systems Italia S.p.a.','Lettera_di_vettura','15-006899','2015-06-26','','VNX 5800','2','P26-P36','2015-06-26','MATERIALE PER STORAGE DR POSTECOM','Safe Watcher S.r.l.','');
+CALL aggiornamento_registro(NULL,'EMC Computer Systems Italia S.p.a.','Lettera_di_vettura','15-006899','792','2015-06-26','Letteradivettura-EMCComputerSystemsItaliaS.p.a.-15-006899.pdf',@myvar);
+CALL SCARICO('357','PISCAZZI','Facility','210','1','P38','SALA2','2015-06-24','2015-06-29','',@myvar);
+CALL aggiornamento_magazzino_posizione('PISCAZZI','145','P05','P16','4','2015-06-29');
+CALL aggiornamento_magazzino_posizione('DALES177','66','P06','p19','240','2015-06-29');
+CALL aggiornamento_magazzino_posizione('DALES177','67','P06','p19','28','2015-06-29');
+CALL aggiornamento_magazzino_posizione('DALES177','126','P06','sala1','1','2015-06-29');
+CALL SCARICO('362','PISCAZZI','Facility','117','1','P08','SALA2-ISOLA16','2015-06-29','2015-06-29','',@myvar);
+CALL SCARICO('363','PISCAZZI','Facility','118','7','P08','SALA1','2015-06-29','2015-06-29','',@myvar);
+CALL SCARICO('364','PISCAZZI','Facility','110','1','P09','SALA1','2015-06-29','2015-06-29','',@myvar);
+CALL SCARICO('365','PISCAZZI','Facility','123','6','P09','SALA1','2015-06-29','2015-06-29','',@myvar);
+CALL SCARICO('366','PISCAZZI','Facility','122','1','P09','SALA1','2015-06-29','2015-06-29','',@myvar);
+
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
