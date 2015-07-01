@@ -87,6 +87,27 @@ RETURN (SELECT IF(note LIKE '%PROVENIENZA%',TRIM(SUBSTRING_INDEX(note,'PROVENIEN
 END //
 
 
+DROP FUNCTION IF EXISTS `get_gruppo_da_documento` //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_gruppo_da_documento`(in_id_registro INT)
+RETURNS INT(11)
+BEGIN
+RETURN (SELECT gruppo FROM REGISTRO WHERE id_registro=in_id_registro);
+END //
+
+
+DROP FUNCTION IF EXISTS `get_next_gruppo` //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `get_next_gruppo`()
+RETURNS INT(11)
+BEGIN
+DECLARE foo INT(11);
+SET foo=(SELECT MAX(gruppo)+1 FROM REGISTRO);
+IF (foo IS NULL) THEN
+SET foo='1';
+END IF;
+RETURN foo;
+END //
+
+
 -- FUNCTION ACCOUNT DI RETE:
 DROP FUNCTION IF EXISTS `account_exists` //
 CREATE DEFINER=`magazzino`@`localhost` FUNCTION `account_exists`(in_rete VARCHAR(45))
