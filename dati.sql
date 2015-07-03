@@ -1466,9 +1466,9 @@ CALL CARICO('MANZOGI9','EMC Computer Systems Italia S.p.a.','Lettera_di_vettura'
 CALL aggiornamento_registro(NULL,'EMC Computer Systems Italia S.p.a.','Lettera_di_vettura','15-006899','792','2015-06-26','Letteradivettura-EMCComputerSystemsItaliaS.p.a.-15-006899.pdf',@myvar);
 CALL SCARICO('357','PISCAZZI','Facility','210','1','P38','SALA2','2015-06-24','2015-06-29','',@myvar);
 CALL aggiornamento_magazzino_posizione('PISCAZZI','145','P05','P16','4','2015-06-29');
-CALL aggiornamento_magazzino_posizione('DALES177','66','P06','p19','240','2015-06-29');
-CALL aggiornamento_magazzino_posizione('DALES177','67','P06','p19','28','2015-06-29');
-CALL aggiornamento_magazzino_posizione('DALES177','126','P06','sala1','1','2015-06-29');
+CALL aggiornamento_magazzino_posizione('PISCAZZI','66','P06','p19','240','2015-06-29');
+CALL aggiornamento_magazzino_posizione('PISCAZZI','67','P06','p19','28','2015-06-29');
+CALL aggiornamento_magazzino_posizione('PISCAZZI','126','P06','sala1','1','2015-06-29');
 CALL SCARICO('362','PISCAZZI','Facility','117','1','P08','SALA2-ISOLA16','2015-06-29','2015-06-29','',@myvar);
 CALL SCARICO('363','PISCAZZI','Facility','118','7','P08','SALA1','2015-06-29','2015-06-29','',@myvar);
 CALL SCARICO('364','PISCAZZI','Facility','110','1','P09','SALA1','2015-06-29','2015-06-29','',@myvar);
@@ -1484,7 +1484,9 @@ CALL SCARICO('367','PISCAZZI','Facility','129','1','P23','SALA1','2015-06-30','2
 CALL SCARICO('367','PISCAZZI','Facility','130','1','P25','SALA1','2015-06-30','2015-06-30','VMAX POSTEL',@myvar);
 CALL SCARICO('367','PISCAZZI','Facility','131','2','P36','SALA1','2015-06-30','2015-06-30','VMAX POSTEL',@myvar);
 CALL SCARICO('368','PISCAZZI','PostemobileTLC','46','42','A2L08','SALA1','2015-07-01','2015-07-01','progetto Poste Vita',@myvar);
-
+CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX CHASSIS','4','P04+P05','2015-06-29','','Safe Watcher S.r.l.','4100189855');
+CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX UPGRADE PORTBLADE 48P','8','P13','2015-06-29','','Safe Watcher S.r.l.','4100189855');
+CALL aggiornamento_registro(NULL,'INFORDATA','Lettera_di_vettura','15-6540','819','2015-06-18','Letteradivettura-INFORDATA-15-6540.pdf',@myvar);
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);

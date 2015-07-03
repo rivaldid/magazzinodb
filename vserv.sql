@@ -104,3 +104,8 @@ SELECT label from proprieta WHERE sel='1' and label like '%M';
 DROP VIEW IF EXISTS vserv_gruppi_doc;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS
 SELECT id_registro,gruppo,CONCAT_WS(' - ',contatto,tipo,numero) as documento,data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento') ORDER BY data DESC;
+
+
+DROP VIEW IF EXISTS vserv_dati_per_aggiornamento_registro;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_dati_per_aggiornamento_registro` AS
+SELECT id_registro,data,DATE_FORMAT(data,'%d/%m/%Y') AS data_ita,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,tipo,numero,gruppo,file FROM REGISTRO WHERE NOT tipo='MDS' AND NOT tipo='Sistema' ORDER BY data DESC;
