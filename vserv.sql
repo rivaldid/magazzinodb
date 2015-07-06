@@ -37,9 +37,11 @@ DROP VIEW IF EXISTS vserv_transiti;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti` AS
 SELECT rete,DATE_FORMAT(data,'%d/%m/%Y') AS dataop,status,posizione,documento,DATE_FORMAT(data_doc,'%d/%m/%Y') AS data_doc,tags,quantita,note,doc_ordine,id_merce,id_operazioni FROM TRANSITI;
 
+
 DROP VIEW IF EXISTS vserv_report_transiti_mensile;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_report_transiti_mensile` AS
 SELECT * FROM report_transiti_mensile;
+
 
 DROP VIEW IF EXISTS vserv_transiti_uscita;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_transiti_uscita` AS
@@ -101,9 +103,9 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS
 SELECT label from proprieta WHERE sel='1' and label like '%M';
 
 
-DROP VIEW IF EXISTS vserv_gruppi_doc;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_gruppi_doc` AS
-SELECT id_registro,gruppo,CONCAT_WS(' - ',contatto,tipo,numero) as documento,data FROM REGISTRO WHERE tipo NOT IN ('MDS','Sistema','Aggiornamento') ORDER BY data DESC;
+DROP VIEW IF EXISTS vserv_id_documento_gruppo;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_id_documento_gruppo` AS
+SELECT id_registro,CONCAT(documento,' ',contatto,'(del ',data,')') as documento,gruppo FROM vista_documenti WHERE documento NOT REGEXP 'MDS|Sistema|Aggiornamento' ORDER BY data DESC;
 
 
 DROP VIEW IF EXISTS vserv_dati_per_aggiornamento_registro;

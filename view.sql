@@ -6,6 +6,7 @@ SELECT
 		CONCAT_WS(' - ',tipo,numero,gruppo),
 		CONCAT('<a href=\"dati/registro/',file,'">',CONCAT_WS(' - ',tipo,numero,gruppo),'</a>')
 	) AS documento,
+	gruppo,
 	contatto,
 	data
 FROM REGISTRO
