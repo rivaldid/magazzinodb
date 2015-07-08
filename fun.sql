@@ -151,4 +151,17 @@ RETURN (SELECT UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL 30 MINUTE)));
 END //
 
 
+-- FUNCTION linkeggia
+DROP FUNCTION IF EXISTS `linkeggia` //
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `linkeggia`(item TEXT)
+RETURNS TEXT
+BEGIN
+IF ( COALESCE( item, '' ) = '' ) THEN
+	RETURN item;
+ELSE
+	RETURN CONCAT('<a href=\"dati/registro/',item,'">',item,'</a>');
+END IF;
+END //
+
+
 DELIMITER ;
