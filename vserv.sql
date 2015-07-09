@@ -103,11 +103,17 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_tags3` AS
 SELECT label from proprieta WHERE sel='1' and label like '%M';
 
 
-DROP VIEW IF EXISTS vserv_id_documento;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_id_documento_gruppo` AS
-SELECT id_registro,CONCAT(documento,' ',contatto,'(del ',data,')') as documento FROM vista_documenti WHERE documento NOT REGEXP 'MDS|Sistema|Aggiornamento' ORDER BY data DESC;
+DROP VIEW IF EXISTS vserv_documento_con_id;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_documento_con_id` AS
+SELECT 
+id_registro,
+IF(data IS NULL OR data = '',
+	CONCAT_WS(' - ',contatto,tipo,numero),
+	CONCAT_WS(' - ',contatto,tipo,numero,CONCAT_WS(' ','(del',data,')'))
+) AS documento
+FROM REGISTRO WHERE tipo NOT REGEXP 'MDS|Sistema|Aggiornamento' ORDER BY data DESC;
 
 
 DROP VIEW IF EXISTS vserv_dati_per_aggiornamento_registro;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_dati_per_aggiornamento_registro` AS
-SELECT id_registro,data,DATE_FORMAT(data,'%d/%m/%Y') AS data_ita,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,tipo,numero,gruppo,(SELECT linkeggia(file)) AS scansione FROM REGISTRO WHERE tipo NOT REGEXP 'MDS|Sistema|Aggiornamento|Reintegro' ORDER BY data DESC;
+SELECT id_registro,data,DATE_FORMAT(data,'%d/%m/%Y') AS data_ita,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,tipo,numero,gruppo,(SELECT linkeggia(file,file)) AS scansione FROM REGISTRO WHERE tipo NOT REGEXP 'MDS|Sistema|Aggiornamento|Reintegro' ORDER BY data DESC;

@@ -153,13 +153,13 @@ END //
 
 -- FUNCTION linkeggia
 DROP FUNCTION IF EXISTS `linkeggia` //
-CREATE DEFINER=`magazzino`@`localhost` FUNCTION `linkeggia`(item TEXT)
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `linkeggia`(target TEXT, label TEXT)
 RETURNS TEXT
 BEGIN
-IF ( COALESCE( item, '' ) = '' ) THEN
-	RETURN item;
+IF ( COALESCE( target, '' ) = '' ) THEN
+	RETURN target;
 ELSE
-	RETURN CONCAT('<a href=\"dati/registro/',item,'">',item,'</a>');
+	RETURN CONCAT('<a href=\"dati/registro/',target,'">',label,'</a>');
 END IF;
 END //
 
