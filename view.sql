@@ -3,8 +3,8 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_documenti` AS
 SELECT
 	id_registro,
 	IF(file IS NULL OR file = '',
-		CONCAT_WS(' - ',tipo,numero,gruppo),
-		CONCAT('<a href=\"dati/registro/',file,'">',CONCAT_WS(' - ',tipo,numero,gruppo),'</a>')
+		CONCAT_WS(' - ',contatto,tipo,numero,gruppo),
+		CONCAT('<a href=\"dati/registro/',file,'">',CONCAT_WS(' - ',contatto,tipo,numero,gruppo),'</a>')
 	) AS documento,
 	gruppo,
 	contatto,
