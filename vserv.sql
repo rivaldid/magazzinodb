@@ -67,7 +67,7 @@ SELECT * FROM contromagazzino;
 
 DROP VIEW IF EXISTS vserv_magazzino_detail;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_magazzino_detail` AS
-SELECT merce, posizione, quantita, id_merce, note FROM vista_magazzino_detail;
+SELECT merce, tags, posizione, quantita, id_merce, note FROM vista_magazzino_detail;
 
 
 DROP VIEW IF EXISTS vserv_magazzino_detail_simple;

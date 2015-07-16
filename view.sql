@@ -101,6 +101,7 @@ DROP VIEW IF EXISTS vista_magazzino_detail;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vista_magazzino_detail` AS
 SELECT
 MERCE.id_merce,
+MERCE.tags,
 CONCAT_WS(' ',
 	MERCE.tags,
 	GROUP_CONCAT(

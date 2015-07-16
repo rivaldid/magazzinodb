@@ -257,4 +257,16 @@ END IF;
 END //
 
 
+DROP PROCEDURE IF EXISTS aggiornamento_oda //
+CREATE DEFINER=`magazzino`@`localhost` PROCEDURE `aggiornamento_oda`(
+IN in_id_operazioni INT,
+IN in_oda VARCHAR(45),
+IN in_data DATE,
+IN in_file TEXT
+)
+BEGIN
+
+-- CALL aggiornamento_registro(@temp_id_registro, 'Poste Italiane S.p.A.','ODA',in_oda,NULL,in_data,in_file,@temp_ritorno);
+-- UPDATE OPERAZIONI SET 
+
 DELIMITER ;

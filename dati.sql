@@ -17,6 +17,8 @@ CALL input_permission('LOMBA693','Lombardo','1');
 CALL input_permission('GENNARE3','Gennarelli','1');
 CALL input_permission('FLORIOCR','Florio','1');
 CALL input_permission('LUCATIFR','Lucati','1');
+CALL input_permission('DACCOLT3','Daccolti','1');
+CALL input_permission('DICASAP1','Di Casa','1');
 
 -- proprieta
 TRUNCATE TABLE proprieta;

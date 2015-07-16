@@ -4,7 +4,7 @@
 
 
 PREFIX="/home/vilardid/magazzinodb"
-PREFIX2="/var/www/html/log_magazzinodb"
+PREFIX2="/var/www/html/magazzino/dati/"
 logfile=$PREFIX2/logdb.htm
 
 BINMYSQL="/usr/bin/mysql"
@@ -38,7 +38,7 @@ $BINECHO $A "Carico le procedure" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di input" $B >> $logfile
 
-echo -ne '#####                     (33%)\r'
+$BINECHO -ne '#####                     (33%)\r'
 
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sp_inp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di aggiornamento dati" $B >> $logfile
@@ -51,14 +51,17 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/view.sql \W;" | foo
 $BINECHO $A "Carico Session Handler" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/sh.sql \W;" | foo
 
-echo -ne '#############             (66%)\r'
+$BINECHO -ne '##########                (50%)\r'
 
 $BINECHO $A "Carico le viste per il service" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/vserv.sql \W;" | foo
 $BINECHO $A "Strumenti di debug" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" | foo
 
+$BINECHO -ne '#############             (66%)\r'
+
 $BINECHO $A "Carico i dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" | foo
+$BINMYSQL $MYARGS -e "source ${PREFIX2}/log/sp.log \W;" | foo
 
-echo -ne '#######################   (100%)\r'
+$BINECHO -ne '#######################   (100%)\r'
