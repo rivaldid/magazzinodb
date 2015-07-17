@@ -4,7 +4,7 @@
 
 
 PREFIX="/home/vilardid/magazzinodb"
-PREFIX2="/var/www/html/magazzino/dati/"
+PREFIX2="/var/www/html/magazzino/dati/log"
 logfile=$PREFIX2/logdb.htm
 
 BINMYSQL="/usr/bin/mysql"
@@ -62,6 +62,6 @@ $BINECHO -ne '#############             (66%)\r'
 
 $BINECHO $A "Carico i dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" | foo
-$BINMYSQL $MYARGS -e "source ${PREFIX2}/log/sp.log \W;" | foo
+$BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" | foo
 
 $BINECHO -ne '#######################   (100%)\r'

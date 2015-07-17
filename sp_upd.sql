@@ -265,8 +265,13 @@ IN in_data DATE,
 IN in_file TEXT
 )
 BEGIN
+DECLARE temp_id_registro INT;
 
--- CALL aggiornamento_registro(@temp_id_registro, 'Poste Italiane S.p.A.','ODA',in_oda,NULL,in_data,in_file,@temp_ritorno);
--- UPDATE OPERAZIONI SET 
+CALL aggiornamento_registro(NULL,'Poste Italiane S.p.A.','ODA',in_oda,NULL,in_data,in_file,@myvar);
+SET @temp_id_registro = (SELECT id_registro FROM REGISTRO WHERE contatto='Poste Italiane S.p.A.' AND tipo='ODA' AND numero=in_oda);
+CALL input_ordini(in_id_operazioni,@temp_id_registro,NULL);
+
+END //
+
 
 DELIMITER ;

@@ -1544,7 +1544,7 @@ CALL SCARICO('386','PISCAZZI','Facility','2','4','A2L12','SALA1-ISOLA5','2015-07
 CALL SCARICO('386','PISCAZZI','Facility','46','12','A2L08','SALA1-ISOLA5','2015-07-14','2015-07-14','',@myvar);
 CALL SCARICO('387','PISCAZZI','Facility','54','29','P02','ISOLA13-F1P5','2015-07-15','2015-07-15','ITEM 40',@myvar);
 CALL SCARICO('387','PISCAZZI','Facility','2','6','A2L12','ISOLA13-F1P5','2015-07-15','2015-07-15','ITEM 40',@myvar);
-
+CALL SCARICO('388','piscazzi','Facility','54','20','P02','SALA1-ISOLA5','2015-07-16','2015-07-16','ITEM 13 2013',@myvar);
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
