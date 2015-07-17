@@ -117,3 +117,13 @@ FROM REGISTRO WHERE tipo NOT REGEXP 'MDS|Sistema|Aggiornamento' ORDER BY data DE
 DROP VIEW IF EXISTS vserv_dati_per_aggiornamento_registro;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_dati_per_aggiornamento_registro` AS
 SELECT id_registro,data,DATE_FORMAT(data,'%d/%m/%Y') AS data_ita,contatto,CONCAT_WS(' - ',tipo,numero,gruppo) as documento,tipo,numero,gruppo,(SELECT linkeggia(file,file)) AS scansione FROM REGISTRO WHERE tipo NOT REGEXP 'MDS|Sistema|Aggiornamento|Reintegro' ORDER BY data DESC;
+
+
+DROP VIEW IF EXISTS vserv_trace;
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_trace` AS
+SELECT data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM vista_trace ORDER BY data DESC LIMIT 0,20;
+
+
+
+
+

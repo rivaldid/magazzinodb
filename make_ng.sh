@@ -62,6 +62,10 @@ $BINECHO -ne '#############             (66%)\r'
 
 $BINECHO $A "Carico i dati" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" | foo
+
+if [ -f ${PREFIX2}/database.sql ] 
+then
 $BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" | foo
+fi
 
 $BINECHO -ne '#######################   (100%)\r'
