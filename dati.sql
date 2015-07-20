@@ -1489,9 +1489,6 @@ CALL SCARICO('368','PISCAZZI','PostemobileTLC','46','42','A2L08','SALA1','2015-0
 CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX CHASSIS','4','P04+P05','2015-06-29','','Safe Watcher S.r.l.','4100189855');
 CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX UPGRADE PORTBLADE 48P','8','P13','2015-06-29','','Safe Watcher S.r.l.','4100189855');
 CALL aggiornamento_registro(NULL,'INFORDATA','Lettera_di_vettura','15-6540','819','2015-06-18','Letteradivettura-INFORDATA-15-6540.pdf',@myvar);
-CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX CHASSIS','4','P04+P05','2015-06-29','','Safe Watcher S.r.l.','4100189855');
-CALL CARICO('PISCAZZI','INFORDATA','Lettera_di_vettura','15-6540','2015-06-18','','DCX UPGRADE PORTBLADE 48P','8','P13','2015-06-29','','Safe Watcher S.r.l.','4100189855');
-CALL aggiornamento_registro(NULL,'INFORDATA','Lettera_di_vettura','15-6540','819','2015-06-18','Letteradivettura-INFORDATA-15-6540.pdf',@myvar);
 CALL SCARICO('369','PISCAZZI','Facility','2','28','A2L12','SALA2','2015-07-06','2015-07-06','contact center ',@myvar);
 CALL SCARICO('369','PISCAZZI','Facility','47','4','A2L13','SALA2','2015-07-06','2015-07-06','contact center ',@myvar);
 CALL SCARICO('369','PISCAZZI','Facility','46','10','A2L08','SALA2','2015-07-06','2015-07-06','contact center ',@myvar);
