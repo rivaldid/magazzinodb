@@ -1560,7 +1560,7 @@ CALL CARICO('manzogi9','INFORDATA','DDT','50/RM','2015-07-20',NULL,'BRETELLA FO-
 CALL aggiornamento_registro('738',NULL,NULL,NULL,'904',NULL,NULL,@myvar);
 CALL aggiornamento_registro(NULL,'INFORDATA','DDT','50/RM','904','2015-07-20','DDT-INFORDATA-50RM.pdf',@myvar);
 CALL CARICO('piscazzi','ITALTEL','DDT','NVLS 68032230','2015-07-16',NULL,'N2K C2248TF 1GE','4','M08','2015-07-21',NULL,'TNT GLOBAL EXPRESS',NULL);
-CALL SCARICO('396','piscazzi','PostemobileTLC','237','2','M08','SALA2','2015-07-22','2015-07-22',NULL,@myvar);
+CALL SCARICO('396','piscazzi','PostemobileTLC','234','4','M08','SALA2','2015-07-22','2015-07-22',NULL,@myvar);
 CALL aggiornamento_registro(NULL,'ITALTEL','DDT','NVLS 68032230','915','2015-07-16','DDT-ITALTEL-NVLS68032230.pdf',@myvar);
 
 -- ' exemple
