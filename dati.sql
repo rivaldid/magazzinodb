@@ -1542,6 +1542,26 @@ CALL SCARICO('386','PISCAZZI','Facility','46','12','A2L08','SALA1-ISOLA5','2015-
 CALL SCARICO('387','PISCAZZI','Facility','54','29','P02','ISOLA13-F1P5','2015-07-15','2015-07-15','ITEM 40',@myvar);
 CALL SCARICO('387','PISCAZZI','Facility','2','6','A2L12','ISOLA13-F1P5','2015-07-15','2015-07-15','ITEM 40',@myvar);
 CALL SCARICO('388','piscazzi','Facility','54','20','P02','SALA1-ISOLA5','2015-07-16','2015-07-16','ITEM 13 2013',@myvar);
+CALL SCARICO('389','piscazzi','Facility','48','1','A2L15','SALA2 ISOLA 13','2015-07-21','2015-07-21','F1 P1',@myvar);
+CALL SCARICO('390','piscazzi','Facility','212','2','P04+P05','SALA1','2015-07-21','2015-07-21','ODA 4100189855',@myvar);
+CALL SCARICO('391','piscazzi','Facility','212','2','P04+P05','SALA2','2015-07-21','2015-07-21','ODA 4100189855',@myvar);
+CALL SCARICO('392','piscazzi','Facility','213','4','P13','SALA1','2015-07-21','2015-07-21','ODA 4100189855',@myvar);
+CALL SCARICO('393','piscazzi','Facility','213','4','P13','SALA2','2015-07-21','2015-07-21','ODA 4100189855',@myvar);
+CALL CARICO('piscazzi','INFORDATA','DDT','55/LT','2015-07-14','DDT-INFORDATA-55LT.pdf','RACK TECNOSTEEL','2','P38','2015-07-20','COMPRESI PANNELLI BARRE ALIMENTAZIONE POWER CORD C13 C14 ( 72X3M) C19-C20 (24X2M)','Emmegi','422992996');
+CALL SCARICO('394','piscazzi','Facility','230','2','P38','SALA2','2015-07-20','2015-07-21',NULL,@myvar);
+CALL CARICO('piscazzi','Hewlett Packard International Sarl','DDT','GW0F250088/051/01 C','2015-07-17','DDT-HewlettPackardInternationalSarl-GW0F25008805101C.pdf','HP BLC7000 ENCLUSURE','1','P37','2015-07-21',NULL,'HMS IT S.p.A.','4501196927');
+CALL CARICO('piscazzi','Hewlett Packard International Sarl','DDT','GW0F250088/051/01 C','2015-07-17','DDT-HewlettPackardInternationalSarl-GW0F25008805101C.pdf','HP BL460C BLADE','8','P37','2015-07-21',NULL,'HMS IT S.p.A.','4501196927');
+CALL SCARICO('395','murato48','Facility','54','100','P02','SALA2','2015-07-21','2015-07-21','Cavi necessari per per la realizzazione della site preparation del progetto Migrazione Exchange 2013I cavi andranno poi installati in isola 1 (76 cavi) e in isola 2 (24 cavi)',@myvar);
+CALL CARICO('murato48','INFORDATA','DDT','EIN-EC-9654899','2015-07-14','DDT-INFORDATA-EIN-EC-9654899.pdf','TASTIERA CONSOLE IBM','4','P35','2015-07-21','4 TRASTIERE CONSOLE IBM DISTRIBUITE SU 2 COLLI','DHL Express','4501196297');
+CALL CARICO('manzogi9','INFORDATA','DDT','50/RM','2015-07-20',NULL,'BRETELLA FO-LC-LC-50/125 10M','40','A2L12','2015-07-22','REINTEGRO BRETELLE','M.G. TRASPORTI',NULL);
+CALL CARICO('manzogi9','INFORDATA','DDT','50/RM','2015-07-20',NULL,'BRETELLA FO-LC-LC-50/125 20M','12','B1L02','2015-07-22','REINTEGRO BRETELLE','M.G. TRASPORTI',NULL);
+CALL CARICO('manzogi9','INFORDATA','DDT','50/RM','2015-07-20',NULL,'BRETELLA FO-LC-LC-50/125 15M','50','A2L14','2015-07-22','REINTEGRO BRETELLE','M.G. TRASPORTI',NULL);
+CALL CARICO('manzogi9','INFORDATA','DDT','50/RM','2015-07-20',NULL,'BRETELLA FO-LC-LC-50/125 1M','20','A2L01','2015-07-22','REINTEGRO BRETELLE','M.G. TRASPORTI',NULL);
+CALL aggiornamento_registro('738',NULL,NULL,NULL,'904',NULL,NULL,@myvar);
+CALL aggiornamento_registro(NULL,'INFORDATA','DDT','50/RM','904','2015-07-20','DDT-INFORDATA-50RM.pdf',@myvar);
+CALL CARICO('piscazzi','ITALTEL','DDT','NVLS 68032230','2015-07-16',NULL,'N2K C2248TF 1GE','4','M08','2015-07-21',NULL,'TNT GLOBAL EXPRESS',NULL);
+CALL SCARICO('396','piscazzi','PostemobileTLC','237','2','M08','SALA2','2015-07-22','2015-07-22',NULL,@myvar);
+CALL aggiornamento_registro(NULL,'ITALTEL','DDT','NVLS 68032230','915','2015-07-16','DDT-ITALTEL-NVLS68032230.pdf',@myvar);
 
 -- ' exemple
 -- CALL CARICO(utente,fornitore, tipo_doc, num_doc, data_doc, scansione, tags, quantita, posizione, data_carico, note_carico, trasportatore, oda);
