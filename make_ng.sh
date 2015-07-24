@@ -28,6 +28,8 @@ MYARGS="--login-path=local -D magazzino"
 $BINCD $PREFIX
 $BINTOUCH $logfile
 
+$BINECHO "<link rel=\"stylesheet\" href=\"../../css/logdb.css\" type=\"text/css\" />" >> $logfile
+
 $BINECHO "<h1>Eseguito il $($BINDATE +"%d/%m/%Y %H.%M.%S")</h1>" >> $logfile
 
 $BINECHO $A "Carico la base" $B >> $logfile
