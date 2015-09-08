@@ -124,6 +124,32 @@ CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_trace` AS
 SELECT data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM vista_trace ORDER BY data DESC LIMIT 0,20;
 
 
+DROP VIEW IF EXISTS vserv_mappa;
+CREATE VIEW vserv_mappa AS
+SELECT 
+	UPPER(TRIM(REPLACE(merce , '"',''))) AS "merce",
+	CASE
+		WHEN SUBSTR(UPPER(posizione),2,1)='0' THEN CONCAT(SUBSTR(UPPER(posizione),1,1),SUBSTR(UPPER(posizione),3,1)) 
+		WHEN SUBSTR(UPPER(posizione),3,1)='L' THEN SUBSTR(UPPER(posizione),1,2)
+        ELSE SUBSTR(UPPER(posizione),1,3)
+	END AS pos,
+	CASE 
+		WHEN SUBSTR(UPPER(posizione),3,1)='L' THEN 
+			CASE 
+				WHEN SUBSTR(UPPER(posizione),4,1)='0' THEN CONCAT(SUBSTR(UPPER(posizione),3,1),SUBSTR(UPPER(posizione),5,1)) 
+				ELSE SUBSTR(UPPER(posizione),3) 
+			END
+		WHEN SUBSTR(UPPER(posizione),4,1)='L' THEN 
+			CASE 
+				WHEN SUBSTR(UPPER(posizione),5,1)='0' THEN CONCAT(SUBSTR(UPPER(posizione),4,1),SUBSTR(UPPER(posizione),6,1)) 
+				ELSE SUBSTR(UPPER(posizione),4)
+			END
+		ELSE ''
+	END AS livello,
+	quantita, posizione
+FROM vserv_magazzino_simple;
+
+
 
 
 
