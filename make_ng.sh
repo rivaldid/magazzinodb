@@ -22,8 +22,8 @@ foo() {
 while read -r line ; do $BINECHO $C.$line.$D >> $logfile; done
 }
 
-#MYARGS="-H -umagazzino -pmagauser -D magazzino"
-MYARGS="--login-path=local -D magazzino"
+MYARGS="-H -umagazzino -pmagauser -D magazzino"
+#MYARGS="--login-path=local -D magazzino"
 
 $BINCD $PREFIX
 $BINTOUCH $logfile
