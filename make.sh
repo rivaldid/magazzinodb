@@ -1,60 +1,75 @@
-#!/usr/local/bin/bash
+#!/bin/bash
+#
+# mysql_config_editor set --login-path=local --host=localhost --user=magazzino --password
 
-PREFIX=/usr/local/www/apache22/data/GMDBDCTO
-PREFIX2=/usr/local/www/apache22/data/GMDCTO/log
+
+PREFIX="/home/vilardid/magazzinodb"
+PREFIX2="/var/www/html/magazzino/dati/log"
 logfile=$PREFIX2/logdb.htm
 
-BINMYSQL=/usr/local/bin/mysql
-BINCD=/usr/bin/cd
-BINECHO=/bin/echo
-BINTOUCH=/usr/bin/touch
-BINDATE=/bin/date
+BINMYSQL="/usr/bin/mysql"
+BINCD="/usr/bin/cd"
+BINECHO="/usr/bin/echo"
+BINTOUCH="/usr/bin/touch"
+BINDATE="/usr/bin/date"
+BINRM="/usr/bin/rm"
 
-A="<P>"
-B=" <i class='fa fa-check-circle'></i></P>"
+A="<h3> -->"
+B="</h3>"
+C="<P>"
+D="</P>"
+
+foo() {
+while read -r line ; do $BINECHO $C.$line.$D >> $logfile; done
+}
 
 MYARGS="-H -umagazzino -pmagauser -D magazzino"
+#MYARGS="--login-path=local -D magazzino"
 
 $BINCD $PREFIX
+$BINRM $logfile
 $BINTOUCH $logfile
 
-$BINECHO "<HTML><HEAD>" >> $logfile
-$BINECHO "<link rel='stylesheet' href='../020/css/outputmysql.css' type='text/css' />" >> $logfile
-$BINECHO "<link rel='stylesheet' href='../020/lib/font-awesome/css/font-awesome.min.css' type='text/css' />" >> $logfile
-$BINECHO "</HEAD><BODY>" >> $logfile
+$BINECHO "<link rel=\"stylesheet\" href=\"../../css/logdb.css\" type=\"text/css\" />" >> $logfile
 
-$BINECHO "<div id='bloccosuperiore'>" >> $logfile
-$BINECHO "<p class='titolo'><i class='fa fa-1x fa-arrow-circle-right'></i> Eseguito il $($BINDATE +"%d/%m/%Y %H.%M.%S")</p>" >> $logfile
+$BINECHO "<h1>Eseguito il $($BINDATE +"%d/%m/%Y %H.%M.%S")</h1>" >> $logfile
 
 $BINECHO $A "Carico la base" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/base.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/base.sql \W;" | foo
 $BINECHO $A "Carico le funzioni" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/fun.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/fun.sql \W;" | foo
 $BINECHO $A "Carico le procedure" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/sp.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di input" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_inp.sql \W;" >> $logfile
+
+$BINECHO -ne '#####                     (33%)\r'
+
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_inp.sql \W;" | foo
 $BINECHO $A "Carico le procedure di aggiornamento dati" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_upd.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_upd.sql \W;" | foo
 
 $BINECHO $A "Carico le APIs pubbliche" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_pub.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sp_pub.sql \W;" | foo
 $BINECHO $A "Carico le viste sui dati" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/view.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/view.sql \W;" | foo
+$BINECHO $A "Carico Session Handler" $B >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/sh.sql \W;" | foo
+
+$BINECHO -ne '##########                (50%)\r'
 
 $BINECHO $A "Carico le viste per il service" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/vserv.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/vserv.sql \W;" | foo
 $BINECHO $A "Strumenti di debug" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" | foo
 
-$BINECHO $A "Strumenti di login" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/login.sql \W;" >> $logfile
-
-$BINECHO "</div>" >> $logfile
+$BINECHO -ne '#############             (66%)\r'
 
 $BINECHO $A "Carico i dati" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX2}/dati2.sql \W;" >> $logfile
+$BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" | foo
 
-$BINECHO "</BODY></HTML>" >> $logfile
+if [ -f ${PREFIX2}/database.sql ] 
+then
+$BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" | foo
+fi
 
+$BINECHO -ne '#######################   (100%)\r'
