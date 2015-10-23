@@ -5,9 +5,13 @@
 
 PREFIX="/home/vilardid/magazzinodb"
 PREFIX2="/var/www/html/magazzino/dati/log"
+
 logfile=$PREFIX2/logdb.htm
+tracefile=$PREFIX2/temp_trace.sql
 
 BINMYSQL="/usr/bin/mysql"
+BINDUMP="/usr/bin/mysqldump"
+
 BINCD="/usr/bin/cd"
 BINECHO="/usr/bin/echo"
 BINTOUCH="/usr/bin/touch"
@@ -33,6 +37,9 @@ $BINTOUCH $logfile
 $BINECHO "<link rel=\"stylesheet\" href=\"../../css/logdb.css\" type=\"text/css\" />" >> $logfile
 
 $BINECHO "<h1>Eseguito il $($BINDATE +"%d/%m/%Y %H.%M.%S")</h1>" >> $logfile
+
+$BINECHO $A "Backup del watchdog" $B >> $logfile
+$BINDUMP -umagazzino -pmagauser magazzino trace > $tracefile
 
 $BINECHO $A "Carico la base" $B >> $logfile
 $BINMYSQL $MYARGS -e "source ${PREFIX}/base.sql \W;" | foo
@@ -72,3 +79,6 @@ $BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" >> $logfile
 fi
 
 $BINECHO -ne '#######################   (100%)\r'
+
+$BINECHO $A "Restore del watchdog" $B >> $logfile
+$BINMYSQL $MYARGS -e "source $tracefile \W;" >> $logfile
