@@ -33,6 +33,7 @@ MYARGS="-H -umagazzino -pmagauser -D magazzino"
 $BINCD $PREFIX
 $BINRM $logfile
 $BINTOUCH $logfile
+$BINTOUCH $tracefile
 
 $BINECHO "<link rel=\"stylesheet\" href=\"../../css/logdb.css\" type=\"text/css\" />" >> $logfile
 
@@ -82,3 +83,4 @@ $BINECHO -ne '#######################   (100%)\r'
 
 $BINECHO $A "Restore del watchdog" $B >> $logfile
 $BINMYSQL $MYARGS -e "source $tracefile \W;" >> $logfile
+$BINRM $tracefile
