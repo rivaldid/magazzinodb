@@ -120,7 +120,7 @@ SELECT id_registro,data,DATE_FORMAT(data,'%d/%m/%Y') AS data_ita,contatto,CONCAT
 
 
 DROP VIEW IF EXISTS vserv_webtrace;
-CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_trace` AS
+CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_webtrace` AS
 SELECT data,REQUEST_URI,HTTP_REFERER,REMOTE_ADDR,REMOTE_USER,PHP_AUTH_USER,HTTP_USER_AGENT FROM vista_trace ORDER BY data DESC LIMIT 0,20;
 
 DROP VIEW IF EXISTS vserv_trace;
