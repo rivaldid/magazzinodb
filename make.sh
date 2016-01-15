@@ -73,10 +73,12 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" | foo
 $BINECHO -ne '#############             (66%)\r'
 
 $BINECHO $A "Carico i dati" $B >> $logfile
-$BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" >> $logfile
+#$BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" >> $logfile
+pv "${PREFIX}/dati.sql" | $BINMYSQL $MYARGS >> $logfile
 
 if [ -f ${PREFIX2}/database.sql ]; then
-$BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" >> $logfile
+#$BINMYSQL $MYARGS -e "source ${PREFIX2}/database.sql \W;" >> $logfile
+pv "${PREFIX2}/database.sql" | $BINMYSQL $MYARGS >> $logfile
 fi
 
 $BINECHO -ne '#######################   (100%)\r'

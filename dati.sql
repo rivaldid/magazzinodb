@@ -3,7 +3,7 @@ USE magazzino;
 -- DATI RELATIVI AGLI ACCOUNT DI RETE
 TRUNCATE TABLE UTENTI;
 TRUNCATE TABLE trace;
-CALL input_permission('LORUSSO6','Lorusso','2');
+-- CALL input_permission('LORUSSO6','Lorusso','2');
 CALL input_permission('VILARDID','Vilardi','2');
 CALL input_permission('MARCHIS6','Marchisotti','1');
 CALL input_permission('NICAST28','Nicastro','1');
@@ -1145,8 +1145,8 @@ CALL CARICO('MANZOGI9','Accessi','Sistema','16','2014-12-01','','BRETELLA UTP-CA
 CALL CARICO('MANZOGI9','Accessi','Sistema','17','2014-12-01','','BRETELLA UTP-CAT6 3M giallo','13','P01','2014-12-01','Carico invocato dal sistema per aggiornamento posizione magazzino','DHL Express','');
 CALL CARICO('MANZOGI9','Hewlett Packard International Sarl','DDT','GW0F 219473/013 F','2014-08-21','DDT-HP-GW0F219473013F.pdf','HP Store Easy 3840 Gateway Storage','1','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
 CALL CARICO('MANZOGI9','Hewlett Packard Italiana S.p.A.','DDT','GW0F 218122/019/01 C','2014-08-05','DDT-HP-GW0F21812201901C.pdf','HP 4GB 1RX4 PC3L-10600R-9 Kit','6','P09','2014-12-04','Materiale Relativo al Progetto CERT','Gebrueder Weiss GmbH Transport und Logistik','');
-CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
-CALL CARICO('MANZOGI9','Italware S.p.A.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Italware S.r.l.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','ARMADIO RACK 7014 T42','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
+CALL CARICO('MANZOGI9','Italware S.r.l.','DDT','1537/A','2014-11-28','DDT-ItalwareS.p.A.-1537A.pdf','SERVER 24 CORE 258GB RAM 20 HDD','1','P18','2014-12-04','PROGETTO ANTIRICICLAGGIO','Tecnotrans S.r.l','');
 CALL SCARICO(NULL,'MANZOGI9','Facility','120','1','P15','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','121','1','A2L05','SALA2-ISOLA10','2014-12-04','2014-12-04','PROGETTO ANTIRICICLAGGIO',@myvar);
 CALL SCARICO(NULL,'MANZOGI9','Facility','49','26','A2L11','SALA2','2014-12-05','2014-12-05','MOVING ARTE ANTICA',@myvar);
@@ -1585,8 +1585,8 @@ CALL CARICO('piscazzi','ITALTEL','DDT','CAOS 95035067','2015-07-28','DDT-ITALTEL
 CALL CARICO('piscazzi','Hewlett Packard International Sarl','DDT','818133387','2015-07-24','DDT-HewlettPackardInternationalSarl-818133387.pdf','MATERIALE PER ESPANSIONE SUPERDOME','1','P13-P14','2015-07-29',NULL,'TNT GLOBAL EXPRESS',NULL);
 CALL SCARICO('402','piscazzi','Facility','241','1','P13-P14','SALA-ISOLA9','2015-07-30','2015-07-30',NULL,@myvar);
 CALL CARICO('piscazzi','INFORDATA','DDT','EIN-EC-9655330','2015-07-27','DDT-INFORDATA-EIN-EC-9655330.pdf','CONSOLLE IBM','4','M12','2015-07-30',NULL,'DHL Express',NULL);
-CALL CARICO('piscazzi','Italware S.p.A.','DDT','ITW2853_15','2015-07-28','DDT-ItalwareS.p.A.-ITW285315.pdf','SERVER TS RD650 D2667V3','20','M09','2015-07-30',NULL,'MASCIOVECCHIO TRASPORTI s.r.l.','4501196610');
-CALL CARICO('piscazzi','Italware S.p.A.','DDT','ITW2853_15','2015-07-28','DDT-ItalwareS.p.A.-ITW285315.pdf','LCD RACK','3','M09','2015-07-30',NULL,'MASCIOVECCHIO TRASPORTI s.r.l.','4501196610');
+CALL CARICO('piscazzi','Italware S.r.l.','DDT','ITW2853_15','2015-07-28','DDT-ItalwareS.p.A.-ITW285315.pdf','SERVER TS RD650 D2667V3','20','M09','2015-07-30',NULL,'MASCIOVECCHIO TRASPORTI s.r.l.','4501196610');
+CALL CARICO('piscazzi','Italware S.r.l.','DDT','ITW2853_15','2015-07-28','DDT-ItalwareS.p.A.-ITW285315.pdf','LCD RACK','3','M09','2015-07-30',NULL,'MASCIOVECCHIO TRASPORTI s.r.l.','4501196610');
 CALL SCARICO('403','piscazzi','Facility','243','20','M09','SALA2','2015-07-30','2015-07-30',NULL,@myvar);
 CALL SCARICO('403','piscazzi','Facility','244','3','M09','SALA2','2015-07-30','2015-07-30',NULL,@myvar);
 CALL aggiornamento_oda('899','4501197968','2015-07-30',NULL);
