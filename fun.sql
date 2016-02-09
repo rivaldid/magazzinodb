@@ -2,7 +2,7 @@ DELIMITER //
 
 
 DROP FUNCTION IF EXISTS `strip_htmltags` //
-CREATE DEFINER=`magazzino`@`localhost` FUNCTION `strip_htmltags`($str text) 
+CREATE DEFINER=`magazzino`@`localhost` FUNCTION `strip_htmltags`($str text)
 RETURNS text
 BEGIN
     DECLARE $start, $end INT DEFAULT 1;
