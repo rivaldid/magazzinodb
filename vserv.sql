@@ -15,7 +15,7 @@ SELECT label FROM proprieta WHERE sel = 4 AND label!='Sistema' ORDER BY label;
 
 DROP VIEW IF EXISTS vserv_numdoc;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numdoc` AS
-SELECT numero FROM REGISTRO WHERE tipo!='MDS' AND tipo!='Sistema' ORDER BY numero;
+SELECT numero AS label FROM REGISTRO WHERE tipo!='MDS' AND tipo!='Sistema' ORDER BY label;
 
 
 DROP VIEW IF EXISTS vserv_posizioni;
@@ -30,7 +30,7 @@ SELECT label FROM proprieta WHERE sel = 3;
 
 DROP VIEW IF EXISTS vserv_numoda;
 CREATE DEFINER=`magazzino`@`localhost` VIEW `vserv_numoda` AS
-SELECT numero FROM REGISTRO WHERE tipo = 'ODA' ORDER BY numero;
+SELECT numero AS label FROM REGISTRO WHERE tipo = 'ODA' ORDER BY label;
 
 
 DROP VIEW IF EXISTS vserv_transiti;
