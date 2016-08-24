@@ -79,6 +79,10 @@ $BINMYSQL $MYARGS -e "source ${PREFIX}/debug.sql \W;" | foo
 
 $BINECHO -ne '#############             (66%)\r'
 
+## FORZATURA UTENTE VILARDID PER TEST
+$BINMYSQL $MYARGS -e "CALL input_permission('VILARDID','Vilardi','2');"
+## FINE FORZATURA
+
 #$BINECHO $A "Carico i dati" $B >> $logfile
 #$BINMYSQL $MYARGS -e "source ${PREFIX}/dati.sql \W;" >> $logfile
 #pv "${PREFIX}/dati.sql" | $BINMYSQL $MYARGS | foo
